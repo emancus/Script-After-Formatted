@@ -20,6 +20,9 @@ ECHO    [0m
 	ECHO [36mPlayer[0m		V1) Scarica VLC v2.2.8 x64	V2) Installa VLC v2.2.8 x64	V3) Cancella VLC installer
 	ECHO [36mRAR[0m		R1) Scarica WinRAR v5.9.1 x64	R2) Installa WinRAR v5.9.1 x64	R3) Cancella WinRAR installer
 	ECHO [36mDownloader[0m	J1) Scarica JDownloader 2 x64	J2) Installa JDownloader 2 x64	J3) Cancella JDownloader 2 installer
+	ECHO [36mMusic[0m		M1) Scarica Mp3tag v3.02 x86	M2) Installa Mp3tag v3.02 x86	M3) Cancella Mp3tag installer 
+	ECHO 		M4) Scarica Spek v.0.8.2	
+	ECHO [36mFileRenamer[0m	F1) Scarica FileRen Basic v6.3 	F2) Installa FileRenamer Basic	F3) Cancella FileRenamer Installer
 	ECHO I) Informazioni
 	ECHO 0) Esci
 ::----------------------LOOP-------------------------------------------------------------------------------------------
@@ -71,6 +74,22 @@ ECHO    [0m
 	if "%c%" EQU "j2" Goto :downloader
 	if "%c%" EQU "J3" Goto :deldownloader
 	if "%c%" EQU "j3" Goto :deldownloader
+	::----MUSIC--------------------------------------
+	if "%c%" EQU "M1" START https://download.mp3tag.de/mp3tagv302setup.exe
+	if "%c%" EQU "m1" START https://download.mp3tag.de/mp3tagv302setup.exe
+	if "%c%" EQU "M2" Goto :music
+	if "%c%" EQU "m2" Goto :music
+	if "%c%" EQU "M3" Goto :delmusic
+	if "%c%" EQU "m3" Goto :delmusic
+	if "%c%" EQU "M4" START https://github.com/alexkay/spek/releases/download/v0.8.2/spek-0.8.2.zip
+	if "%c%" EQU "m4" START https://github.com/alexkay/spek/releases/download/v0.8.2/spek-0.8.2.zip
+	::----FILE RENAMER-------------------------------
+	if "%c%" EQU "F1" START http://www.sherrodcomputers.com/downloads/FileRenamerBasic.exe
+	if "%c%" EQU "f1" START http://www.sherrodcomputers.com/downloads/FileRenamerBasic.exe
+	if "%c%" EQU "F2" Goto :file
+	if "%c%" EQU "f2" Goto :file
+	if "%c%" EQU "F3" Goto :delfile
+	if "%c%" EQU "f3" Goto :delfile
 	::----INFO---------------------------------------
 	if "%c%" EQU "I" Goto :information
 	if "%c%" EQU "i" Goto :information
@@ -171,6 +190,36 @@ ECHO    [0m
 		IF NOT EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe ECHO [43m[Attenzione][0m - L'installer di [31mJDownloader 2[0m non esiste
 	)
 	Goto :letsgo
+::----------------------MUSIC-----
+:music
+	IF EXIST D:\Download\mp3tagv302setup.exe ECHO Installazione di [31mMp3tag[0m partita dal disco D
+	IF EXIST D:\Download\mp3tagv302setup.exe START D:\Download\mp3tagv302setup.exe
+	IF EXIST D:\Download\mp3tagv302setup.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO Installazione di [31mMp3tag[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe START C:\Users\%username%\Downloads\mp3tagv302setup.exe
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
+	Goto :letsgo
+:delmusic
+	set music=0
+	IF EXIST D:\Download\mp3tagv302setup.exe SET music=1
+	IF EXIST D:\Download\mp3tagv302setup.exe ECHO Installer di [31mMp3tag[0m cancellato dal disco D
+	IF EXIST D:\Download\mp3tagv302setup.exe DEL D:\Download\mp3tagv302setup.exe
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe SET music=1	
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO Installer di [31Mp3tag[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe DEL C:\Users\%username%\Downloads\mp3tagv302setup.exe
+	IF %music%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\mp3tagv302setup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
+	)
+	Goto :letsgo
+::----------------------FILE RENAMER--
+:file
+	ECHO Da implementare
+	Goto :letsgo
+:nofile
+	ECHO Da implementare
+	Goto :letsgo
 ::----------------------INFO-----------
 :information
 	ECHO [33m
@@ -180,8 +229,8 @@ ECHO    [0m
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.0.4 		 *
-	ECHO 	    *		  Codename = Sparkling Tiger		*
+	ECHO 	   *		     Versione = v.0.0.5 		 *
+	ECHO 	    *		  Codename = Sparkling Horse		*
 	ECHO 	     *		 Ultima Release = 30/09/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
