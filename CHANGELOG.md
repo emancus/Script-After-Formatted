@@ -1,5 +1,5 @@
 ## Version List
- - v.0.0.5 - Sparkling Whale
+ - v.0.0.6 - Sparkling Whale
  - v.0.0.5 - Sparkling Horse
  - v.0.0.4 - Sparkling Tiger
  - v.0.0.3 - Sparkling Lion
@@ -7,7 +7,7 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
-### v.0.0.5 - Sparkling Whale
+### v.0.0.6 - Sparkling Whale
 + Next Release
 
 ### v.0.0.5 - Sparkling Horse
