@@ -1,2 +1,2 @@
-# Script-After-Formatted
-An useful script to download and install programs from web after formatted
+# Script After Formatted
+An useful script (written in Batch) to download and install programs from web after formatted
