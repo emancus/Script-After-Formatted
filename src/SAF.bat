@@ -19,9 +19,9 @@ ECHO    [0m
 	ECHO [36mBrowser[0m		B1) Scarica Firefox		B2) Installa Firefox		B3) Cancella Firefox installer
 	ECHO [36mPlayer[0m		V1) Scarica VLC v2.2.8 x64	V2) Installa VLC v2.2.8 x64	V3) Cancella VLC installer
 	ECHO [36mRAR[0m		R1) Scarica WinRAR v5.9.1 x64	R2) Installa WinRAR v5.9.1 x64	R3) Cancella WinRAR installer
+	ECHO [36mDownloader[0m	J1) Scarica JDownloader 2 x64	J2) Installa JDownloader 2 x64	J3) Cancella JDownloader 2 installer
 	ECHO I) Informazioni
 	ECHO 0) Esci
-
 ::----------------------LOOP-------------------------------------------------------------------------------------------
 :letsgo
 	set /P c=
@@ -64,6 +64,13 @@ ECHO    [0m
 	if "%c%" EQU "r2" Goto :rar
 	if "%c%" EQU "R3" Goto :delrar
 	if "%c%" EQU "r3" Goto :delrar
+	::----DOWNLOADER---------------------------------
+	if "%c%" EQU "J1" START https://jdownloader.org/dl?v=101
+	if "%c%" EQU "j1" START https://jdownloader.org/dl?v=101
+	if "%c%" EQU "J2" Goto :downloader
+	if "%c%" EQU "j2" Goto :downloader
+	if "%c%" EQU "J3" Goto :deldownloader
+	if "%c%" EQU "j3" Goto :deldownloader
 	::----INFO---------------------------------------
 	if "%c%" EQU "I" Goto :information
 	if "%c%" EQU "i" Goto :information
@@ -136,11 +143,34 @@ ECHO    [0m
 	IF EXIST C:\Users\%username%\Downloads\WinRAR-x64-591it.exe SET rar=1	
 	IF EXIST C:\Users\%username%\Downloads\WinRAR-x64-591it.exe ECHO Installer di [31mWinRAR[0m cancellato dal disco C
 	IF EXIST C:\Users\%username%\Downloads\WinRAR-x64-591it.exe DEL C:\Users\%username%\Downloads\WinRAR-x64-591it.exe
+	IF %rar%==1 Goto :letsgo
         IF NOT EXIST D:\Download\WinRAR-x64-591it.exe (
 		IF NOT EXIST C:\Users\%username%\Downloads\WinRAR-x64-591it.exe ECHO [43m[Attenzione][0m - L'installer di [31mWinRAR[0m non esiste
 	)
 	Goto :letsgo
-
+::----------------------DOWNLOADER-----
+:downloader
+	IF EXIST D:\Download\JDownloaderSetup.exe ECHO Installazione di [31mJDownloader 2[0m partita dal disco D
+	IF EXIST D:\Download\JDownloaderSetup.exe START D:\Download\JDownloaderSetup.exe
+	IF EXIST D:\Download\JDownloaderSetup.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe ECHO Installazione di [31mJDownloader 2[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe START C:\Users\%username%\Downloads\JDownloaderSetup.exe
+	IF EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mJDownloader 2[0m non esiste
+	Goto :letsgo
+:deldownloader
+	set downloader=0
+	IF EXIST D:\Download\JDownloaderSetup.exe SET downloader=1
+	IF EXIST D:\Download\JDownloaderSetup.exe ECHO Installer di [31mJDownloader 2[0m cancellato dal disco D
+	IF EXIST D:\Download\JDownloaderSetup.exe DEL D:\Download\JDownloaderSetup.exe
+	IF EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe SET downloader=1	
+	IF EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe ECHO Installer di [31mJDownloader 2[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe DEL C:\Users\%username%\Downloads\JDownloaderSetup.exe
+	IF %downloader%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\JDownloaderSetup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe ECHO [43m[Attenzione][0m - L'installer di [31mJDownloader 2[0m non esiste
+	)
+	Goto :letsgo
 ::----------------------INFO-----------
 :information
 	ECHO [33m
@@ -150,8 +180,8 @@ ECHO    [0m
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.0.3 		 *
-	ECHO 	    *		  Codename = Sparkling Lion		*
+	ECHO 	   *		     Versione = v.0.0.4 		 *
+	ECHO 	    *		  Codename = Sparkling Tiger		*
 	ECHO 	     *		 Ultima Release = 30/09/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
