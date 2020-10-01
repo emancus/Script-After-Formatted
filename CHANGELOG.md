@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.1.2 - Roaring Mouse
  - v.0.1.1 - Roaring Kitty
  - v.0.1.0 - Roaring Dog
  - v.0.0.9 - Sparkling Hawk
@@ -12,8 +13,13 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
-### v.0.1.1 - Roaring Kitty
+### v.0.1.2 - Roaring Mouse
 + Next Release
+
+### v.0.1.1 - Roaring Kitty
++ Add support to "Atom" / "Notepad++" / "AMD Drive
++ Add "Windows Store reset" functionality
++ UI Improved
 
 ### v.0.1.0 - Roaring Dog
 + Revisited Menu (now has 2 pages)
