@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.1.0 - Roaring Dog
  - v.0.0.9 - Sparkling Hawk
  - v.0.0.8 - Sparkling Grid
  - v.0.0.7 - Sparkling Stone
@@ -10,8 +11,12 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
-### v.0.0.9 - Sparkling Hawk
+### v.0.1.0 - Roaring Dog
 + Next Release
+
+### v.0.0.9 - Sparkling Hawk
++ Add support to "OBS Studio" / "Tor" / "Steam" / "Epic Games"
++ Add "delete all installer" functionality
 
 ### v.0.0.8 - Sparkling Grid
 + Add support for "VirtualBox" / "TeamViewer"
