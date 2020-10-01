@@ -45,8 +45,18 @@ Why? Because it's simple and work fine!
 **Games** = Steam Client (Last Version) + Epic Games (Last Version)<br/>
 Why? Because are the most popular game library among players!
 
+**Text Editor** = Atom (Last Version) + Notepad++ (Last Version)<br/>
+Why? Atom it's a perfect fast editor high customizable!<br/>
+Notepad++ is a valid alternative
+
 ## Will you give support to other programs?
 Of couse! I'm working on it!
+
+## What functionality is supported?
++ AMD / NVIDIA video driver fast link
++ TRIM check
++ Windows Update Reconfiguration
++ Windows Store reset
 
 [Click Here]: https://github.com/HidroSaphire/Script-After-Formatted/archive/master.zip
 [Enrico Mancuso]: https://github.com/HidroSaphire
