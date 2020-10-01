@@ -33,7 +33,7 @@ ECHO    [0m
 :menu
 	ECHO [36mMenu[0m		M) Show Menu
 	ECHO [36mUAC[0m		U1) Disabilita UAC		U2) Abilita UAC
-	ECHO [36mMix[0m		TR) Controllo Trim
+	ECHO [36mMix[0m		TR) Controllo TRIM
 	ECHO [36mBrowser[0m		B1) Scarica Firefox		B2) Installa Firefox		B3) Cancella Firefox installer
 	ECHO [36mPlayer[0m		V1) Scarica VLC v2.2.8 x64	V2) Installa VLC		V3) Cancella VLC installer
 	ECHO [36mRAR[0m		R1) Scarica WinRAR v5.9.1 x64	R2) Installa WinRAR		R3) Cancella WinRAR installer
@@ -43,7 +43,7 @@ ECHO    [0m
 	ECHO 		M4) Scarica Spek v.0.8.2	
 	ECHO [36mFileRenamer[0m	F1) Scarica FileRen Basic v6.3 	F2) Installa FileRenamer	F3) Cancella FileRenamer Installer
 	ECHO [36mSyncronizer[0m	S1) Scarica SyncTrayzor x64 	S2) Installa SyncTrayzor	S3) Cancella SyncTrayzor Installer
-	ECHO [32mExtra[0m		I) Informazioni		C) Clear Screen		D) DebugRoom
+	ECHO [32mExtra[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO 0) Esci
 
 
@@ -141,6 +141,14 @@ ECHO    [0m
 	if "%c%" EQU "d" test&cls
 	if "%c%" EQU "D" Goto :debugRoom
 	if "%c%" EQU "d" Goto :debugRoom
+	if "%c%" EQU "PC" test&cls
+	if "%c%" EQU "pc" test&cls
+	if "%c%" EQU "PC" Goto :infoPC
+	if "%c%" EQU "pc" Goto :infoPC
+	if "%c%" EQU "E" test&cls
+	if "%c%" EQU "e" test&cls
+	if "%c%" EQU "E" Goto :easterEgg
+	if "%c%" EQU "e" Goto :easterEgg
 	::----END----------------------------------------
 	if %c%==0 Goto :end
 
@@ -340,8 +348,8 @@ ECHO    [0m
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.0.6 		 *
-	ECHO 	    *		  Codename = Sparkling Whale		*
+	ECHO 	   *		     Versione = v.0.0.7 		 *
+	ECHO 	    *		  Codename = Sparkling Stone		*
 	ECHO 	     *		 Ultima Release = 01/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
@@ -371,6 +379,55 @@ Goto :letsgo
 	ECHO 		  Spero che sia d'inspirazione ai programmatori che guarderanno questo codice	
 	ECHO [36m
 	ECHO											     (HidroSaphire)
+	ECHO [0m
+
+	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+Goto :letsgo
+
+::----------------------INFOPC---------
+:infoPC
+	ECHO [36m	INFORMAZIONI SUL COMPUTER[33m
+	ver
+	ECHO [32mNome Computer = [0m %COMPUTERNAME% 
+	ECHO [32mNome Utente = 	[0m %USERNAME%
+	ECHO [0m
+	ECHO [32mWindows e' in modalita' (.exe = Legacy BIOS / .efi = UEFI) - Richiede privilegi di amministratore[0m
+	bcdedit | find "path"
+	ECHO [0m
+	ECHO [32mIl path del File di Paging:[0m
+	wmic pagefile list /format:list | find "Name"
+	ECHO [0m
+	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+Goto :letsgo
+
+::----------------------EASTER EGG------
+:easterEgg
+
+	ECHO [0m
+	ECHO [107;107m                                  [0m 
+	ECHO [107;107m          [0m             [107;107m           
+	ECHO  [107;107m      [0m      [107;107m  [101;91m    [107;107m  [0m      [107;107m       
+	ECHO  [107;107m    [0m    [107;107m      [101;91m    [107;107m      [0m    [107;107m     
+	ECHO  [107;107m  [0m    [101;101m  [107;107m    [101;91m        [107;107m    [101;91m  [0m    [107;107m   
+	ECHO  [107;107m  [0m  [107;107m  [101;91m                    [107;107m  [0m  [107;107m   
+	ECHO [107;107m [0m    [107;107m    [101;91m    [107;107m        [101;91m    [107;107m    [0m    [107;107m 
+	ECHO [107;107m [0m  [107;107m      [101;91m  [107;107m            [101;91m  [107;107m      [0m  [107;107m 
+	ECHO [107;107m [0m  [107;107m      [101;91m  [107;107m            [101;91m  [107;107m      [0m  [107;107m 
+	ECHO [107;107m [0m  [107;107m    [101;91m    [107;107m            [101;91m    [107;107m    [0m  [107;107m 
+	ECHO [107;107m [0m  [101;91m          [107;107m        [101;91m          [0m  [107;107m [0m 
+	ECHO [107;107m [0m  [101;91m    [0m                    [101;91m    [0m  [107;107m [0m 
+	ECHO [107;107m [0m        [107;107m    [0m  [107;107m    [0m  [107;107m    [0m        [107;107m [0m 
+	ECHO [107;107m   [0m    [107;107m      [0m  [107;107m    [0m  [107;107m      [0m    [107;107m   [0m 
+	ECHO [107;107m     [0m  [107;107m                    [0m  [107;107m     [0m 
+	ECHO [107;107m     [0m    [107;107m                [0m    [107;107m     [0m 
+	ECHO [107;107m       [0m                    [107;107m       [0m 
+	ECHO [107;107m                                  [0m 
+	ECHO [0m
+	ECHO [0m
+	ECHO [36mHey, ho appena scoperto di essere bravo con l'ASCII Art![0m
+	ECHO [36mNo, scherzo, c'ho messo almeno un ora per fare sta cosa![0m
+	ECHO [36m                                                (HidroSaphire)[0m
+	ECHO [0m
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
 Goto :letsgo
