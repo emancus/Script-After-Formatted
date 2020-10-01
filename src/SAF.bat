@@ -5,7 +5,7 @@
 
 
 ::----------------------TITLE OF WINDOWS--------------------------------------------------------------------------------------
-title HidroSaphrie's SAF (Script After Formatted)
+title HidroSaphrie SAF - (Script After Formatted)
 
 
 ::----------------------VARIABLE INITIALIZATION-------------------------------------------------------------------------------
@@ -20,6 +20,11 @@ title HidroSaphrie's SAF (Script After Formatted)
 	SET sync=0
 	SET vm=0
 	SET remoto=0
+	SET tor=0
+	SET steam=0
+	SET epic=0
+	SET capture=0
+	SET t=0
 
 
 ::----------------------PRINT TITLE-------------------------------------------------------------------------------------------
@@ -40,6 +45,7 @@ ECHO    [0m
 	ECHO [32m------------------------------------[Programmi]--------------------------------------------
 	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
 	ECHO [36mBrowser[0m		B1) Firefox x64		  B2) Firefox		B3) Firefox installer
+	ECHO			B4) Tor (ITA) x64	  B5) Tor		B6) Tor installer 
 	ECHO [36mPlayer[0m		P1) VLC v2.2.8 x64	  P2) VLC		V3) PLC installer
 	ECHO [36mRAR[0m		R1) WinRAR v5.9.1 x64	  R2) WinRAR		R3) WinRAR installer
 	ECHO [36mDownloader[0m	J1) JDownloader 2 x64	  J2) JDown 2		J3) JDownloader 2 installer
@@ -50,6 +56,10 @@ ECHO    [0m
 	ECHO [36mFileRenamer[0m	F1) FileRen Basic v6.3 	  F2) FileRenamer	F3) FileRenamer installer
 	ECHO [36mSyncronizer[0m	S1) SyncTrayzor x64 	  S2) SyncTrayzor	S3) SyncTrayzor installer
 	ECHO [36mVM[0m		V1) VirtualBox v6.1.14    V2) VirtualBox	V3) VirtualBox Installer
+	ECHO [36mScreen Capt[0m	O1) OBS Studio x64        O2) OBS Studio 	O3) OBS Studio
+	ECHO [36mGiochi[0m		G1) Steam Client x86	  G2) Steam 		G3) Steam installer
+	ECHO			G4) Epic Games	  	  G5) Epic Games 	G6) Epic Games installer
+	ECHO									TT) Cancella tutti 
 	ECHO [32m-------------------------------------[Extra]------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO 0) Esci
@@ -84,7 +94,13 @@ ECHO    [0m
 	if "%c%" EQU "B2" Goto :browser
 	if "%c%" EQU "b2" Goto :browser
 	if "%c%" EQU "B3" Goto :delbrowser
-	if "%c%" EQU "b3" Goto :delbrowser
+	if "%c%" EQU "b3" Goto :delbrowser	
+	if "%c%" EQU "B4" START https://www.torproject.org/dist/torbrowser/10.0/torbrowser-install-win64-10.0_it.exe
+	if "%c%" EQU "b4" START https://www.torproject.org/dist/torbrowser/10.0/torbrowser-install-win64-10.0_it.exe
+	if "%c%" EQU "B5" Goto :tor
+	if "%c%" EQU "b5" Goto :tor
+	if "%c%" EQU "B6" Goto :deltor
+	if "%c%" EQU "b6" Goto :deltor
 	::----PLAYER-------------------------------------
 	if "%c%" EQU "P1" START http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
 	if "%c%" EQU "p1" START http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
@@ -150,6 +166,31 @@ ECHO    [0m
 	if "%c%" EQU "V2" Goto :vm
 	if "%c%" EQU "v3" Goto :delvm
 	if "%c%" EQU "V3" Goto :delvm
+	::----SCREEN CAPTURE----------------------------
+	if "%c%" EQU "o1" START https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0-Full-Installer-x64.exe
+	if "%c%" EQU "O1" START https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0-Full-Installer-x64.exe
+	if "%c%" EQU "o2" Goto :capture
+	if "%c%" EQU "O2" Goto :capture
+	if "%c%" EQU "o3" Goto :delcapture
+	if "%c%" EQU "O3" Goto :delcapture
+	::----GIOCHI-------------------------------------
+	if "%c%" EQU "G1" START https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
+	if "%c%" EQU "g1" START https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
+	if "%c%" EQU "G2" Goto :steam
+	if "%c%" EQU "g2" Goto :steam
+	if "%c%" EQU "G3" Goto :delsteam
+	if "%c%" EQU "g3" Goto :delsteam
+	if "%c%" EQU "G4" START https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi
+	if "%c%" EQU "g4" START https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi
+	if "%c%" EQU "G5" Goto :epic
+	if "%c%" EQU "g5" Goto :epic
+	if "%c%" EQU "G6" Goto :delepic
+	if "%c%" EQU "g6" Goto :delepic
+	::----TOTAL--------------------------------------
+	if "%c%" EQU "TT" Goto :deltotal
+	if "%c%" EQU "tt" Goto :deltotal	
+	if "%c%" EQU "Tt" Goto :deltotal
+	if "%c%" EQU "Tt" Goto :deltotal
 	::----EXTRA--------------------------------------
 	if "%c%" EQU "I" test&cls
 	if "%c%" EQU "i" test&cls
@@ -198,6 +239,28 @@ ECHO    [0m
 	IF %browser%==1 Goto :letsgo
         IF NOT EXIST D:\Download\"Firefox Installer.exe" (
 		IF NOT EXIST C:\Users\%username%\Downloads\"Firefox Installer.exe" ECHO [43m[Attenzione][0m - L'installer di [31mFirefox[0m non esiste
+	)
+	Goto :letsgo
+:tor
+	IF EXIST D:\Download\torbrowser-install-win64-10.0_it.exe ECHO Installazione di [31mTor[0m partita dal disco D
+	IF EXIST D:\Download\torbrowser-install-win64-10.0_it.exe START D:\Download\torbrowser-install-win64-10.0_it.exe
+	IF EXIST D:\Download\torbrowser-install-win64-10.0_it.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe ECHO Installazione di [31mTor[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe START C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe
+	IF EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mTor[0m non esiste
+	Goto :letsgo
+:deltor
+	set tor=0
+	IF EXIST D:\Download\torbrowser-install-win64-10.0_it.exe SET tor=1
+	IF EXIST D:\Download\torbrowser-install-win64-10.0_it.exe ECHO Installer di [31mTor[0m cancellato dal disco D
+	IF EXIST D:\Download\torbrowser-install-win64-10.0_it.exe DEL D:\Download\torbrowser-install-win64-10.0_it.exe
+	IF EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe SET tor=1
+	IF EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe ECHO Installer di [31mTor[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe DEL C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe
+	IF %tor%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\torbrowser-install-win64-10.0_it.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe ECHO [43m[Attenzione][0m - L'installer di [31mTor[0m non esiste
 	)
 	Goto :letsgo
 ::----------------------PLAYER---------
@@ -389,9 +452,9 @@ ECHO    [0m
 	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe ECHO Installazione di [31mVirtualBox[0m partita dal disco D
 	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe START D:\Download\VirtualBox-6.1.14-140239-Win.exe
 	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe Goto :letsgo
-	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe ECHO Installazione di [31mVirtualBox[0m partita dal disco C
-	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe START C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe
-	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe ECHO Installazione di [31mVirtualBox[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe START C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe
+	IF EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe Goto :letsgo
         ECHO [43m[Attenzione][0m - L'installer di [31mVirtualBox[0m non esiste
 	Goto :letsgo
 :delvm
@@ -407,6 +470,77 @@ ECHO    [0m
 		IF NOT EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe ECHO [43m[Attenzione][0m - L'installer di [31mVirtualBox[0m non esiste
 	)
 	Goto :letsgo
+::----------------------CAPTURE-----
+:capture
+	IF EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe ECHO Installazione di [31mOBS Studio[0m partita dal disco D
+	IF EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe START D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe
+	IF EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe ECHO Installazione di [31mOBS Studio[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe START C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe
+	IF EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mOBS Studio[0m non esiste
+	Goto :letsgo
+:delcapture
+	set capture=0
+	IF EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe SET capture=1
+	IF EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe ECHO Installer di [31mOBS Studio[0m cancellato dal disco D
+	IF EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe DEL D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe
+	IF EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe SET capture=1	
+	IF EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe ECHO Installer di [31mOBS Studio[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe DEL C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe
+	IF %capture%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mOBS Studio[0m non esiste
+	)
+	Goto :letsgo
+::----------------------GAME-----
+:steam
+	IF EXIST D:\Download\SteamSetup.exe ECHO Installazione di [31mSteam[0m partita dal disco D
+	IF EXIST D:\Download\SteamSetup.exe START D:\Download\SteamSetup.exe
+	IF EXIST D:\Download\SteamSetup.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\SteamSetup.exe ECHO Installazione di [31mSteam[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\SteamSetup.exe START C:\Users\%username%\Downloads\SteamSetup.exe
+	IF EXIST C:\Users\%username%\Downloads\SteamSetup.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mSteam[0m non esiste
+	Goto :letsgo
+:delsteam
+	set steam=0
+	IF EXIST D:\Download\SteamSetup.exe SET steam=1
+	IF EXIST D:\Download\SteamSetup.exe ECHO Installer di [31mSteam[0m cancellato dal disco D
+	IF EXIST D:\Download\SteamSetup.exe DEL D:\Download\SteamSetup.exe
+	IF EXIST C:\Users\%username%\Downloads\SteamSetup.exe SET steam=1
+	IF EXIST C:\Users\%username%\Downloads\SteamSetup.exe ECHO Installer di [31mSteam[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\SteamSetup.exe DEL C:\Users\%username%\Downloads\SteamSetup.exe
+	IF %steam%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\SteamSetup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\SteamSetup.exe ECHO [43m[Attenzione][0m - L'installer di [31mSteam[0m non esiste
+	)
+	Goto :letsgo
+:epic
+	IF EXIST D:\Download\EpicInstaller-10.18.8.msi ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m potrebbe richiedere Privilegi di Amministratore
+	IF EXIST D:\Download\EpicInstaller-10.18.8.msi ECHO Installazione di [31mEpic Games Launcher[0m partita dal disco D
+	IF EXIST D:\Download\EpicInstaller-10.18.8.msi START D:\Download\EpicInstaller-10.18.8.msi
+	IF EXIST D:\Download\EpicInstaller-10.18.8.msi Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m potrebbe richiedere Privilegi di Amministratore
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO Installazione di [31mEpic Games Launcher[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi START C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m non esiste
+	Goto :letsgo
+:delepic
+	set epic=0
+	IF EXIST D:\Download\EpicInstaller-10.18.8.msi SET epic=1
+	IF EXIST D:\Download\EpicInstaller-10.18.8.msi ECHO Installer di [31mEpic Games Launcher[0m cancellato dal disco D
+	IF EXIST D:\Download\EpicInstaller-10.18.8.msi DEL D:\Download\EpicInstaller-10.18.8.msi
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi SET epic=1	
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO Installer di [31mEpic Games Launcher[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi DEL C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi
+	IF %epic%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\EpicInstaller-10.18.8.msi (
+		IF NOT EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m non esiste
+	)
+	Goto :letsgo
+
 ::----------------------INFO-----------
 :information
 	ECHO [33m
@@ -416,8 +550,8 @@ ECHO    [0m
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.0.8 		 *
-	ECHO 	    *		  Codename = Sparkling Grid		*
+	ECHO 	   *		     Versione = v.0.0.9 		 *
+	ECHO 	    *		  Codename = Sparkling Hawk		*
 	ECHO 	     *		 Ultima Release = 01/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
@@ -435,9 +569,10 @@ Goto :letsgo
 	ECHO 	  		! 	browser=%browser%player=%player%	rar=%rar%		    !
 	ECHO 	  		! 	rar=%rar%		downloader=%downloader%torrent=%torrent%	    !
 	ECHO 	  		! 	music=%music%		file=%file%		sync=%sync%		    !
-	ECHO 	  		! 	vm=%vm%		remoto=%remoto%			    !
+	ECHO 	  		! 	vm=%vm%		remoto=%remoto%	tor=%tor%	 	    !
+	ECHO 	  		! 	steam=%steam%		epic=%epic%		capture=%capture%	    !
 	ECHO 	  		! 			    				    !
-	ECHO 	  		! 	c=%c% (choice)					    !
+	ECHO 	  		! 	c=%c% (choice)	t=%t%			   	    !
 	ECHO 			\___________________________________________________________/
 	ECHO [36m	
 	ECHO [36m	
@@ -500,6 +635,128 @@ Goto :letsgo
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
 Goto :letsgo
+
+
+::----------------------TOTAL----------
+
+:deltotal
+	SET /P t=Vuoi cancellare tutti gli installer [S/N]?	
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :deleverything
+	if /I "%t%" EQU "N" test&cls
+	if /I "%t%" EQU "N" goto :menu
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :deleverything
+	if /I "%t%" EQU "n" test&cls
+	if /I "%t%" EQU "n" goto :menu
+	Goto :deltotal
+
+:deleverything
+	IF EXIST D:\Download\"Firefox Installer.exe" ECHO Installer di [31mFirefox[0m cancellato dal disco D
+	IF EXIST D:\Download\"Firefox Installer.exe" DEL D:\Download\"Firefox Installer.exe"
+	IF EXIST C:\Users\%username%\Downloads\"Firefox Installer.exe" ECHO Installer di [31mFirefox[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\"Firefox Installer.exe" DEL C:\Users\%username%\Downloads\"Firefox Installer.exe"
+        IF NOT EXIST D:\Download\"Firefox Installer.exe" (
+		IF NOT EXIST C:\Users\%username%\Downloads\"Firefox Installer.exe" ECHO [43m[Attenzione][0m - L'installer di [31mFirefox[0m non esiste
+	)
+	IF EXIST D:\Download\torbrowser-install-win64-10.0_it.exe ECHO Installer di [31mTor[0m cancellato dal disco D
+	IF EXIST D:\Download\torbrowser-install-win64-10.0_it.exe DEL D:\Download\torbrowser-install-win64-10.0_it.exe
+	IF EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe ECHO Installer di [31mTor[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe DEL C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe
+        IF NOT EXIST D:\Download\torbrowser-install-win64-10.0_it.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\torbrowser-install-win64-10.0_it.exe ECHO [43m[Attenzione][0m - L'installer di [31mTor[0m non esiste
+	)
+	IF EXIST D:\Download\vlc-2.2.8-win64.exe ECHO Installer di [31mVLC[0m cancellato dal disco D
+	IF EXIST D:\Download\vlc-2.2.8-win64.exe DEL D:\Download\vlc-2.2.8-win64.exe
+	IF EXIST C:\Users\%username%\Downloads\vlc-2.2.8-win64.exe ECHO Installer di [31mVLC[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\vlc-2.2.8-win64.exe DEL C:\Users\%username%\Downloads\vlc-2.2.8-win64.exe
+	IF NOT EXIST D:\Download\vlc-2.2.8-win64.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\vlc-2.2.8-win64.exe ECHO [43m[Attenzione][0m - L'installer di [31mVLC[0m non esiste
+	)
+	IF EXIST D:\Download\WinRAR-x64-591it.exe ECHO Installer di [31mWinRAR[0m cancellato dal disco D
+	IF EXIST D:\Download\WinRAR-x64-591it.exe DEL D:\Download\vlc-2.2.8-win64.exe
+	IF EXIST C:\Users\%username%\Downloads\WinRAR-x64-591it.exe ECHO Installer di [31mWinRAR[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\WinRAR-x64-591it.exe DEL C:\Users\%username%\Downloads\WinRAR-x64-591it.exe
+	 IF NOT EXIST D:\Download\WinRAR-x64-591it.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\WinRAR-x64-591it.exe ECHO [43m[Attenzione][0m - L'installer di [31mWinRAR[0m non esiste
+	)
+	IF EXIST D:\Download\JDownloaderSetup.exe ECHO Installer di [31mJDownloader 2[0m cancellato dal disco D
+	IF EXIST D:\Download\JDownloaderSetup.exe DEL D:\Download\JDownloaderSetup.exe
+	IF EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe ECHO Installer di [31mJDownloader 2[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe DEL C:\Users\%username%\Downloads\JDownloaderSetup.exe
+	IF NOT EXIST D:\Download\JDownloaderSetup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe ECHO [43m[Attenzione][0m - L'installer di [31mJDownloader 2[0m non esiste
+	)
+	IF EXIST D:\Download\uTorrent.exe ECHO Installer di [31muTorrent[0m cancellato dal disco D
+	IF EXIST D:\Download\uTorrent.exe DEL D:\Download\uTorrent.exe
+	IF EXIST C:\Users\%username%\Downloads\uTorrent.exe ECHO Installer di [31muTorrent[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\uTorrent.exe DEL C:\Users\%username%\Downloads\uTorrent.exe
+	IF NOT EXIST D:\Download\uTorrent.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\uTorrent.exe ECHO [43m[Attenzione][0m - L'installer di [31muTorrent[0m non esiste
+	)
+	IF EXIST D:\Download\mp3tagv302setup.exe ECHO Installer di [31mMp3tag[0m cancellato dal disco D
+	IF EXIST D:\Download\mp3tagv302setup.exe DEL D:\Download\mp3tagv302setup.exe
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO Installer di [31Mp3tag[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe DEL C:\Users\%username%\Downloads\mp3tagv302setup.exe
+	IF NOT EXIST D:\Download\mp3tagv302setup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
+	)
+	IF EXIST D:\Download\TeamViewer_Setup.exe ECHO Installer di [31mTeamViewer[0m cancellato dal disco D
+	IF EXIST D:\Download\TeamViewer_Setup.exe DEL D:\Download\TeamViewer_Setup.exe
+	IF EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe ECHO Installer di [31mTeamViewer[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe DEL C:\Users\%username%\Downloads\TeamViewer_Setup.exe
+	IF NOT EXIST D:\Download\TeamViewer_Setup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe ECHO [43m[Attenzione][0m - L'installer di [31mTeamViewer[0m non esiste
+	)
+	IF EXIST D:\Download\FileRenamerBasic.exe ECHO Installer di [31mFile Renamer Basic[0m cancellato dal disco D
+	IF EXIST D:\Download\FileRenamerBasic.exe DEL D:\Download\FileRenamerBasic.exe
+	IF EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe ECHO Installer di [31File Renamer Basic[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe DEL C:\Users\%username%\Downloads\FileRenamerBasic.exe
+	IF NOT EXIST D:\Download\FileRenamerBasic.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe ECHO [43m[Attenzione][0m - L'installer di [31mFile Renamer Basic[0m non esiste
+	)
+	IF EXIST D:\Download\SyncTrayzorSetup-x64.exe ECHO Installer di [31mSyncTrayzor[0m cancellato dal disco D
+	IF EXIST D:\Download\SyncTrayzorSetup-x64.exe DEL D:\Download\SyncTrayzorSetup-x64.exe
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe ECHO Installer di [31SyncTrayzor[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe DEL C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe
+	IF NOT EXIST D:\Download\SyncTrayzorSetup-x64.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mSyncTrayzor[0m non esiste
+	)
+	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe ECHO Installer di [31mVirtualBox[0m cancellato dal disco D
+	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe DEL D:\Download\VirtualBox-6.1.14-140239-Win.exe
+	IF EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe ECHO Installer di [31VirtualBox[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe DEL C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe
+	IF NOT EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe ECHO [43m[Attenzione][0m - L'installer di [31mVirtualBox[0m non esiste
+	)
+	IF EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe ECHO Installer di [31mOBS Studio[0m cancellato dal disco D
+	IF EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe DEL D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe
+	IF EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe ECHO Installer di [31mOBS Studio[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe DEL C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe
+	IF NOT EXIST D:\Download\OBS-Studio-26.0-Full-Installer-x64.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\OBS-Studio-26.0-Full-Installer-x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mOBS Studio[0m non esiste
+	)
+	IF EXIST D:\Download\SteamSetup.exe ECHO Installer di [31mSteam[0m cancellato dal disco D
+	IF EXIST D:\Download\SteamSetup.exe DEL D:\Download\SteamSetup.exe
+	IF EXIST C:\Users\%username%\Downloads\SteamSetup.exe ECHO Installer di [31mSteam[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\SteamSetup.exe DEL C:\Users\%username%\Downloads\SteamSetup.exe
+	IF NOT EXIST D:\Download\SteamSetup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\SteamSetup.exe ECHO [43m[Attenzione][0m - L'installer di [31mSteam[0m non esiste
+	)
+	IF EXIST D:\Download\EpicInstaller-10.18.8.msi ECHO Installer di [31mEpic Games Launcher[0m cancellato dal disco D
+	IF EXIST D:\Download\EpicInstaller-10.18.8.msi DEL D:\Download\EpicInstaller-10.18.8.msi
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO Installer di [31mEpic Games Launcher[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi DEL C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi
+	IF NOT EXIST D:\Download\EpicInstaller-10.18.8.msi (
+		IF NOT EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m non esiste
+	)
+
+:endTotal
+	ECHO	[42m[COMPLETATO][0m - Tutti gli installer sono stati cancellati
+	ECHO [0m
+	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+	GOTO :letsgo
+
 
 ::----------------------END-------------------------------------------------------------------------------------------
 :end
