@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.0.8 - Sparkling Grid
  - v.0.0.7 - Sparkling Stone
  - v.0.0.6 - Sparkling Whale
  - v.0.0.5 - Sparkling Horse
@@ -8,8 +9,12 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
-### v.0.0.7 - Sparkling Stone
+### v.0.0.8 - Sparkling Grid
 + Next Release
+
+### v.0.0.7 - Sparkling Stone
++ Add Info of local PC
++ Add Easter Egg
 
 ### v.0.0.6 - Sparkling Whale
 + Add support for "SyncTrayzor" / "uTorrent"
