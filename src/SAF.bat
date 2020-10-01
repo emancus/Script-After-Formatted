@@ -18,6 +18,8 @@ title HidroSaphrie's SAF (Script After Formatted)
 	SET music=0
 	SET file=0
 	SET sync=0
+	SET vm=0
+	SET remoto=0
 
 
 ::----------------------PRINT TITLE-------------------------------------------------------------------------------------------
@@ -31,19 +33,25 @@ ECHO    [0m
 
 ::----------------------PRINT MENU-------------------------------------------------------------------------------------------
 :menu
+	ECHO [32m-----------------------------------[Comandi Base]------------------------------------------
 	ECHO [36mMenu[0m		M) Show Menu
 	ECHO [36mUAC[0m		U1) Disabilita UAC		U2) Abilita UAC
 	ECHO [36mMix[0m		TR) Controllo TRIM
-	ECHO [36mBrowser[0m		B1) Scarica Firefox		B2) Installa Firefox		B3) Cancella Firefox installer
-	ECHO [36mPlayer[0m		V1) Scarica VLC v2.2.8 x64	V2) Installa VLC		V3) Cancella VLC installer
-	ECHO [36mRAR[0m		R1) Scarica WinRAR v5.9.1 x64	R2) Installa WinRAR		R3) Cancella WinRAR installer
-	ECHO [36mDownloader[0m	J1) Scarica JDownloader 2 x64	J2) Installa JDown 2		J3) Cancella JDownloader 2 installer
-	ECHO [36mTorrent[0m		T1) Scarica uTorrent x86	T2) Installa uTorrent		T3) Cancella uTorrent installer
-	ECHO [36mMusic[0m		M1) Scarica Mp3tag v3.02 x86	M2) Installa Mp3tag		M3) Cancella Mp3tag installer 
-	ECHO 		M4) Scarica Spek v.0.8.2	
-	ECHO [36mFileRenamer[0m	F1) Scarica FileRen Basic v6.3 	F2) Installa FileRenamer	F3) Cancella FileRenamer Installer
-	ECHO [36mSyncronizer[0m	S1) Scarica SyncTrayzor x64 	S2) Installa SyncTrayzor	S3) Cancella SyncTrayzor Installer
-	ECHO [32mExtra[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
+	ECHO [32m------------------------------------[Programmi]--------------------------------------------
+	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
+	ECHO [36mBrowser[0m		B1) Firefox x64		  B2) Firefox		B3) Firefox installer
+	ECHO [36mPlayer[0m		P1) VLC v2.2.8 x64	  P2) VLC		V3) PLC installer
+	ECHO [36mRAR[0m		R1) WinRAR v5.9.1 x64	  R2) WinRAR		R3) WinRAR installer
+	ECHO [36mDownloader[0m	J1) JDownloader 2 x64	  J2) JDown 2		J3) JDownloader 2 installer
+	ECHO [36mTorrent[0m		T1) uTorrent x86	  T2) uTorrent		T3) uTorrent installer
+	ECHO [36mMusica[0m		M1) Mp3tag v3.02 x86	  M2) Mp3tag		M3) Mp3tag installer 
+	ECHO 		M4) Spek v.0.8.2	
+	ECHO [36mDesk Remoto[0m	D1) TeamViewer x86	  D2) TeamViewer 	D3) TeamViewer installer
+	ECHO [36mFileRenamer[0m	F1) FileRen Basic v6.3 	  F2) FileRenamer	F3) FileRenamer installer
+	ECHO [36mSyncronizer[0m	S1) SyncTrayzor x64 	  S2) SyncTrayzor	S3) SyncTrayzor installer
+	ECHO [36mVM[0m		V1) VirtualBox v6.1.14    V2) VirtualBox	V3) VirtualBox Installer
+	ECHO [32m-------------------------------------[Extra]------------------------------------------------
+	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO 0) Esci
 
 
@@ -78,12 +86,12 @@ ECHO    [0m
 	if "%c%" EQU "B3" Goto :delbrowser
 	if "%c%" EQU "b3" Goto :delbrowser
 	::----PLAYER-------------------------------------
-	if "%c%" EQU "V1" START http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
-	if "%c%" EQU "v1" START http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
-	if "%c%" EQU "V2" Goto :player
-	if "%c%" EQU "v2" Goto :player	
-	if "%c%" EQU "V3" Goto :delplayer
-	if "%c%" EQU "v3" Goto :delplayer
+	if "%c%" EQU "P1" START http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
+	if "%c%" EQU "p1" START http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
+	if "%c%" EQU "P2" Goto :player
+	if "%c%" EQU "p2" Goto :player	
+	if "%c%" EQU "P3" Goto :delplayer
+	if "%c%" EQU "p3" Goto :delplayer
 	::----RAR----------------------------------------
 	if "%c%" EQU "R1" START https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-591it.exe
 	if "%c%" EQU "r1" START https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-591it.exe
@@ -114,6 +122,13 @@ ECHO    [0m
 	if "%c%" EQU "m3" Goto :delmusic
 	if "%c%" EQU "M4" START https://github.com/alexkay/spek/releases/download/v0.8.2/spek-0.8.2.zip
 	if "%c%" EQU "m4" START https://github.com/alexkay/spek/releases/download/v0.8.2/spek-0.8.2.zip
+	::----DESKTOP REMOTO-----------------------------
+	if "%c%" EQU "D1" START https://download.teamviewer.com/full
+	if "%c%" EQU "d1" START https://download.teamviewer.com/full
+	if "%c%" EQU "D2" Goto :remoto
+	if "%c%" EQU "d2" Goto :remoto
+	if "%c%" EQU "D3" Goto :delremoto
+	if "%c%" EQU "d3" Goto :delremoto
 	::----FILE RENAMER-------------------------------
 	if "%c%" EQU "F1" START http://www.sherrodcomputers.com/downloads/FileRenamerBasic.exe
 	if "%c%" EQU "f1" START http://www.sherrodcomputers.com/downloads/FileRenamerBasic.exe
@@ -128,6 +143,13 @@ ECHO    [0m
 	if "%c%" EQU "S2" Goto :sync
 	if "%c%" EQU "s3" Goto :delsync
 	if "%c%" EQU "S3" Goto :delsync
+	::----VIRTUAL MACHINE----------------------------
+	if "%c%" EQU "v1" START https://download.virtualbox.org/virtualbox/6.1.14/VirtualBox-6.1.14-140239-Win.exe
+	if "%c%" EQU "V1" START https://download.virtualbox.org/virtualbox/6.1.14/VirtualBox-6.1.14-140239-Win.exe
+	if "%c%" EQU "v2" Goto :vm
+	if "%c%" EQU "V2" Goto :vm
+	if "%c%" EQU "v3" Goto :delvm
+	if "%c%" EQU "V3" Goto :delvm
 	::----EXTRA--------------------------------------
 	if "%c%" EQU "I" test&cls
 	if "%c%" EQU "i" test&cls
@@ -293,6 +315,29 @@ ECHO    [0m
 		IF NOT EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
 	)
 	Goto :letsgo
+::----------------------REMOTO----
+:remoto
+	IF EXIST D:\Download\TeamViewer_Setup.exe ECHO Installazione di [31mTeamViewer[0m partita dal disco D
+	IF EXIST D:\Download\TeamViewer_Setup.exe START D:\Download\TeamViewer_Setup.exe
+	IF EXIST D:\Download\TeamViewer_Setup.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe ECHO Installazione di [31mTeamViewer[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe START C:\Users\%username%\Downloads\TeamViewer_Setup.exe
+	IF EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mTeamViewer[0m non esiste
+	Goto :letsgo
+:delremoto
+	set remoto=0
+	IF EXIST D:\Download\TeamViewer_Setup.exe SET remoto=1
+	IF EXIST D:\Download\TeamViewer_Setup.exe ECHO Installer di [31mTeamViewer[0m cancellato dal disco D
+	IF EXIST D:\Download\TeamViewer_Setup.exe DEL D:\Download\TeamViewer_Setup.exe
+	IF EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe SET remoto=1
+	IF EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe ECHO Installer di [31mTeamViewer[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe DEL C:\Users\%username%\Downloads\TeamViewer_Setup.exe
+	IF %remoto%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\TeamViewer_Setup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\TeamViewer_Setup.exe ECHO [43m[Attenzione][0m - L'installer di [31mTeamViewer[0m non esiste
+	)
+	Goto :letsgo
 ::----------------------FILE RENAMER--
 :file
 	IF EXIST D:\Download\FileRenamerBasic.exe ECHO Installazione di [31mFile Renamer Basic[0m partita dal disco D
@@ -339,6 +384,29 @@ ECHO    [0m
 		IF NOT EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mSyncTrayzor[0m non esiste
 	)
 	Goto :letsgo
+::----------------------VM-----
+:vm
+	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe ECHO Installazione di [31mVirtualBox[0m partita dal disco D
+	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe START D:\Download\VirtualBox-6.1.14-140239-Win.exe
+	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe ECHO Installazione di [31mVirtualBox[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe START C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mVirtualBox[0m non esiste
+	Goto :letsgo
+:delvm
+	set vm=0
+	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe SET vm=1
+	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe ECHO Installer di [31mVirtualBox[0m cancellato dal disco D
+	IF EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe DEL D:\Download\VirtualBox-6.1.14-140239-Win.exe
+	IF EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe SET vm=1	
+	IF EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe ECHO Installer di [31VirtualBox[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe DEL C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe
+	IF %vm%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\VirtualBox-6.1.14-140239-Win.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\VirtualBox-6.1.14-140239-Win.exe ECHO [43m[Attenzione][0m - L'installer di [31mVirtualBox[0m non esiste
+	)
+	Goto :letsgo
 ::----------------------INFO-----------
 :information
 	ECHO [33m
@@ -348,8 +416,8 @@ ECHO    [0m
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.0.7 		 *
-	ECHO 	    *		  Codename = Sparkling Stone		*
+	ECHO 	   *		     Versione = v.0.0.8 		 *
+	ECHO 	    *		  Codename = Sparkling Grid		*
 	ECHO 	     *		 Ultima Release = 01/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
@@ -367,6 +435,7 @@ Goto :letsgo
 	ECHO 	  		! 	browser=%browser%player=%player%	rar=%rar%		    !
 	ECHO 	  		! 	rar=%rar%		downloader=%downloader%torrent=%torrent%	    !
 	ECHO 	  		! 	music=%music%		file=%file%		sync=%sync%		    !
+	ECHO 	  		! 	vm=%vm%		remoto=%remoto%			    !
 	ECHO 	  		! 			    				    !
 	ECHO 	  		! 	c=%c% (choice)					    !
 	ECHO 			\___________________________________________________________/
