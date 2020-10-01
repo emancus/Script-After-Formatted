@@ -30,19 +30,17 @@ title HidroSaphrie SAF - (Script After Formatted)
 ::----------------------PRINT TITLE-------------------------------------------------------------------------------------------
 
 COLOR 9
-ECHO 	  *********************************************************
-ECHO 	 *	   HidroSaphire SAF - Script After Formatted	   *
-ECHO 	*************************************************************
-ECHO    [0m
+ECHO 			  *********************************************************
+ECHO 			 *	   HidroSaphire SAF - Script After Formatted	   *
+ECHO 			*************************************************************
 
 
-::----------------------PRINT MENU-------------------------------------------------------------------------------------------
+::----------------------PRINT MENU [PAG 1]------------------------------------------------------------------------------------------
 :menu
-	ECHO [32m-----------------------------------[Comandi Base]------------------------------------------
-	ECHO [36mMenu[0m		M) Show Menu
-	ECHO [36mUAC[0m		U1) Disabilita UAC		U2) Abilita UAC
-	ECHO [36mMix[0m		TR) Controllo TRIM
-	ECHO [32m------------------------------------[Programmi]--------------------------------------------
+	ECHO [31m[Pag 1/2][0m
+	ECHO [32m--------------------------------------------[Navigazione]--------------------------------------------
+	ECHO [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2
+	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
 	ECHO [36mBrowser[0m		B1) Firefox x64		  B2) Firefox		B3) Firefox installer
 	ECHO			B4) Tor (ITA) x64	  B5) Tor		B6) Tor installer 
@@ -60,20 +58,37 @@ ECHO    [0m
 	ECHO [36mGiochi[0m		G1) Steam Client x86	  G2) Steam 		G3) Steam installer
 	ECHO			G4) Epic Games	  	  G5) Epic Games 	G6) Epic Games installer
 	ECHO									TT) Cancella tutti 
-	ECHO [32m-------------------------------------[Extra]------------------------------------------------
+	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO 0) Esci
+	Goto :letsgo
 
+::----------------------PRINT MENU [PAG 2]------------------------------------------------------------------------------------------
+:menu2
+	ECHO [31m[Pag 2/2][0m
+	ECHO [32m--------------------------------------------[Navigazione]--------------------------------------------
+	ECHO [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2
+	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
+	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
+	ECHO			QUESTA PAGINA E' IN COSTRUZIONE.
+	ECHO [32m---------------------------------------------[Utility]----------------------------------------------
+	ECHO [36mUAC[0m		U1) Disabilita UAC		U2) Abilita UAC
+	ECHO [36mMix[0m		TR) Controllo TRIM
+	ECHO [36mWin Update[0m	UP1) WU soft-reset	   UP2) WU Riconfig	UP3) WU hard-reset
+	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
+	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
+	ECHO 0) Esci
+	Goto :letsgo
 
 ::----------------------LOOP-------------------------------------------------------------------------------------------
 :letsgo
 	set /P c=
 
 	::----MENU---------------------------------------
-	if "%c%" EQU "M"	test&cls
-	if "%c%" EQU "M"	(Goto :menu)
-	if "%c%" EQU "m"	test&cls
-	if "%c%" EQU "m"	(Goto :menu)
+	if "%c%" EQU "1"	test&cls
+	if "%c%" EQU "1"	(Goto :menu)
+	if "%c%" EQU "2"	test&cls
+	if "%c%" EQU "2"	(Goto :menu2)
 	::----UAC----------------------------------------
 	if "%c%" EQU "U1" ECHO Ancora non implementato
 	if "%c%" EQU "u1" ECHO Ancora non implementato
@@ -198,8 +213,8 @@ ECHO    [0m
 	if "%c%" EQU "i" Goto :information
 	if "%c%" EQU "C" test&cls
 	if "%c%" EQU "c" test&cls
-	if "%c%" EQU "C" ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
-	if "%c%" EQU "c" ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+	if "%c%" EQU "C" ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	if "%c%" EQU "c" ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 	if "%c%" EQU "D" test&cls
 	if "%c%" EQU "d" test&cls
 	if "%c%" EQU "D" Goto :debugRoom
@@ -214,6 +229,17 @@ ECHO    [0m
 	if "%c%" EQU "e" Goto :easterEgg
 	::----END----------------------------------------
 	if %c%==0 Goto :end
+	::----PAG2 UTILITY--------------------------------------
+	if "%c%" EQU "UP1" ECHO Non ancora implementato
+	if "%c%" EQU "up1" ECHO Non ancora implementato
+	if "%c%" EQU "UP2" Goto :wureset2
+	if "%c%" EQU "up2" Goto :wureset2
+	if "%c%" EQU "UP3" ECHO Non ancora implementato
+	if "%c%" EQU "up3" ECHO Non ancora implementato
+	if "%c%" EQU "i" test&cls
+	if "%c%" EQU "I" Goto :information
+	if "%c%" EQU "i" Goto :information
+	if "%c%" EQU "C" test&cls
 
 	Goto :letsgo
 
@@ -541,6 +567,7 @@ ECHO    [0m
 	)
 	Goto :letsgo
 
+
 ::----------------------INFO-----------
 :information
 	ECHO [33m
@@ -550,13 +577,14 @@ ECHO    [0m
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.0.9 		 *
-	ECHO 	    *		  Codename = Sparkling Hawk		*
+	ECHO 	   *		     Versione = v.0.1.0 		 *
+	ECHO 	    *		  Codename = Roaring Dog		*
 	ECHO 	     *		 Ultima Release = 01/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 Goto :letsgo
+
 
 ::----------------------DEBUG Room-----------
 :debugRoom
@@ -584,9 +612,9 @@ Goto :letsgo
 	ECHO [36m
 	ECHO											     (HidroSaphire)
 	ECHO [0m
-
-	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 Goto :letsgo
+
 
 ::----------------------INFOPC---------
 :infoPC
@@ -601,8 +629,9 @@ Goto :letsgo
 	ECHO [32mIl path del File di Paging:[0m
 	wmic pagefile list /format:list | find "Name"
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 Goto :letsgo
+
 
 ::----------------------EASTER EGG------
 :easterEgg
@@ -633,7 +662,7 @@ Goto :letsgo
 	ECHO [36m                                                (HidroSaphire)[0m
 	ECHO [0m
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 Goto :letsgo
 
 
@@ -754,9 +783,33 @@ Goto :letsgo
 :endTotal
 	ECHO	[42m[COMPLETATO][0m - Tutti gli installer sono stati cancellati
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 	GOTO :letsgo
 
+
+::----------------------WINDOWS UPDATE RECONFIGURATION----------
+
+:wureset2
+	ECHO [43m[Attenzione][0m - Quest'operazione potrebbe richiedere i Privilegi di Amministratore
+	SET /P t=Vuoi effettuare un hard reset di Windows Update [S/N]?	
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :reset2
+	if /I "%t%" EQU "N" test&cls
+	if /I "%t%" EQU "N" goto :menu
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :reset2
+	if /I "%t%" EQU "n" test&cls
+	if /I "%t%" EQU "n" goto :menu
+	Goto :wureset2
+
+:reset2
+	SC config wuauserv start=auto
+	SC config bits start=auto
+	SC config cryptsvc start=auto
+	SC config trustedinstaller start=auto
+	ECHO	[42m[COMPLETATO][0m - Reset completato. Adesso devi riavviare il computer
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	Goto :letsgo
 
 ::----------------------END-------------------------------------------------------------------------------------------
 :end
