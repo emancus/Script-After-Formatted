@@ -24,6 +24,8 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET steam=0
 	SET epic=0
 	SET capture=0
+	SET atom=0
+	SET notepad=0
 	SET t=0
 
 
@@ -70,11 +72,16 @@ ECHO 			*************************************************************
 	ECHO [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2
 	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
-	ECHO			QUESTA PAGINA E' IN COSTRUZIONE.
+	ECHO [36mText Editor[0m	E1) Atom x64		  E2) Atom 	E3) Atom installer
+	ECHO			E4) Notepad++ x64	  E5) Notepad++ E6) Notepad installer 
+	ECHO			E7) Lista pacchetti aggiuntivi Atom 
+	ECHO [36mCustomization[0m	C1) Rainmeter		  C2) Rainmeter 	E3) Rainmeter
 	ECHO [32m---------------------------------------------[Utility]----------------------------------------------
-	ECHO [36mUAC[0m		U1) Disabilita UAC		U2) Abilita UAC
+	ECHO [36mLink[0m		Q1) Driver video AMD	  Q2) Driver Video nVidia
+	ECHO [36mUAC[0m		U1) Disabilita UAC	  U2) Abilita UAC
 	ECHO [36mMix[0m		TR) Controllo TRIM
-	ECHO [36mWin Update[0m	UP1) WU soft-reset	   UP2) WU Riconfig	UP3) WU hard-reset
+	ECHO [36mWin Update[0m	WU1) WU Riconfig	  WU2) WU hard-reset
+	ECHO [36mWin Update[0m	WS1) WS Reset		
 	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO 0) Esci
@@ -201,6 +208,23 @@ ECHO 			*************************************************************
 	if "%c%" EQU "g5" Goto :epic
 	if "%c%" EQU "G6" Goto :delepic
 	if "%c%" EQU "g6" Goto :delepic
+	::----EDITOR-------------------------------------
+	if "%c%" EQU "E1" START https://atom.io/download/windows_x64
+	if "%c%" EQU "e1" START https://atom.io/download/windows_x64
+	if "%c%" EQU "E2" Goto :atom
+	if "%c%" EQU "e2" Goto :atom
+	if "%c%" EQU "E3" Goto :delatom
+	if "%c%" EQU "e3" Goto :delatom
+	if "%c%" EQU "E4" START https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.9/npp.7.9.Installer.x64.exe
+	if "%c%" EQU "e4" START https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.9/npp.7.9.Installer.x64.exe
+	if "%c%" EQU "E5" Goto :notepad
+	if "%c%" EQU "e5" Goto :notepad
+	if "%c%" EQU "E6" Goto :delnotepad
+	if "%c%" EQU "e6" Goto :delnotepad
+	if "%c%" EQU "E7" test&cls
+	if "%c%" EQU "E7" Goto :atomInfoPacket
+	if "%c%" EQU "e7" test&cls
+	if "%c%" EQU "e7" Goto :atomInfoPacket
 	::----TOTAL--------------------------------------
 	if "%c%" EQU "TT" Goto :deltotal
 	if "%c%" EQU "tt" Goto :deltotal	
@@ -230,12 +254,16 @@ ECHO 			*************************************************************
 	::----END----------------------------------------
 	if %c%==0 Goto :end
 	::----PAG2 UTILITY--------------------------------------
-	if "%c%" EQU "UP1" ECHO Non ancora implementato
-	if "%c%" EQU "up1" ECHO Non ancora implementato
-	if "%c%" EQU "UP2" Goto :wureset2
-	if "%c%" EQU "up2" Goto :wureset2
-	if "%c%" EQU "UP3" ECHO Non ancora implementato
-	if "%c%" EQU "up3" ECHO Non ancora implementato
+	if "%c%" EQU "Q1" START https://www.amd.com/en/support
+	if "%c%" EQU "q1" START https://www.amd.com/en/support
+	if "%c%" EQU "Q2" START https://www.nvidia.it/Download/index.aspx?lang=it
+	if "%c%" EQU "q2" START https://www.nvidia.it/Download/index.aspx?lang=it
+	if "%c%" EQU "WU1" Goto :wureset
+	if "%c%" EQU "wu1" Goto :wureset
+	if "%c%" EQU "wu2" ECHO Non ancora implementato
+	if "%c%" EQU "wi2" ECHO Non ancora implementato
+	if "%c%" EQU "WS1" Goto :wsreset
+	if "%c%" EQU "ws1" Goto :wsreset
 	if "%c%" EQU "i" test&cls
 	if "%c%" EQU "I" Goto :information
 	if "%c%" EQU "i" Goto :information
@@ -566,6 +594,65 @@ ECHO 			*************************************************************
 		IF NOT EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m non esiste
 	)
 	Goto :letsgo
+::----------------------EDITOR-----
+:atom
+	IF EXIST D:\Download\AtomSetup-x64.exe ECHO Installazione di [31mAtom[0m partita dal disco D
+	IF EXIST D:\Download\AtomSetup-x64.exe START D:\Download\SteamSetup.exe
+	IF EXIST D:\Download\AtomSetup-x64.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe ECHO Installazione di [31mAtom[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe START C:\Users\%username%\Downloads\AtomSetup-x64.exe
+	IF EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mAtom[0m non esiste
+	Goto :letsgo
+:delatom
+	set atom=0
+	IF EXIST D:\Download\AtomSetup-x64.exe SET atom=1
+	IF EXIST D:\Download\AtomSetup-x64.exe ECHO Installer di [31mAtom[0m cancellato dal disco D
+	IF EXIST D:\Download\AtomSetup-x64.exe DEL D:\Download\AtomSetup-x64.exe
+	IF EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe SET atom=1
+	IF EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe ECHO Installer di [31mAtom[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe DEL C:\Users\%username%\Downloads\AtomSetup-x64.exe
+	IF %atom%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\AtomSetup-x64.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mAtom[0m non esiste
+	)
+	Goto :letsgo
+:notepad
+	IF EXIST D:\Download\npp.7.9.Installer.x64.exe ECHO Installazione di [31mNotepad++[0m partita dal disco D
+	IF EXIST D:\Download\npp.7.9.Installer.x64.exe START D:\Download\npp.7.9.Installer.x64.exe
+	IF EXIST D:\Download\npp.7.9.Installer.x64.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\npp.7.9.Installer.x64.exe ECHO Installazione di [31mNotepad++[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\npp.7.9.Installer.x64.exe START C:\Users\%username%\Downloads\npp.7.9.Installer.x64.exe
+	IF EXIST C:\Users\%username%\Downloads\npp.7.9.Installer.x64.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mNotepad++[0m non esiste
+	Goto :letsgo
+:delnotepad
+	set notepad=0
+	IF EXIST D:\Download\npp.7.9.Installer.x64.exe SET notepad=1
+	IF EXIST D:\Download\npp.7.9.Installer.x64.exe ECHO Installer di [31mNotepad++[0m cancellato dal disco D
+	IF EXIST D:\Download\npp.7.9.Installer.x64.exe DEL D:\Download\npp.7.9.Installer.x64.exe 
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi SET notepad=1
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO Installer di [31mNotepad++[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi DEL C:\Users\%username%\Downloads\npp.7.9.Installer.x64.exe
+	IF %notepad%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\npp.7.9.Installer.x64.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\npp.7.9.Installer.x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mNotepad++[0m non esiste
+	)
+	Goto :letsgo
+
+::----------------------ATOM INFO PACKET-----
+:atomInfoPacket
+	ECHO [33mLista dei pacchetti aggiuntivi utili per Atom
+	ECHO [0m
+	ECHO [36mminimap[0m			-	Preview di tutto il codice sorgente
+	ECHO [36matom-i18n[0m		-	Traduce Atom in 18 lingue diverse (incl. italiano)
+	ECHO [36mlanguage-batchfile[0m	-	Colora le keyword dei file .bat
+	ECHO [0m
+	ECHO [33mLista impostazioni utili per Atom
+	ECHO [0mEditor / "Mostra Guida Indentazione" - [36mAbilitare[0m
+	ECHO [0m
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+Goto :letsgo
 
 
 ::----------------------INFO-----------
@@ -577,8 +664,8 @@ ECHO 			*************************************************************
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.1.0 		 *
-	ECHO 	    *		  Codename = Roaring Dog		*
+	ECHO 	   *		     Versione = v.0.1.1 		 *
+	ECHO 	    *		  Codename = Roaring Kitty		*
 	ECHO 	     *		 Ultima Release = 01/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
@@ -599,6 +686,7 @@ Goto :letsgo
 	ECHO 	  		! 	music=%music%		file=%file%		sync=%sync%		    !
 	ECHO 	  		! 	vm=%vm%		remoto=%remoto%	tor=%tor%	 	    !
 	ECHO 	  		! 	steam=%steam%		epic=%epic%		capture=%capture%	    !
+	ECHO 	  		! 	atom=%atom%		notepad=%notepad%	   		    !
 	ECHO 	  		! 			    				    !
 	ECHO 	  		! 	c=%c% (choice)	t=%t%			   	    !
 	ECHO 			\___________________________________________________________/
@@ -779,6 +867,20 @@ Goto :letsgo
 	IF NOT EXIST D:\Download\EpicInstaller-10.18.8.msi (
 		IF NOT EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m non esiste
 	)
+	IF EXIST D:\Download\AtomSetup-x64.exe ECHO Installer di [31mAtom[0m cancellato dal disco D
+	IF EXIST D:\Download\AtomSetup-x64.exe DEL D:\Download\AtomSetup-x64.exe
+	IF EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe ECHO Installer di [31mAtom[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe DEL C:\Users\%username%\Downloads\AtomSetup-x64.exe
+	IF NOT EXIST D:\Download\AtomSetup-x64.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\AtomSetup-x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mAtom[0m non esiste
+	)
+	IF EXIST D:\Download\npp.7.9.Installer.x64.exe ECHO Installer di [31mNotepad++[0m cancellato dal disco D
+	IF EXIST D:\Download\npp.7.9.Installer.x64.exe DEL D:\Download\npp.7.9.Installer.x64.exe 
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi ECHO Installer di [31mNotepad++[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\EpicInstaller-10.18.8.msi DEL C:\Users\%username%\Downloads\npp.7.9.Installer.x64.exe
+        IF NOT EXIST D:\Download\npp.7.9.Installer.x64.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\npp.7.9.Installer.x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mNotepad++[0m non esiste
+	)
 
 :endTotal
 	ECHO	[42m[COMPLETATO][0m - Tutti gli installer sono stati cancellati
@@ -789,20 +891,20 @@ Goto :letsgo
 
 ::----------------------WINDOWS UPDATE RECONFIGURATION----------
 
-:wureset2
+:wureset
 	ECHO [43m[Attenzione][0m - Quest'operazione potrebbe richiedere i Privilegi di Amministratore
-	SET /P t=Vuoi effettuare un hard reset di Windows Update [S/N]?	
+	SET /P t=Vuoi effettuare un reset di Windows Update [S/N]?	
 	if /I "%t%" EQU "S" test&cls
-	if /I "%t%" EQU "S" goto :reset2
+	if /I "%t%" EQU "S" goto :wuresetconfirm
 	if /I "%t%" EQU "N" test&cls
 	if /I "%t%" EQU "N" goto :menu
 	if /I "%t%" EQU "S" test&cls
-	if /I "%t%" EQU "S" goto :reset2
+	if /I "%t%" EQU "S" goto :wuresetconfirm
 	if /I "%t%" EQU "n" test&cls
 	if /I "%t%" EQU "n" goto :menu
-	Goto :wureset2
+	Goto :wureset
 
-:reset2
+:wuresetconfirm
 	SC config wuauserv start=auto
 	SC config bits start=auto
 	SC config cryptsvc start=auto
@@ -810,6 +912,29 @@ Goto :letsgo
 	ECHO	[42m[COMPLETATO][0m - Reset completato. Adesso devi riavviare il computer
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 	Goto :letsgo
+
+::----------------------WINDOWS STORE RESET.............----------
+
+:wsreset
+	ECHO [43m[Attenzione][0m - Quest'operazione potrebbe richiedere i Privilegi di Amministratore
+	SET /P t=Vuoi effettuare un reset di Windows Store [S/N]?	
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :wsresetconfirm
+	if /I "%t%" EQU "N" test&cls
+	if /I "%t%" EQU "N" goto :menu
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :wsresetconfirm
+	if /I "%t%" EQU "n" test&cls
+	if /I "%t%" EQU "n" goto :menu
+	Goto :wsreset
+
+:wsresetconfirm
+	netsh winsock reset
+	wsreset.exe
+	ECHO	[42m[COMPLETATO][0m - Reset completato. Dovresti vedere adesso Windows Store aperto
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	Goto :letsgo
+
 
 ::----------------------END-------------------------------------------------------------------------------------------
 :end
