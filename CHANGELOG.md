@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.0.9 - Sparkling Hawk
  - v.0.0.8 - Sparkling Grid
  - v.0.0.7 - Sparkling Stone
  - v.0.0.6 - Sparkling Whale
@@ -9,8 +10,12 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
-### v.0.0.8 - Sparkling Grid
+### v.0.0.9 - Sparkling Hawk
 + Next Release
+
+### v.0.0.8 - Sparkling Grid
++ Add support for "VirtualBox" / "TeamViewer"
++ Redesigned UI
 
 ### v.0.0.7 - Sparkling Stone
 + Add Info of local PC
