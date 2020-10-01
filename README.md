@@ -7,7 +7,7 @@ An useful script (written in Batch) for Windows to download and install programs
  - [Enrico Mancuso] :computer:
 
 ## What program is supported?
-**Web Browser** = Firefox (Last Version)<br/> + Tor (Last Version)
+**Web Browser** = Firefox (Last Version) + Tor (Last Version)<br/> 
 Why? Because Firefox is a very good open-source browser. The latest version is always the most recommended.<br/>
 Tor can be used for gain more privacy!
 
@@ -27,8 +27,7 @@ Why? Because isn't heavy and does its job!
 Why? Is a powerful tool! I'm feel protected with this.
 
 **Music** = Mp3tag (Last Version) + Spek (v0.8.2)<br/>
-Why? <br/>
-Mp3tag because it's easy-to-use and has an User Friendly UI<br/>
+Why? Mp3tag because it's easy-to-use and has an User Friendly UI<br/>
 Spek because is the best Acoustic Spectrum Analyser which work with every file and is super light!
 
 **File Renamer** = File Renamer Basic (Last Version)<br/>
