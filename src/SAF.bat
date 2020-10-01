@@ -3,13 +3,31 @@
 ::----------------------------------------------------------
 @echo off
 
-title HidroSaphrie's SAF (Script After Formatted)
-COLOR 9
 
+::----------------------TITLE OF WINDOWS--------------------------------------------------------------------------------------
+title HidroSaphrie's SAF (Script After Formatted)
+
+
+::----------------------VARIABLE INITIALIZATION-------------------------------------------------------------------------------
+:: Non è necessario, ma permette di visualizzare le variabili inizializzate a 0 nella debug room
+	SET browser=0	
+	SET player=0
+	SET rar=0
+	SET downloader=0	
+	SET torrent=0
+	SET music=0
+	SET file=0
+	SET sync=0
+
+
+::----------------------PRINT TITLE-------------------------------------------------------------------------------------------
+
+COLOR 9
 ECHO 	  *********************************************************
 ECHO 	 *	   HidroSaphire SAF - Script After Formatted	   *
 ECHO 	*************************************************************
 ECHO    [0m
+
 
 ::----------------------PRINT MENU-------------------------------------------------------------------------------------------
 :menu
@@ -17,20 +35,26 @@ ECHO    [0m
 	ECHO [36mUAC[0m		U1) Disabilita UAC		U2) Abilita UAC
 	ECHO [36mMix[0m		TR) Controllo Trim
 	ECHO [36mBrowser[0m		B1) Scarica Firefox		B2) Installa Firefox		B3) Cancella Firefox installer
-	ECHO [36mPlayer[0m		V1) Scarica VLC v2.2.8 x64	V2) Installa VLC v2.2.8 x64	V3) Cancella VLC installer
-	ECHO [36mRAR[0m		R1) Scarica WinRAR v5.9.1 x64	R2) Installa WinRAR v5.9.1 x64	R3) Cancella WinRAR installer
-	ECHO [36mDownloader[0m	J1) Scarica JDownloader 2 x64	J2) Installa JDownloader 2 x64	J3) Cancella JDownloader 2 installer
-	ECHO [36mMusic[0m		M1) Scarica Mp3tag v3.02 x86	M2) Installa Mp3tag v3.02 x86	M3) Cancella Mp3tag installer 
+	ECHO [36mPlayer[0m		V1) Scarica VLC v2.2.8 x64	V2) Installa VLC		V3) Cancella VLC installer
+	ECHO [36mRAR[0m		R1) Scarica WinRAR v5.9.1 x64	R2) Installa WinRAR		R3) Cancella WinRAR installer
+	ECHO [36mDownloader[0m	J1) Scarica JDownloader 2 x64	J2) Installa JDown 2		J3) Cancella JDownloader 2 installer
+	ECHO [36mTorrent[0m		T1) Scarica uTorrent x86	T2) Installa uTorrent		T3) Cancella uTorrent installer
+	ECHO [36mMusic[0m		M1) Scarica Mp3tag v3.02 x86	M2) Installa Mp3tag		M3) Cancella Mp3tag installer 
 	ECHO 		M4) Scarica Spek v.0.8.2	
-	ECHO [36mFileRenamer[0m	F1) Scarica FileRen Basic v6.3 	F2) Installa FileRenamer Basic	F3) Cancella FileRenamer Installer
-	ECHO I) Informazioni
+	ECHO [36mFileRenamer[0m	F1) Scarica FileRen Basic v6.3 	F2) Installa FileRenamer	F3) Cancella FileRenamer Installer
+	ECHO [36mSyncronizer[0m	S1) Scarica SyncTrayzor x64 	S2) Installa SyncTrayzor	S3) Cancella SyncTrayzor Installer
+	ECHO [32mExtra[0m		I) Informazioni		C) Clear Screen		D) DebugRoom
 	ECHO 0) Esci
+
+
 ::----------------------LOOP-------------------------------------------------------------------------------------------
 :letsgo
 	set /P c=
 
 	::----MENU---------------------------------------
+	if "%c%" EQU "M"	test&cls
 	if "%c%" EQU "M"	(Goto :menu)
+	if "%c%" EQU "m"	test&cls
 	if "%c%" EQU "m"	(Goto :menu)
 	::----UAC----------------------------------------
 	if "%c%" EQU "U1" ECHO Ancora non implementato
@@ -74,6 +98,13 @@ ECHO    [0m
 	if "%c%" EQU "j2" Goto :downloader
 	if "%c%" EQU "J3" Goto :deldownloader
 	if "%c%" EQU "j3" Goto :deldownloader
+	::----TORRENT------------------------------------
+	if "%c%" EQU "T1" START https://download-hr.utorrent.com/track/stable/endpoint/utorrent/os/windows
+	if "%c%" EQU "t1" START https://download-hr.utorrent.com/track/stable/endpoint/utorrent/os/windows
+	if "%c%" EQU "T2" Goto :torrent
+	if "%c%" EQU "t2" Goto :torrent
+	if "%c%" EQU "T3" Goto :deltorrent
+	if "%c%" EQU "t3" Goto :deltorrent
 	::----MUSIC--------------------------------------
 	if "%c%" EQU "M1" START https://download.mp3tag.de/mp3tagv302setup.exe
 	if "%c%" EQU "m1" START https://download.mp3tag.de/mp3tagv302setup.exe
@@ -90,13 +121,31 @@ ECHO    [0m
 	if "%c%" EQU "f2" Goto :file
 	if "%c%" EQU "F3" Goto :delfile
 	if "%c%" EQU "f3" Goto :delfile
-	::----INFO---------------------------------------
+	::----SYNCRONIZER-------------------------------
+	if "%c%" EQU "s1" START https://github.com/canton7/SyncTrayzor/releases/download/v1.1.24/SyncTrayzorSetup-x64.exe
+	if "%c%" EQU "S1" START https://github.com/canton7/SyncTrayzor/releases/download/v1.1.24/SyncTrayzorSetup-x64.exe
+	if "%c%" EQU "s2" Goto :sync
+	if "%c%" EQU "S2" Goto :sync
+	if "%c%" EQU "s3" Goto :delsync
+	if "%c%" EQU "S3" Goto :delsync
+	::----EXTRA--------------------------------------
+	if "%c%" EQU "I" test&cls
+	if "%c%" EQU "i" test&cls
 	if "%c%" EQU "I" Goto :information
 	if "%c%" EQU "i" Goto :information
+	if "%c%" EQU "C" test&cls
+	if "%c%" EQU "c" test&cls
+	if "%c%" EQU "C" ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+	if "%c%" EQU "c" ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+	if "%c%" EQU "D" test&cls
+	if "%c%" EQU "d" test&cls
+	if "%c%" EQU "D" Goto :debugRoom
+	if "%c%" EQU "d" Goto :debugRoom
 	::----END----------------------------------------
 	if %c%==0 Goto :end
 
 	Goto :letsgo
+
 
 ::----------------------BROWSER--------
 :browser
@@ -190,6 +239,29 @@ ECHO    [0m
 		IF NOT EXIST C:\Users\%username%\Downloads\JDownloaderSetup.exe ECHO [43m[Attenzione][0m - L'installer di [31mJDownloader 2[0m non esiste
 	)
 	Goto :letsgo
+::----------------------TORRENT---
+:torrent
+	IF EXIST D:\Download\uTorrent.exe ECHO Installazione di [31muTorrent[0m partita dal disco D
+	IF EXIST D:\Download\uTorrent.exe START D:\Download\uTorrent.exe
+	IF EXIST D:\Download\uTorrent.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\uTorrent.exe ECHO Installazione di [31muTorrent[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\uTorrent.exe START C:\Users\%username%\Downloads\uTorrent.exe
+	IF EXIST C:\Users\%username%\Downloads\uTorrent.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31muTorrent[0m non esiste
+	Goto :letsgo
+:deltorrent
+	set torrent=0
+	IF EXIST D:\Download\uTorrent.exe SET torrent=1
+	IF EXIST D:\Download\uTorrent.exe ECHO Installer di [31muTorrent[0m cancellato dal disco D
+	IF EXIST D:\Download\uTorrent.exe DEL D:\Download\uTorrent.exe
+	IF EXIST C:\Users\%username%\Downloads\uTorrent.exe SET torrent=1
+	IF EXIST C:\Users\%username%\Downloads\uTorrent.exe ECHO Installer di [31muTorrent[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\uTorrent.exe DEL C:\Users\%username%\Downloads\uTorrent.exe
+	IF %torrent%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\uTorrent.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\uTorrent.exe ECHO [43m[Attenzione][0m - L'installer di [31muTorrent[0m non esiste
+	)
+	Goto :letsgo
 ::----------------------MUSIC-----
 :music
 	IF EXIST D:\Download\mp3tagv302setup.exe ECHO Installazione di [31mMp3tag[0m partita dal disco D
@@ -215,10 +287,49 @@ ECHO    [0m
 	Goto :letsgo
 ::----------------------FILE RENAMER--
 :file
-	ECHO Da implementare
+	IF EXIST D:\Download\FileRenamerBasic.exe ECHO Installazione di [31mFile Renamer Basic[0m partita dal disco D
+	IF EXIST D:\Download\FileRenamerBasic.exe START D:\Download\FileRenamerBasic.exe
+	IF EXIST D:\Download\FileRenamerBasic.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe ECHO Installazione di [31mFile Renamer Basic[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe START C:\Users\%username%\Downloads\FileRenamerBasic.exe
+	IF EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mFile Renamer Basic[0m non esiste
 	Goto :letsgo
-:nofile
-	ECHO Da implementare
+:delfile
+	set file=0
+	IF EXIST D:\Download\FileRenamerBasic.exe SET file=1
+	IF EXIST D:\Download\FileRenamerBasic.exe ECHO Installer di [31mFile Renamer Basic[0m cancellato dal disco D
+	IF EXIST D:\Download\FileRenamerBasic.exe DEL D:\Download\FileRenamerBasic.exe
+	IF EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe SET file=1	
+	IF EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe ECHO Installer di [31File Renamer Basic[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe DEL C:\Users\%username%\Downloads\FileRenamerBasic.exe
+	IF %file%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\FileRenamerBasic.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\FileRenamerBasic.exe ECHO [43m[Attenzione][0m - L'installer di [31mFile Renamer Basic[0m non esiste
+	)
+	Goto :letsgo
+::----------------------SYNC-----
+:sync
+	IF EXIST D:\Download\SyncTrayzorSetup-x64.exe ECHO Installazione di [31mSyncTrayzor[0m partita dal disco D
+	IF EXIST D:\Download\SyncTrayzorSetup-x64.exe START D:\Download\SyncTrayzorSetup-x64.exe
+	IF EXIST D:\Download\SyncTrayzorSetup-x64.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe ECHO Installazione di [31mSyncTrayzor[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe START C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mSyncTrayzor[0m non esiste
+	Goto :letsgo
+:delsync
+	set sync=0
+	IF EXIST D:\Download\SyncTrayzorSetup-x64.exe SET sync=1
+	IF EXIST D:\Download\SyncTrayzorSetup-x64.exe ECHO Installer di [31mSyncTrayzor[0m cancellato dal disco D
+	IF EXIST D:\Download\SyncTrayzorSetup-x64.exe DEL D:\Download\SyncTrayzorSetup-x64.exe
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe SET sync=1	
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe ECHO Installer di [31SyncTrayzor[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe DEL C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe
+	IF %sync%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\SyncTrayzorSetup-x64.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\SyncTrayzorSetup-x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mSyncTrayzor[0m non esiste
+	)
 	Goto :letsgo
 ::----------------------INFO-----------
 :information
@@ -229,11 +340,39 @@ ECHO    [0m
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.0.5 		 *
-	ECHO 	    *		  Codename = Sparkling Horse		*
-	ECHO 	     *		 Ultima Release = 30/09/2020	       *
+	ECHO 	   *		     Versione = v.0.0.6 		 *
+	ECHO 	    *		  Codename = Sparkling Whale		*
+	ECHO 	     *		 Ultima Release = 01/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
+	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
+Goto :letsgo
+
+::----------------------DEBUG Room-----------
+:debugRoom
+	ECHO [31m
+	ECHO 			/***********************************************************\
+	ECHO 			!	  	  HidroSaphire - DEBUG ROOM	            !
+	ECHO 			!***********************************************************!
+	ECHO 	 		!							    !
+	ECHO 	  		! Variabili:						    !
+	ECHO 	  		! 	browser=%browser%player=%player%	rar=%rar%		    !
+	ECHO 	  		! 	rar=%rar%		downloader=%downloader%torrent=%torrent%	    !
+	ECHO 	  		! 	music=%music%		file=%file%		sync=%sync%		    !
+	ECHO 	  		! 			    				    !
+	ECHO 	  		! 	c=%c% (choice)					    !
+	ECHO 			\___________________________________________________________/
+	ECHO [36m	
+	ECHO [36m	
+	ECHO [36m
+	ECHO 		     Penso che ogni programma che si rispetti debba avere una Debug Room
+	ECHO 		          Andiamo, anche Final Fantasy VII aveva la sua Debug Room!
+	ECHO 		           Renderla accessibile facilmente e' stata una mia scelta
+	ECHO 		  Spero che sia d'inspirazione ai programmatori che guarderanno questo codice	
+	ECHO [36m
+	ECHO											     (HidroSaphire)
+	ECHO [0m
+	ECHO [43m[Attenzione][0m - Premi [36mM[0m per visualizzare il Menu
 Goto :letsgo
 
 ::----------------------END-------------------------------------------------------------------------------------------
