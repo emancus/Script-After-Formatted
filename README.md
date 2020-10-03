@@ -49,6 +49,10 @@ Why? Because are the most popular game library among players!
 Why? Atom it's a perfect fast editor high customizable!<br/>
 Notepad++ is a valid alternative
 
+**Text Editor** = Rainmeter (Beta Version) + RocketDock (Last Version)<br/>
+Why? Rainmeter is one of most used desktop customizator ever made!<br/>
+RocketDock is a "Mac Dock-like" really good!
+
 ## Will you give support to other programs?
 Of couse! I'm working on it!
 
