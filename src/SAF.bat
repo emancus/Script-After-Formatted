@@ -26,6 +26,8 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET capture=0
 	SET atom=0
 	SET notepad=0
+	SET rainmeter=0
+	SET rocket=0
 	SET t=0
 
 
@@ -46,7 +48,7 @@ ECHO 			*************************************************************
 	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
 	ECHO [36mBrowser[0m		B1) Firefox x64		  B2) Firefox		B3) Firefox installer
 	ECHO			B4) Tor (ITA) x64	  B5) Tor		B6) Tor installer 
-	ECHO [36mPlayer[0m		P1) VLC v2.2.8 x64	  P2) VLC		V3) PLC installer
+	ECHO [36mPlayer[0m		P1) VLC v2.2.8 x64	  P2) VLC		V3) VLC installer
 	ECHO [36mRAR[0m		R1) WinRAR v5.9.1 x64	  R2) WinRAR		R3) WinRAR installer
 	ECHO [36mDownloader[0m	J1) JDownloader 2 x64	  J2) JDown 2		J3) JDownloader 2 installer
 	ECHO [36mTorrent[0m		T1) uTorrent x86	  T2) uTorrent		T3) uTorrent installer
@@ -72,12 +74,14 @@ ECHO 			*************************************************************
 	ECHO [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2
 	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
-	ECHO [36mText Editor[0m	E1) Atom x64		  E2) Atom 	E3) Atom installer
-	ECHO			E4) Notepad++ x64	  E5) Notepad++ E6) Notepad installer 
+	ECHO [36mText Editor[0m	E1) Atom x64		  E2) Atom 		E3) Atom installer
+	ECHO			E4) Notepad++ x64	  E5) Notepad++ 	E6) Notepad installer 
 	ECHO			E7) Lista pacchetti aggiuntivi Atom 
-	ECHO [36mCustomization[0m	C1) Rainmeter		  C2) Rainmeter 	E3) Rainmeter
+	ECHO [36mCustomization[0m	C1) Rainmeter 4.4 Beta	  C2) Rainmeter 	C3) Rainmeter
+	ECHO 		C4) RocketDock v1.3.5 x86 C5) RocketDock 	C6) RocketDock 
 	ECHO [32m---------------------------------------------[Utility]----------------------------------------------
-	ECHO [36mLink[0m		Q1) Driver video AMD	  Q2) Driver Video nVidia
+	ECHO [36mLink[0m		Q1) Driver video AMD	  	Q2) Driver Video NVIDIA
+	ECHO			Q3) KMS 360 Pro 4644 Link1	Q4) KMS 360 Pro 4644 Link2
 	ECHO [36mUAC[0m		U1) Disabilita UAC	  U2) Abilita UAC
 	ECHO [36mMix[0m		TR) Controllo TRIM
 	ECHO [36mWin Update[0m	WU1) WU Riconfig	  WU2) WU hard-reset
@@ -103,7 +107,7 @@ ECHO 			*************************************************************
 	if "%c%" EQU "u2" ECHO Ancora non implementato
 	::----MIX----------------------------------------
 	if "%c%" EQU "tr" (	ECHO [32m
-				ECHO 0=TRIM Abilitato / 1= TRIM Disabilitato [0m
+				ECHO 0=TRIM Abilitato / 1=TRIM Disabilitato [0m
 				fsutil behavior query DisableDeleteNotify
 			   )
 	if "%c%" EQU "TR" (	ECHO [32m
@@ -225,6 +229,19 @@ ECHO 			*************************************************************
 	if "%c%" EQU "E7" Goto :atomInfoPacket
 	if "%c%" EQU "e7" test&cls
 	if "%c%" EQU "e7" Goto :atomInfoPacket
+	::----CUSTOMIZATION-------------------------------
+	if "%c%" EQU "c1" START https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3404/Rainmeter-4.4-r3404-beta.exe
+	if "%c%" EQU "C1" START https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3404/Rainmeter-4.4-r3404-beta.exe
+	if "%c%" EQU "c2" Goto :rainmeter
+	if "%c%" EQU "C2" Goto :rainmeter
+	if "%c%" EQU "c3" Goto :delrainmeter
+	if "%c%" EQU "C3" Goto :delrainmeter
+	if "%c%" EQU "c4" START https://punklabs.com/downloads/RocketDock-v1.3.5.exe
+	if "%c%" EQU "C4" START https://punklabs.com/downloads/RocketDock-v1.3.5.exe
+	if "%c%" EQU "c5" Goto :rocket
+	if "%c%" EQU "C5" Goto :rocket
+	if "%c%" EQU "c6" Goto :delrocket
+	if "%c%" EQU "C6" Goto :delrocket
 	::----TOTAL--------------------------------------
 	if "%c%" EQU "TT" Goto :deltotal
 	if "%c%" EQU "tt" Goto :deltotal	
@@ -258,6 +275,10 @@ ECHO 			*************************************************************
 	if "%c%" EQU "q1" START https://www.amd.com/en/support
 	if "%c%" EQU "Q2" START https://www.nvidia.it/Download/index.aspx?lang=it
 	if "%c%" EQU "q2" START https://www.nvidia.it/Download/index.aspx?lang=it
+	if "%c%" EQU "Q3" START https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
+	if "%c%" EQU "q3" START https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
+	if "%c%" EQU "Q4" START https://rapidgator.net/file/2fb3e86836ea43071a026138725a1fdb/KMS_360_Pro_4644.zip
+	if "%c%" EQU "q4" START https://rapidgator.net/file/2fb3e86836ea43071a026138725a1fdb/KMS_360_Pro_4644.zip
 	if "%c%" EQU "WU1" Goto :wureset
 	if "%c%" EQU "wu1" Goto :wureset
 	if "%c%" EQU "wu2" ECHO Non ancora implementato
@@ -653,7 +674,51 @@ ECHO 			*************************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 Goto :letsgo
-
+::----------------------CUSTOMIZATION-----
+:rainmeter
+	IF EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe ECHO Installazione di [31mRainmeter[0m partita dal disco D
+	IF EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe START D:\Download\Rainmeter-4.4-r3404-beta.exe
+	IF EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe ECHO Installazione di [31mRainmeter[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe START C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe
+	IF EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mRainmeter[0m non esiste
+	Goto :letsgo
+:delrainmeter
+	set rainmeter=0
+	IF EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe SET rainmeter=1
+	IF EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe ECHO Installer di [31mRainmeter[0m cancellato dal disco D
+	IF EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe DEL D:\Download\Rainmeter-4.4-r3404-beta.exe
+	IF EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe SET rainmeter=1
+	IF EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe ECHO Installer di [31mRainmeter[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe DEL C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe
+	IF %rainmeter%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe ECHO [43m[Attenzione][0m - L'installer di [31mRainmeter[0m non esiste
+	)
+	Goto :letsgo
+:rocket
+	IF EXIST D:\Download\RocketDock-v1.3.5.exe ECHO Installazione di [31mRocketDock[0m partita dal disco D
+	IF EXIST D:\Download\RocketDock-v1.3.5.exe START D:\Download\RocketDock-v1.3.5.exe
+	IF EXIST D:\Download\RocketDock-v1.3.5.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe ECHO Installazione di [31mRocketDock[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe START C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe
+	IF EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mRocketDock[0m non esiste
+	Goto :letsgo
+:delrocket
+	set rocket=0
+	IF EXIST D:\Download\RocketDock-v1.3.5.exe SET rocket=1
+	IF EXIST D:\Download\RocketDock-v1.3.5.exe ECHO Installer di [31mRocketDock[0m cancellato dal disco D
+	IF EXIST D:\Download\RocketDock-v1.3.5.exe DEL D:\Download\RocketDock-v1.3.5.exe
+	IF EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe SET rocket=1
+	IF EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe ECHO Installer di [31mRocketDock[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe DEL C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe
+	IF %rocket%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\RocketDock-v1.3.5.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe ECHO [43m[Attenzione][0m - L'installer di [31mRocketDock[0m non esiste
+	)
+	Goto :letsgo
 
 ::----------------------INFO-----------
 :information
@@ -664,9 +729,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.1.1 		 *
-	ECHO 	    *		  Codename = Roaring Kitty		*
-	ECHO 	     *		 Ultima Release = 01/10/2020	       *
+	ECHO 	   *		     Versione = v.0.1.2 		 *
+	ECHO 	    *		  Codename = Roaring Mouse		*
+	ECHO 	     *		 Ultima Release = 04/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
@@ -686,7 +751,8 @@ Goto :letsgo
 	ECHO 	  		! 	music=%music%		file=%file%		sync=%sync%		    !
 	ECHO 	  		! 	vm=%vm%		remoto=%remoto%	tor=%tor%	 	    !
 	ECHO 	  		! 	steam=%steam%		epic=%epic%		capture=%capture%	    !
-	ECHO 	  		! 	atom=%atom%		notepad=%notepad%	   		    !
+	ECHO 	  		! 	atom=%atom%		notepad=%notepad%	rainmeter=%rainmeter%	    !
+	ECHO 	  		! 	rocket=%rocket%					    !
 	ECHO 	  		! 			    				    !
 	ECHO 	  		! 	c=%c% (choice)	t=%t%			   	    !
 	ECHO 			\___________________________________________________________/
@@ -881,9 +947,23 @@ Goto :letsgo
         IF NOT EXIST D:\Download\npp.7.9.Installer.x64.exe (
 		IF NOT EXIST C:\Users\%username%\Downloads\npp.7.9.Installer.x64.exe ECHO [43m[Attenzione][0m - L'installer di [31mNotepad++[0m non esiste
 	)
+	IF EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe ECHO Installer di [31mRainmeter[0m cancellato dal disco D
+	IF EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe DEL D:\Download\Rainmeter-4.4-r3404-beta.exe
+	IF EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe ECHO Installer di [31mRainmeter[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe DEL C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe
+	IF NOT EXIST D:\Download\Rainmeter-4.4-r3404-beta.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\Rainmeter-4.4-r3404-beta.exe ECHO [43m[Attenzione][0m - L'installer di [31mRainmeter[0m non esiste
+	)
+	IF EXIST D:\Download\RocketDock-v1.3.5.exe ECHO Installer di [31mRocketDock[0m cancellato dal disco D
+	IF EXIST D:\Download\RocketDock-v1.3.5.exe DEL D:\Download\RocketDock-v1.3.5.exe
+	IF EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe ECHO Installer di [31mRocketDock[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe DEL C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe
+        IF NOT EXIST D:\Download\RocketDock-v1.3.5.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\RocketDock-v1.3.5.exe ECHO [43m[Attenzione][0m - L'installer di [31mRocketDock[0m non esiste
+	)
 
 :endTotal
-	ECHO	[42m[COMPLETATO][0m - Tutti gli installer sono stati cancellati
+	ECHO [42m[COMPLETATO][0m - Tutti gli installer sono stati cancellati
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 	GOTO :letsgo
