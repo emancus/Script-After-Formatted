@@ -14,7 +14,8 @@
 
 ## Changelog
 ### v.0.1.2 - Roaring Mouse
-+ Next Release
++ Add support to "Rainmeter" / "RocketDock"
++ Minor Fix
 
 ### v.0.1.1 - Roaring Kitty
 + Add support to "Atom" / "Notepad++" / "AMD Drive
