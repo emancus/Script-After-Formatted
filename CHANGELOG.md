@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.2.1 - Glorious Fox
  - v.0.2.0 - Glorious Dingo
  - v.0.1.3 - Roaring Snake
  - v.0.1.2 - Roaring Mouse
@@ -15,7 +16,10 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
-### v.0.2.0 - Roaring Snake
+### v.0.2.1 - Glorious Fox
++ Bug Fix #1
+
+### v.0.2.0 - Glorious Dingo
 + Total revision of code
 + Bug Fix
 
