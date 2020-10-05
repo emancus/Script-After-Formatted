@@ -45,11 +45,14 @@ Why? Because it's simple and work fine!
 **Games** = Steam Client (Last Version) + Epic Games (Last Version)<br/>
 Why? Because are the most popular game library among players!
 
+**PlayStation** = PlayStation Now (Last Version)<br/>
+Why? Because is an amazing services!
+
 **Text Editor** = Atom (Last Version) + Notepad++ (Last Version)<br/>
 Why? Atom it's a perfect fast editor high customizable!<br/>
 Notepad++ is a valid alternative
 
-**Text Editor** = Rainmeter (Beta Version) + RocketDock (Last Version)<br/>
+**Customizatior** = Rainmeter (Beta Version) + RocketDock (Last Version)<br/>
 Why? Rainmeter is one of most used desktop customizator ever made!<br/>
 RocketDock is a "Mac Dock-like" really good!
 
