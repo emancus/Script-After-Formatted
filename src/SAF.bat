@@ -10,7 +10,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 
 ::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
 :: Variabili per i link
-	SET l_firefox=https://download.mozilla.org/?product=firefox-stub&os=win&lang=it
+	::Firefox non puo' avere una variabile link perche' ha un "&" nel link che sballa l'output sul prompt
 	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0/torbrowser-install-win64-10.0_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
 	SET l_rar=https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-591it.exe
@@ -34,8 +34,8 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_kms1=https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
 	SET l_kms2=https://rapidgator.net/file/2fb3e86836ea43071a026138725a1fdb/KMS_360_Pro_4644.zip
 
-		::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
-	:: Variabili per gli exe
+::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
+:: Variabili per gli exe
 	SET e_firefox="Firefox Installer.exe"
 	SET e_tor=torbrowser-install-win64-10.0_it.exe
 	SET e_player=vlc-2.2.8-win64.exe
@@ -162,8 +162,8 @@ ECHO 			*************************************************************
 				fsutil behavior query DisableDeleteNotify
 			   )
 	::----BROWSER------------------------------------
-	if "%c%" EQU "B1" START %l_firefox%
-	if "%c%" EQU "b1" START %l_firefox%
+	if "%c%" EQU "B1" START https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"
+	if "%c%" EQU "b1" START https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"
 	if "%c%" EQU "B2" Goto :browser
 	if "%c%" EQU "b2" Goto :browser
 	if "%c%" EQU "B3" Goto :delbrowser
@@ -776,8 +776,8 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.2.0 		 *
-	ECHO 	    *		  Codename = Glorious Dingo		*
+	ECHO 	   *		     Versione = v.0.2.1 		 *
+	ECHO 	    *		  Codename = Glorious Fox		*
 	ECHO 	     *		 Ultima Release = 05/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
