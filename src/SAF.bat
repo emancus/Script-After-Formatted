@@ -115,8 +115,8 @@ ECHO 			*************************************************************
 				fsutil behavior query DisableDeleteNotify
 			   )
 	::----BROWSER------------------------------------
-	if "%c%" EQU "B1" START https://www.mozilla.org/it/firefox/download/thanks/
-	if "%c%" EQU "b1" START https://www.mozilla.org/it/firefox/download/thanks/
+	if "%c%" EQU "B1" START https://download.mozilla.org/?product=firefox-stub&os=win&lang=it
+	if "%c%" EQU "b1" START https://download.mozilla.org/?product=firefox-stub&os=win&lang=it
 	if "%c%" EQU "B2" Goto :browser
 	if "%c%" EQU "b2" Goto :browser
 	if "%c%" EQU "B3" Goto :delbrowser
@@ -156,8 +156,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "T3" Goto :deltorrent
 	if "%c%" EQU "t3" Goto :deltorrent
 	::----MUSIC--------------------------------------
-	if "%c%" EQU "M1" START https://download.mp3tag.de/mp3tagv302setup.exe
-	if "%c%" EQU "m1" START https://download.mp3tag.de/mp3tagv302setup.exe
+	if "%c%" EQU "M1" START https://download.mp3tag.de/mp3tagv303setup.exe
+	if "%c%" EQU "m1" START https://download.mp3tag.de/mp3tagv303setup.exe
 	if "%c%" EQU "M2" Goto :music
 	if "%c%" EQU "m2" Goto :music
 	if "%c%" EQU "M3" Goto :delmusic
@@ -432,25 +432,25 @@ ECHO 			*************************************************************
 	Goto :letsgo
 ::----------------------MUSIC-----
 :music
-	IF EXIST D:\Download\mp3tagv302setup.exe ECHO Installazione di [31mMp3tag[0m partita dal disco D
-	IF EXIST D:\Download\mp3tagv302setup.exe START D:\Download\mp3tagv302setup.exe
-	IF EXIST D:\Download\mp3tagv302setup.exe Goto :letsgo
-	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO Installazione di [31mMp3tag[0m partita dal disco C
-	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe START C:\Users\%username%\Downloads\mp3tagv302setup.exe
-	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe Goto :letsgo
+	IF EXIST D:\Download\mp3tagv303setup.exe ECHO Installazione di [31mMp3tag[0m partita dal disco D
+	IF EXIST D:\Download\mp3tagv303setup.exe START D:\Download\mp3tagv303setup.exe 
+	IF EXIST D:\Download\mp3tagv303setup.exe Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe ECHO Installazione di [31mMp3tag[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe START C:\Users\%username%\Downloads\mp3tagv303setup.exe 
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe Goto :letsgo
         ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
 	Goto :letsgo
 :delmusic
 	set music=0
-	IF EXIST D:\Download\mp3tagv302setup.exe SET music=1
-	IF EXIST D:\Download\mp3tagv302setup.exe ECHO Installer di [31mMp3tag[0m cancellato dal disco D
-	IF EXIST D:\Download\mp3tagv302setup.exe DEL D:\Download\mp3tagv302setup.exe
-	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe SET music=1	
-	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO Installer di [31Mp3tag[0m cancellato dal disco C
-	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe DEL C:\Users\%username%\Downloads\mp3tagv302setup.exe
+	IF EXIST D:\Download\mp3tagv303setup.exe SET music=1
+	IF EXIST D:\Download\mp3tagv303setup.exe ECHO Installer di [31mMp3tag[0m cancellato dal disco D
+	IF EXIST D:\Download\mp3tagv303setup.exe DEL D:\Download\mp3tagv303setup.exe 
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe SET music=1	
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe ECHO Installer di [31Mp3tag[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe DEL C:\Users\%username%\Downloads\mp3tagv303setup.exe 
 	IF %music%==1 Goto :letsgo
-        IF NOT EXIST D:\Download\mp3tagv302setup.exe (
-		IF NOT EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
+        IF NOT EXIST D:\Download\mp3tagv303setup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
 	)
 	Goto :letsgo
 ::----------------------REMOTO----
@@ -729,9 +729,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.1.2 		 *
-	ECHO 	    *		  Codename = Roaring Mouse		*
-	ECHO 	     *		 Ultima Release = 04/10/2020	       *
+	ECHO 	   *		     Versione = v.0.1.3 		 *
+	ECHO 	    *		  Codename = Roaring Snake		*
+	ECHO 	     *		 Ultima Release = 05/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
@@ -877,12 +877,12 @@ Goto :letsgo
 	IF NOT EXIST D:\Download\uTorrent.exe (
 		IF NOT EXIST C:\Users\%username%\Downloads\uTorrent.exe ECHO [43m[Attenzione][0m - L'installer di [31muTorrent[0m non esiste
 	)
-	IF EXIST D:\Download\mp3tagv302setup.exe ECHO Installer di [31mMp3tag[0m cancellato dal disco D
-	IF EXIST D:\Download\mp3tagv302setup.exe DEL D:\Download\mp3tagv302setup.exe
-	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO Installer di [31Mp3tag[0m cancellato dal disco C
-	IF EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe DEL C:\Users\%username%\Downloads\mp3tagv302setup.exe
-	IF NOT EXIST D:\Download\mp3tagv302setup.exe (
-		IF NOT EXIST C:\Users\%username%\Downloads\mp3tagv302setup.exe ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
+	IF EXIST D:\Download\mp3tagv303setup.exe ECHO Installer di [31mMp3tag[0m cancellato dal disco D
+	IF EXIST D:\Download\mp3tagv303setup.exe DEL D:\Download\mp3tagv303setup.exe 
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe ECHO Installer di [31Mp3tag[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe DEL C:\Users\%username%\Downloads\mp3tagv303setup.exe 
+	IF NOT EXIST D:\Download\mp3tagv303setup.exe (
+		IF NOT EXIST C:\Users\%username%\Downloads\mp3tagv303setup.exe ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
 	)
 	IF EXIST D:\Download\TeamViewer_Setup.exe ECHO Installer di [31mTeamViewer[0m cancellato dal disco D
 	IF EXIST D:\Download\TeamViewer_Setup.exe DEL D:\Download\TeamViewer_Setup.exe
