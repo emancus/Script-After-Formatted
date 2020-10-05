@@ -29,6 +29,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_notepad=https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.9/npp.7.9.Installer.x64.exe
 	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3404/Rainmeter-4.4-r3404-beta.exe
 	SET l_rocket=https://punklabs.com/downloads/RocketDock-v1.3.5.exe
+	SET l_psnow=https://download-psnow.playstation.com/downloads/psnow/pc/latest
 	SET l_amd=https://www.amd.com/en/support
 	SET l_nvidia=https://www.nvidia.it/Download/index.aspx?lang=it
 	SET l_kms1=https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
@@ -54,6 +55,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET e_notepad=npp.7.9.Installer.x64.exe
 	SET e_rainmeter=Rainmeter-4.4-r3404-beta.exe
 	SET e_rocket=RocketDock-v1.3.5.exe
+	SET e_psnow=PlayStationNow-11.2.2.exe
 
 ::----------------------VARIABLE INITIALIZATION-------------------------------------------------------------------------------
 :: Non è necessario, ma permette di visualizzare le variabili inizializzate a 0 nella debug room
@@ -75,6 +77,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET notepad=0
 	SET rainmeter=0
 	SET rocket=0
+	SET psnow=0
 	SET t=0
 
 
@@ -108,6 +111,7 @@ ECHO 			*************************************************************
 	ECHO [36mScreen Capt[0m	O1) OBS Studio x64        O2) OBS Studio 	O3) OBS Studio
 	ECHO [36mGiochi[0m		G1) Steam Client x86	  G2) Steam 		G3) Steam installer
 	ECHO			G4) Epic Games	  	  G5) Epic Games 	G6) Epic Games installer
+	ECHO [36mPlaystation[0m	G7) PlayStation Now	  G8) PlayStation Now	G9) PlayStation Now installer
 	ECHO									TT) Cancella tutti
 	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
@@ -259,6 +263,12 @@ ECHO 			*************************************************************
 	if "%c%" EQU "g5" Goto :epic
 	if "%c%" EQU "G6" Goto :delepic
 	if "%c%" EQU "g6" Goto :delepic
+	if "%c%" EQU "G7" START %l_psnow%
+	if "%c%" EQU "g7" START %l_psnow%
+	if "%c%" EQU "G8" Goto :psnow
+	if "%c%" EQU "g8" Goto :psnow
+	if "%c%" EQU "G9" Goto :delpsnow
+	if "%c%" EQU "g9" Goto :delpsnow
 	::----EDITOR-------------------------------------
 	if "%c%" EQU "E1" START %l_atom%
 	if "%c%" EQU "e1" START %l_atom%
@@ -662,6 +672,28 @@ ECHO 			*************************************************************
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_epic% ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m non esiste
 	)
 	Goto :letsgo
+:psnow
+	IF EXIST D:\Download\%e_psnow% ECHO Installazione di [31mPlayStation Now[0m partita dal disco D
+	IF EXIST D:\Download\%e_psnow% START D:\Download\%e_psnow%
+	IF EXIST D:\Download\%e_psnow% Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\%e_psnow% ECHO Installazione di [31mPlayStation Now[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_psnow% START C:\Users\%username%\Downloads\%e_psnow%
+	IF EXIST C:\Users\%username%\Downloads\%e_psnow% Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mPlayStation Now[0m non esiste
+	Goto :letsgo
+:delpsnow
+	set psnow=0
+	IF EXIST D:\Download\%e_psnow% SET psnow=1
+	IF EXIST D:\Download\%e_psnow% ECHO Installer di [31mPlayStation Now[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_psnow% DEL D:\Download\%e_psnow%
+	IF EXIST C:\Users\%username%\Downloads\%e_psnow% SET psnow=1
+	IF EXIST C:\Users\%username%\Downloads\%e_psnow% ECHO Installer di [31mPlayStation Now[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_psnow% DEL C:\Users\%username%\Downloads\%e_psnow%
+	IF %psnow%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\%e_psnow% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_psnow% ECHO [43m[Attenzione][0m - L'installer di [31mPlayStation Now[0m non esiste
+	)
+	Goto :letsgo
 ::----------------------EDITOR-----
 :atom
 	IF EXIST D:\Download\%e_atom% ECHO Installazione di [31mAtom[0m partita dal disco D
@@ -776,8 +808,8 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.2.1 		 *
-	ECHO 	    *		  Codename = Glorious Fox		*
+	ECHO 	   *		     Versione = v.0.2.2 		 *
+	ECHO 	    *		  Codename = Glorious Monkey		*
 	ECHO 	     *		 Ultima Release = 05/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
@@ -793,13 +825,13 @@ Goto :letsgo
 	ECHO 			!***********************************************************!
 	ECHO 	 		!							    !
 	ECHO 	  		! Variabili:						    !
-	ECHO 	  		! 	browser=%browser%player=%player%	rar=%rar%		    !
-	ECHO 	  		! 	rar=%rar%		downloader=%downloader%torrent=%torrent%	    !
+	ECHO 	  		! 	browser=%browser%	player=%player%	rar=%rar%		    !
+	ECHO 	  		! 	rar=%rar%		downloader=%downloader%	torrent=%torrent%	    !
 	ECHO 	  		! 	music=%music%		file=%file%		sync=%sync%		    !
 	ECHO 	  		! 	vm=%vm%		remoto=%remoto%	tor=%tor%	 	    !
 	ECHO 	  		! 	steam=%steam%		epic=%epic%		capture=%capture%	    !
 	ECHO 	  		! 	atom=%atom%		notepad=%notepad%	rainmeter=%rainmeter%	    !
-	ECHO 	  		! 	rocket=%rocket%					    !
+	ECHO 	  		! 	rocket=%rocket%	psnow=%psnow%				    !
 	ECHO 	  		! 			    				    !
 	ECHO 	  		! 	c=%c% (choice)	t=%t%			   	    !
 	ECHO 			\___________________________________________________________/
@@ -907,7 +939,7 @@ Goto :letsgo
 	IF EXIST D:\Download\%e_rar% DEL D:\Download\%e_player%
 	IF EXIST C:\Users\%username%\Downloads\%e_rar% ECHO Installer di [31mWinRAR[0m cancellato dal disco C
 	IF EXIST C:\Users\%username%\Downloads\%e_rar% DEL C:\Users\%username%\Downloads\%e_rar%
-	 IF NOT EXIST D:\Download\%e_rar% (
+	IF NOT EXIST D:\Download\%e_rar% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_rar% ECHO [43m[Attenzione][0m - L'installer di [31mWinRAR[0m non esiste
 	)
 	IF EXIST D:\Download\%e_downloader% ECHO Installer di [31mJDownloader 2[0m cancellato dal disco D
@@ -980,6 +1012,13 @@ Goto :letsgo
 	IF NOT EXIST D:\Download\%e_epic% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_epic% ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m non esiste
 	)
+	IF EXIST D:\Download\%e_psnow% ECHO Installer di [31mPlayStation Now[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_psnow% DEL D:\Download\%e_psnow%
+	IF EXIST C:\Users\%username%\Downloads\%e_psnow% ECHO Installer di [31mPlayStation Now[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_psnow% DEL C:\Users\%username%\Downloads\%e_psnow%
+        IF NOT EXIST D:\Download\%e_psnow% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_psnow% ECHO [43m[Attenzione][0m - L'installer di [31mPlayStation Now[0m non esiste
+	)
 	IF EXIST D:\Download\%e_atom% ECHO Installer di [31mAtom[0m cancellato dal disco D
 	IF EXIST D:\Download\%e_atom% DEL D:\Download\%e_atom%
 	IF EXIST C:\Users\%username%\Downloads\%e_atom% ECHO Installer di [31mAtom[0m cancellato dal disco C
@@ -1040,7 +1079,7 @@ Goto :letsgo
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 	Goto :letsgo
 
-::----------------------WINDOWS STORE RESET.............----------
+::----------------------WINDOWS STORE RESET-----------------------
 
 :wsreset
 	ECHO [43m[Attenzione][0m - Quest'operazione potrebbe richiedere i Privilegi di Amministratore
