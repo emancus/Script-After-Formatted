@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.1.3 - Roaring Snake
  - v.0.1.2 - Roaring Mouse
  - v.0.1.1 - Roaring Kitty
  - v.0.1.0 - Roaring Dog
@@ -13,6 +14,10 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.1.3 - Roaring Snake
++ Update support to "Firefox" / "Mp3tag"
++ Minor Fix
+
 ### v.0.1.2 - Roaring Mouse
 + Add support to "Rainmeter" / "RocketDock"
 + Minor Fix
