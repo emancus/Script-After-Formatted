@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.2.0 - Glorious Dingo
  - v.0.1.3 - Roaring Snake
  - v.0.1.2 - Roaring Mouse
  - v.0.1.1 - Roaring Kitty
@@ -14,6 +15,10 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.2.0 - Roaring Snake
++ Total revision of code
++ Bug Fix
+
 ### v.0.1.3 - Roaring Snake
 + Update support to "Firefox" / "Mp3tag"
 + Minor Fix
