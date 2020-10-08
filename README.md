@@ -6,6 +6,12 @@ An useful script (written in Batch) for Windows to download and install programs
 ## Author & Developers
  - [Enrico Mancuso] :computer:
 
+## Screenshot
+<div align="center">
+	<img src="media/screenshot.png">
+	<br>
+</div>
+
 ## What program is supported?
 **Web Browser** = Firefox (Last Version) + Tor (Last Version)<br/> 
 Why? Because Firefox is a very good open-source browser. The latest version is always the most recommended.<br/>
