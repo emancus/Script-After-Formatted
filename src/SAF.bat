@@ -13,6 +13,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	::Firefox non puo' avere una variabile link perche' ha un "&" nel link che sballa l'output sul prompt
 	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0/torbrowser-install-win64-10.0_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
+	SET l_spotify=https://download.scdn.co/SpotifySetup.exe
 	SET l_rar=https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-591it.exe
 	SET l_downloader=https://jdownloader.org/dl?v=101
 	SET l_torrent=https://download-hr.utorrent.com/track/stable/endpoint/utorrent/os/windows
@@ -30,6 +31,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3404/Rainmeter-4.4-r3404-beta.exe
 	SET l_rocket=https://punklabs.com/downloads/RocketDock-v1.3.5.exe
 	SET l_psnow=https://download-psnow.playstation.com/downloads/psnow/pc/latest
+	SET l_ds4windows=https://github.com/Jays2Kings/DS4Windows/releases/download/v1.4.52/DS4Windows.zip
 	SET l_afterburner=http://download.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip
 	SET l_amd=https://www.amd.com/en/support
 	SET l_nvidia=https://www.nvidia.it/Download/index.aspx?lang=it
@@ -41,6 +43,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET e_firefox="Firefox Installer.exe"
 	SET e_tor=torbrowser-install-win64-10.0_it.exe
 	SET e_player=vlc-2.2.8-win64.exe
+	SET e_spotify=SpotifySetup.exe
 	SET e_rar=WinRAR-x64-591it.exe
 	SET e_downloader=JDownloaderSetup.exe
 	SET e_torrent=uTorrent.exe
@@ -99,20 +102,18 @@ ECHO 			*************************************************************
 	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
 	ECHO [36mBrowser[0m		B1) Firefox x64		  B2) Firefox		B3) Firefox installer
 	ECHO			B4) Tor (ITA) x64	  B5) Tor		B6) Tor installer
-	ECHO [36mPlayer[0m		P1) VLC v2.2.8 x64	  P2) VLC		V3) VLC installer
+	ECHO [36mPlayer[0m		P1) VLC v2.2.8 x64	  P2) VLC		P3) VLC installer
+	ECHO 		P4) Spotify
 	ECHO [36mRAR[0m		R1) WinRAR v5.9.1 x64	  R2) WinRAR		R3) WinRAR installer
 	ECHO [36mDownloader[0m	J1) JDownloader 2 x64	  J2) JDown 2		J3) JDownloader 2 installer
 	ECHO [36mTorrent[0m		T1) uTorrent x86	  T2) uTorrent		T3) uTorrent installer
 	ECHO [36mMusica[0m		M1) Mp3tag v3.02 x86	  M2) Mp3tag		M3) Mp3tag installer
-	ECHO 		M4) Spek v.0.8.2
+	ECHO 		M4) Spek v.0.8.2 x86
 	ECHO [36mDesk Remoto[0m	D1) TeamViewer x86	  D2) TeamViewer 	D3) TeamViewer installer
 	ECHO [36mFileRenamer[0m	F1) FileRen Basic v6.3 	  F2) FileRenamer	F3) FileRenamer installer
 	ECHO [36mSyncronizer[0m	S1) SyncTrayzor x64 	  S2) SyncTrayzor	S3) SyncTrayzor installer
 	ECHO [36mVM[0m		V1) VirtualBox v6.1.14    V2) VirtualBox	V3) VirtualBox Installer
-	ECHO [36mScreen Capt[0m	O1) OBS Studio x64        O2) OBS Studio 	O3) OBS Studio
-	ECHO [36mGiochi[0m		G1) Steam Client x86	  G2) Steam 		G3) Steam installer
-	ECHO			G4) Epic Games	  	  G5) Epic Games 	G6) Epic Games installer
-	ECHO [36mPlaystation[0m	G7) PlayStation Now	  G8) PlayStation Now	G9) PlayStation Now installer
+	ECHO [36mScreen Capt[0m	O1) OBS Studio x64        O2) OBS Studio 	O3) OBS Studio installer
 	ECHO									TT) Cancella tutti
 	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
@@ -127,18 +128,23 @@ ECHO 			*************************************************************
 	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
 	ECHO [36mPC Monitor[0m	A1) MSI Afterburner
+	ECHO [36mGiochi[0m		G1) Steam Client x86	  G2) Steam 		G3) Steam installer
+	ECHO			G4) Epic Games	  	  G5) Epic Games 	G6) Epic Games installer
+	ECHO [36mPlaystation[0m	G7) PlayStation Now	  G8) PlayStation Now	G9) PlayStation Now installer
+	ECHO [36mController[0m	D4) DS4Windows
 	ECHO [36mText Editor[0m	E1) Atom x64		  E2) Atom 		E3) Atom installer
 	ECHO			E4) Notepad++ x64	  E5) Notepad++ 	E6) Notepad installer
 	ECHO			E7) Lista pacchetti aggiuntivi Atom
-	ECHO [36mCustomization[0m	C1) Rainmeter 4.4 Beta	  C2) Rainmeter 	C3) Rainmeter
-	ECHO 		C4) RocketDock v1.3.5 x86 C5) RocketDock 	C6) RocketDock
+	ECHO [36mCustomization[0m	C1) Rainmeter 4.4 Beta	  C2) Rainmeter 	C3) Rainmeter installer
+	ECHO 		C4) RocketDock v1.3.5 x86 C5) RocketDock 	C6) RocketDock installer
+	ECHO									TT) Cancella tutti
 	ECHO [32m---------------------------------------------[Utility]----------------------------------------------
 	ECHO [36mLink[0m		Q1) Driver video AMD	  	Q2) Driver Video NVIDIA
 	ECHO			Q3) KMS 360 Pro 4644 Link1	Q4) KMS 360 Pro 4644 Link2
 	ECHO [36mUAC[0m		U1) Disabilita UAC	  U2) Abilita UAC
 	ECHO [36mMix[0m		TR) Controllo TRIM
 	ECHO [36mWin Update[0m	WU1) WU Riconfig	  WU2) WU hard-reset
-	ECHO [36mWin Update[0m	WS1) WS Reset
+	ECHO [36mWin Store[0m	WS1) WS Reset
 	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO 0) Esci
@@ -153,22 +159,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "1"	(Goto :menu)
 	if "%c%" EQU "2"	test&cls
 	if "%c%" EQU "2"	(Goto :menu2)
-	::----UAC----------------------------------------
-	if "%c%" EQU "U1" ECHO Ancora non implementato
-	if "%c%" EQU "u1" ECHO Ancora non implementato
-	if "%c%" EQU "U2" ECHO Ancora non implementato
-	if "%c%" EQU "u2" ECHO Ancora non implementato
-	::----MIX----------------------------------------
-	if "%c%" EQU "tr" (	ECHO [32m
-				ECHO 0=TRIM Abilitato / 1=TRIM Disabilitato [0m
-				fsutil behavior query DisableDeleteNotify
-			   )
-	if "%c%" EQU "TR" (	ECHO [32m
-				ECHO 0=TRIM Abilitato / 1= TRIM Disabilitato [0m
-				fsutil behavior query DisableDeleteNotify
-			   )
-	::----BROWSER------------------------------------
-	if "%c%" EQU "B1" START https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"
+	::----PROGRAM-----------------------------------
+	if "%c%" EQU "B1" START https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"	::----Browser------------
 	if "%c%" EQU "b1" START https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"
 	if "%c%" EQU "B2" Goto :browser
 	if "%c%" EQU "b2" Goto :browser
@@ -180,36 +172,33 @@ ECHO 			*************************************************************
 	if "%c%" EQU "b5" Goto :tor
 	if "%c%" EQU "B6" Goto :deltor
 	if "%c%" EQU "b6" Goto :deltor
-	::----PLAYER-------------------------------------
-	if "%c%" EQU "P1" START %l_player%
+	if "%c%" EQU "P1" START %l_player%		::----PLAYER-------------------------------------
 	if "%c%" EQU "p1" START %l_player%
 	if "%c%" EQU "P2" Goto :player
 	if "%c%" EQU "p2" Goto :player
 	if "%c%" EQU "P3" Goto :delplayer
 	if "%c%" EQU "p3" Goto :delplayer
-	::----RAR----------------------------------------
-	if "%c%" EQU "R1" START %l_rar%
+	if "%c%" EQU "P4" START %l_spotify%		
+	if "%c%" EQU "p4" START %l_spotify%
+	if "%c%" EQU "R1" START %l_rar%			::----RAR----------------------------------------
 	if "%c%" EQU "r1" START %l_rar%
 	if "%c%" EQU "R2" Goto :rar
 	if "%c%" EQU "r2" Goto :rar
 	if "%c%" EQU "R3" Goto :delrar
 	if "%c%" EQU "r3" Goto :delrar
-	::----DOWNLOADER---------------------------------
-	if "%c%" EQU "J1" START %l_downloader%
+	if "%c%" EQU "J1" START %l_downloader%		::----DOWNLOADER---------------------------------
 	if "%c%" EQU "j1" START %l_downloader%
 	if "%c%" EQU "J2" Goto :downloader
 	if "%c%" EQU "j2" Goto :downloader
 	if "%c%" EQU "J3" Goto :deldownloader
 	if "%c%" EQU "j3" Goto :deldownloader
-	::----TORRENT------------------------------------
-	if "%c%" EQU "T1" START %l_torrent%
+	if "%c%" EQU "T1" START %l_torrent%		::----TORRENT------------------------------------
 	if "%c%" EQU "t1" START %l_torrent%
 	if "%c%" EQU "T2" Goto :torrent
 	if "%c%" EQU "t2" Goto :torrent
 	if "%c%" EQU "T3" Goto :deltorrent
 	if "%c%" EQU "t3" Goto :deltorrent
-	::----MUSIC--------------------------------------
-	if "%c%" EQU "M1" START %l_music%
+	if "%c%" EQU "M1" START %l_music%		::----MUSIC--------------------------------------
 	if "%c%" EQU "m1" START %l_music%
 	if "%c%" EQU "M2" Goto :music
 	if "%c%" EQU "m2" Goto :music
@@ -217,43 +206,39 @@ ECHO 			*************************************************************
 	if "%c%" EQU "m3" Goto :delmusic
 	if "%c%" EQU "M4" START %l_spek%
 	if "%c%" EQU "m4" START %l_spek%
-	::----DESKTOP REMOTO-----------------------------
-	if "%c%" EQU "D1" START %l_remoto%
+	if "%c%" EQU "D1" START %l_remoto%		::----DESKTOP REMOTO-----------------------------
 	if "%c%" EQU "d1" START %l_remoto%
 	if "%c%" EQU "D2" Goto :remoto
 	if "%c%" EQU "d2" Goto :remoto
 	if "%c%" EQU "D3" Goto :delremoto
 	if "%c%" EQU "d3" Goto :delremoto
-	::----FILE RENAMER-------------------------------
-	if "%c%" EQU "F1" START %l_file%
+	if "%c%" EQU "F1" START %l_file%		::----FILE RENAMER-------------------------------
 	if "%c%" EQU "f1" START %l_file%
 	if "%c%" EQU "F2" Goto :file
 	if "%c%" EQU "f2" Goto :file
 	if "%c%" EQU "F3" Goto :delfile
 	if "%c%" EQU "f3" Goto :delfile
-	::----SYNCRONIZER-------------------------------
-	if "%c%" EQU "s1" START %l_sync%
+	if "%c%" EQU "s1" START %l_sync%		::----SYNCRONIZER-------------------------------
 	if "%c%" EQU "S1" START %l_sync%
 	if "%c%" EQU "s2" Goto :sync
 	if "%c%" EQU "S2" Goto :sync
 	if "%c%" EQU "s3" Goto :delsync
 	if "%c%" EQU "S3" Goto :delsync
-	::----VIRTUAL MACHINE----------------------------
-	if "%c%" EQU "v1" START %l_vm%
+	if "%c%" EQU "v1" START %l_vm%			::----VIRTUAL MACHINE----------------------------
 	if "%c%" EQU "V1" START %l_vm%
 	if "%c%" EQU "v2" Goto :vm
 	if "%c%" EQU "V2" Goto :vm
 	if "%c%" EQU "v3" Goto :delvm
 	if "%c%" EQU "V3" Goto :delvm
-	::----SCREEN CAPTURE----------------------------
-	if "%c%" EQU "o1" START %l_capture%
+	if "%c%" EQU "o1" START %l_capture%		::----SCREEN CAPTURE----------------------------
 	if "%c%" EQU "O1" START %l_capture%
 	if "%c%" EQU "o2" Goto :capture
 	if "%c%" EQU "O2" Goto :capture
 	if "%c%" EQU "o3" Goto :delcapture
 	if "%c%" EQU "O3" Goto :delcapture
-	::----GIOCHI-------------------------------------
-	if "%c%" EQU "G1" START %l_steam%
+	if "%c%" EQU "A1" START %l_afterburner%		::----PC MONITOR---------------------------------
+	if "%c%" EQU "a1" START %l_afterburner%
+	if "%c%" EQU "G1" START %l_steam%		::----GIOCHI-------------------------------------
 	if "%c%" EQU "g1" START %l_steam%
 	if "%c%" EQU "G2" Goto :steam
 	if "%c%" EQU "g2" Goto :steam
@@ -265,17 +250,15 @@ ECHO 			*************************************************************
 	if "%c%" EQU "g5" Goto :epic
 	if "%c%" EQU "G6" Goto :delepic
 	if "%c%" EQU "g6" Goto :delepic
-	if "%c%" EQU "G7" START %l_psnow%
+	if "%c%" EQU "G7" START %l_psnow%		::----PLAYSTATION--------------------------------
 	if "%c%" EQU "g7" START %l_psnow%
 	if "%c%" EQU "G8" Goto :psnow
 	if "%c%" EQU "g8" Goto :psnow
 	if "%c%" EQU "G9" Goto :delpsnow
 	if "%c%" EQU "g9" Goto :delpsnow
-	::----PC MONITOR---------------------------------
-	if "%c%" EQU "A1" START %l_afterburner%
-	if "%c%" EQU "a1" START %l_afterburner%
-	::----EDITOR-------------------------------------
-	if "%c%" EQU "E1" START %l_atom%
+	if "%c%" EQU "D4" START %l_ds4windows%		::----CONTROLLER---------------------------------
+	if "%c%" EQU "d4" START %l_ds4windows%
+	if "%c%" EQU "E1" START %l_atom%		::----EDITOR-------------------------------------
 	if "%c%" EQU "e1" START %l_atom%
 	if "%c%" EQU "E2" Goto :atom
 	if "%c%" EQU "e2" Goto :atom
@@ -291,8 +274,7 @@ ECHO 			*************************************************************
 	if "%c%" EQU "E7" Goto :atomInfoPacket
 	if "%c%" EQU "e7" test&cls
 	if "%c%" EQU "e7" Goto :atomInfoPacket
-	::----CUSTOMIZATION-------------------------------
-	if "%c%" EQU "c1" START %l_rainmeter%
+	if "%c%" EQU "c1" START %l_rainmeter%		::----CUSTOMIZATION-------------------------------
 	if "%c%" EQU "C1" START %l_rainmeter%
 	if "%c%" EQU "c2" Goto :rainmeter
 	if "%c%" EQU "C2" Goto :rainmeter
@@ -304,11 +286,41 @@ ECHO 			*************************************************************
 	if "%c%" EQU "C5" Goto :rocket
 	if "%c%" EQU "c6" Goto :delrocket
 	if "%c%" EQU "C6" Goto :delrocket
-	::----TOTAL--------------------------------------
-	if "%c%" EQU "TT" Goto :deltotal
+	if "%c%" EQU "TT" Goto :deltotal		::----TOTAL--------------------------------------
 	if "%c%" EQU "tt" Goto :deltotal
 	if "%c%" EQU "Tt" Goto :deltotal
 	if "%c%" EQU "Tt" Goto :deltotal
+	
+	::----PAG2 UTILITY--------------------------------------
+	if "%c%" EQU "Q1" START %l_amd%
+	if "%c%" EQU "q1" START %l_amd%
+	if "%c%" EQU "Q2" START %l_nvidia%
+	if "%c%" EQU "q2" START %l_nvidia%
+	if "%c%" EQU "Q3" START %l_kms1%
+	if "%c%" EQU "q3" START %l_kms1%
+	if "%c%" EQU "Q4" START %l_kms2%
+	if "%c%" EQU "q4" START %l_kms2%
+	if "%c%" EQU "WU1" Goto :wureset
+	if "%c%" EQU "wu1" Goto :wureset
+	if "%c%" EQU "wu2" ECHO Non ancora implementato
+	if "%c%" EQU "wi2" ECHO Non ancora implementato
+	if "%c%" EQU "WS1" Goto :wsreset
+	if "%c%" EQU "ws1" Goto :wsreset
+	::----UAC----------------------------------------
+	if "%c%" EQU "U1" ECHO Ancora non implementato
+	if "%c%" EQU "u1" ECHO Ancora non implementato
+	if "%c%" EQU "U2" ECHO Ancora non implementato
+	if "%c%" EQU "u2" ECHO Ancora non implementato
+	::----MIX----------------------------------------
+	if "%c%" EQU "tr" (	ECHO [32m
+				ECHO 0=TRIM Abilitato / 1=TRIM Disabilitato [0m
+				fsutil behavior query DisableDeleteNotify
+			   )
+	if "%c%" EQU "TR" (	ECHO [32m
+				ECHO 0=TRIM Abilitato / 1= TRIM Disabilitato [0m
+				fsutil behavior query DisableDeleteNotify
+			   )
+
 	::----EXTRA--------------------------------------
 	if "%c%" EQU "I" test&cls
 	if "%c%" EQU "i" test&cls
@@ -330,27 +342,12 @@ ECHO 			*************************************************************
 	if "%c%" EQU "e" test&cls
 	if "%c%" EQU "E" Goto :easterEgg
 	if "%c%" EQU "e" Goto :easterEgg
+	
+	::----ERRORI-------------------------------------
+	if "%c%" EQU "," ECHO [43m[ERRORE][0m - Comando non ammesso - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+
 	::----END----------------------------------------
 	if %c%==0 Goto :end
-	::----PAG2 UTILITY--------------------------------------
-	if "%c%" EQU "Q1" START %l_amd%
-	if "%c%" EQU "q1" START %l_amd%
-	if "%c%" EQU "Q2" START %l_nvidia%
-	if "%c%" EQU "q2" START %l_nvidia%
-	if "%c%" EQU "Q3" START %l_kms1%
-	if "%c%" EQU "q3" START %l_kms1%
-	if "%c%" EQU "Q4" START %l_kms2%
-	if "%c%" EQU "q4" START %l_kms2%
-	if "%c%" EQU "WU1" Goto :wureset
-	if "%c%" EQU "wu1" Goto :wureset
-	if "%c%" EQU "wu2" ECHO Non ancora implementato
-	if "%c%" EQU "wi2" ECHO Non ancora implementato
-	if "%c%" EQU "WS1" Goto :wsreset
-	if "%c%" EQU "ws1" Goto :wsreset
-	if "%c%" EQU "i" test&cls
-	if "%c%" EQU "I" Goto :information
-	if "%c%" EQU "i" Goto :information
-	if "%c%" EQU "C" test&cls
 
 	Goto :letsgo
 
@@ -419,7 +416,7 @@ ECHO 			*************************************************************
 	IF EXIST C:\Users\%username%\Downloads\%e_player% ECHO Installer di [31mVLC[0m cancellato dal disco C
 	IF EXIST C:\Users\%username%\Downloads\%e_player% DEL C:\Users\%username%\Downloads\%e_player%
 	IF %player%==1 Goto :letsgo
-        IF NOT EXIST D:\Download\%e_player%(
+        IF NOT EXIST D:\Download\%e_player% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_player% ECHO [43m[Attenzione][0m - L'installer di [31mVLC[0m non esiste
 	)
 	Goto :letsgo
@@ -813,8 +810,8 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.2.3 		 *
-	ECHO 	    *		  Codename = Glorious Owl		*
+	ECHO 	   *		     Versione = v.0.2.4 		 *
+	ECHO 	    *		  Codename = Glorious Elephant		*
 	ECHO 	     *		 Ultima Release = 09/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m

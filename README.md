@@ -13,14 +13,15 @@ An useful script (written in Batch) for Windows to download and install programs
 </div>
 
 ## What program is supported?
-**Web Browser** = Firefox (Last Version) + Tor (Last Version)<br/> 
+**Web Browser** = Firefox (Last Version) + Tor (Last Version)<br/>
 Why? Because Firefox is a very good open-source browser. The latest version is always the most recommended.<br/>
 Tor can be used for gain more privacy!
 
-**Movie Player** = VLC x64 (v2.2.8)<br/>
-Why? Because v3 has many bug IMHO.
+**Movie Player** = VLC x64 (v2.2.8) + Spotify (Last Version)<br/>
+Why? Because VLC v3 has many bug IMHO.<br/>
+Spotify is one of much used player
 
-**RAR** = WinRAR x64 (v5.9.1)<br/>
+**RAR** = WinRAR x64 (Last Version)<br/>
 Why? Because it's an excellent and performing program.
 
 **Downloader** = JDownloader 2 (Last Version)<br/>
@@ -32,7 +33,7 @@ Why? Because isn't heavy and does its job!
 **Remote Desktop** = TeamViewer (Last Version)<br/>
 Why? Is a powerful tool! I'm feel protected with this.
 
-**Music** = Mp3tag (Last Version) + Spek (v0.8.2)<br/>
+**Music** = Mp3tag (Last Version) + Spek (Last Version)<br/>
 Why? Mp3tag because it's easy-to-use and has an User Friendly UI<br/>
 Spek because is the best Acoustic Spectrum Analyser which work with every file and is super light!
 
@@ -51,11 +52,14 @@ Why? Because it's simple and work fine!
 **Games** = Steam Client (Last Version) + Epic Games (Last Version)<br/>
 Why? Because are the most popular game library among players!
 
+**PC Monitor** = MSI Afterburner (Last Version)<br/>
+Why? Because is a "must have" application for who wants test the performance of their own pc!<br/>
+
 **PlayStation** = PlayStation Now (Last Version)<br/>
 Why? Because is an amazing services!
 
-**PC Monitor** = MSI Afterburner (Last Version)<br/>
-Why? Because is a "must have" application for who wants test the performance of their own pc!<br/>
+**Controller** = DS4Windows (Last Version)<br/>
+Why? Good controller driver for PS4 controller
 
 **Text Editor** = Atom (Last Version) + Notepad++ (Last Version)<br/>
 Why? Atom it's a perfect fast editor high customizable!<br/>
@@ -67,6 +71,7 @@ RocketDock is a "Mac Dock-like" really good!
 
 ## Will you give support to other programs?
 Of couse! I'm working on it!
+Do you have a request? Open an issue, or write me!
 
 ## What functionality is supported?
 + AMD / NVIDIA video driver fast link
