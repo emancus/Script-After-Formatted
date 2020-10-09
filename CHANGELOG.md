@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.2.2 - Glorious Owl
  - v.0.2.2 - Glorious Monkey
  - v.0.2.1 - Glorious Fox
  - v.0.2.0 - Glorious Dingo
@@ -17,6 +18,9 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.2.2 - Glorious Owl
++ Add support to "MSI Afterburner"
+
 ### v.0.2.2 - Glorious Monkey
 + Add support to "PlayStation Now"
 

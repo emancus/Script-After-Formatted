@@ -54,6 +54,9 @@ Why? Because are the most popular game library among players!
 **PlayStation** = PlayStation Now (Last Version)<br/>
 Why? Because is an amazing services!
 
+**PC Monitor** = MSI Afterburner (Last Version)<br/>
+Why? Because is a "must have" application for who wants test the performance of their own pc!<br/>
+
 **Text Editor** = Atom (Last Version) + Notepad++ (Last Version)<br/>
 Why? Atom it's a perfect fast editor high customizable!<br/>
 Notepad++ is a valid alternative

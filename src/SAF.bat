@@ -30,6 +30,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3404/Rainmeter-4.4-r3404-beta.exe
 	SET l_rocket=https://punklabs.com/downloads/RocketDock-v1.3.5.exe
 	SET l_psnow=https://download-psnow.playstation.com/downloads/psnow/pc/latest
+	SET l_afterburner=http://download.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip
 	SET l_amd=https://www.amd.com/en/support
 	SET l_nvidia=https://www.nvidia.it/Download/index.aspx?lang=it
 	SET l_kms1=https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
@@ -125,6 +126,7 @@ ECHO 			*************************************************************
 	ECHO [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2
 	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
+	ECHO [36mPC Monitor[0m	A1) MSI Afterburner
 	ECHO [36mText Editor[0m	E1) Atom x64		  E2) Atom 		E3) Atom installer
 	ECHO			E4) Notepad++ x64	  E5) Notepad++ 	E6) Notepad installer
 	ECHO			E7) Lista pacchetti aggiuntivi Atom
@@ -269,6 +271,9 @@ ECHO 			*************************************************************
 	if "%c%" EQU "g8" Goto :psnow
 	if "%c%" EQU "G9" Goto :delpsnow
 	if "%c%" EQU "g9" Goto :delpsnow
+	::----PC MONITOR---------------------------------
+	if "%c%" EQU "A1" START %l_afterburner%
+	if "%c%" EQU "a1" START %l_afterburner%
 	::----EDITOR-------------------------------------
 	if "%c%" EQU "E1" START %l_atom%
 	if "%c%" EQU "e1" START %l_atom%
@@ -808,9 +813,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.2.2 		 *
-	ECHO 	    *		  Codename = Glorious Monkey		*
-	ECHO 	     *		 Ultima Release = 05/10/2020	       *
+	ECHO 	   *		     Versione = v.0.2.3 		 *
+	ECHO 	    *		  Codename = Glorious Owl		*
+	ECHO 	     *		 Ultima Release = 09/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
