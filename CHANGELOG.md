@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.3.0 - Dancing Flamingo
  - v.0.2.4 - Glorious Elephant
  - v.0.2.3 - Glorious Owl
  - v.0.2.2 - Glorious Monkey
@@ -19,6 +20,13 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.3.0 - Dancing Flamingo
++ Added support to "Spotify"
++ Delete functionality for zip files
++ "Delete all" now delete all the zip files
++ Bugfix
++ DebugRoom improved
+
 ### v.0.2.4 - Glorious Elephant
 + Added support to "DS4Windows"
 + Code cleaned

@@ -17,11 +17,11 @@ An useful script (written in Batch) for Windows to download and install programs
 Why? Because Firefox is a very good open-source browser. The latest version is always the most recommended.<br/>
 Tor can be used for gain more privacy!
 
-**Movie Player** = VLC x64 (v2.2.8) + Spotify (Last Version)<br/>
+**Multimedia Player** = VLC x64 (v2.2.8) + Spotify (Last Version)<br/>
 Why? Because VLC v3 has many bug IMHO.<br/>
 Spotify is one of much used player
 
-**RAR** = WinRAR x64 (Last Version)<br/>
+**Compression** = WinRAR x64 (Last Version)<br/>
 Why? Because it's an excellent and performing program.
 
 **Downloader** = JDownloader 2 (Last Version)<br/>
@@ -49,11 +49,11 @@ Why? Because it's work fine, I never had a problem with it!
 **Screen Capture** = OBS Studio (Last Version)<br/>
 Why? Because it's simple and work fine!
 
-**Games** = Steam Client (Last Version) + Epic Games (Last Version)<br/>
-Why? Because are the most popular game library among players!
-
 **PC Monitor** = MSI Afterburner (Last Version)<br/>
 Why? Because is a "must have" application for who wants test the performance of their own pc!<br/>
+
+**Games** = Steam Client (Last Version) + Epic Games (Last Version)<br/>
+Why? Because are the most popular game library among players!
 
 **PlayStation** = PlayStation Now (Last Version)<br/>
 Why? Because is an amazing services!

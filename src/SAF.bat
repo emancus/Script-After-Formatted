@@ -9,8 +9,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 
 
 ::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
-:: Variabili per i link
-	::Firefox non puo' avere una variabile link perche' ha un "&" nel link che sballa l'output sul prompt
+	::Firefox can't have a variabile link because has a "&" in the link that mess up the output on the prompt
 	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0/torbrowser-install-win64-10.0_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
 	SET l_spotify=https://download.scdn.co/SpotifySetup.exe
@@ -38,8 +37,8 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_kms1=https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
 	SET l_kms2=https://rapidgator.net/file/2fb3e86836ea43071a026138725a1fdb/KMS_360_Pro_4644.zip
 
+
 ::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
-:: Variabili per gli exe
 	SET e_firefox="Firefox Installer.exe"
 	SET e_tor=torbrowser-install-win64-10.0_it.exe
 	SET e_player=vlc-2.2.8-win64.exe
@@ -61,11 +60,19 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET e_rocket=RocketDock-v1.3.5.exe
 	SET e_psnow=PlayStationNow-11.2.2.exe
 
+
+::----------------------ZIP VARIABLE INIALIZATION----------------------------------------------------------------------------
+	SET z_spek=spek-0.8.2.zip
+	SET z_ds4windows=DS4Windows.zip
+	SET z_afterburner=MSIAfterburnerSetup.zip
+
+
 ::----------------------VARIABLE INITIALIZATION-------------------------------------------------------------------------------
-:: Non è necessario, ma permette di visualizzare le variabili inizializzate a 0 nella debug room
+:: Isn't necessary, but required for have the variable initializate to 0 in the debug room
 	SET browser=0
 	SET tor=0
 	SET player=0
+	SET spotify=0
 	SET rar=0
 	SET downloader=0
 	SET torrent=0
@@ -82,6 +89,9 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET rainmeter=0
 	SET rocket=0
 	SET psnow=0
+	SET spek=0
+	SET ds4windows=0
+	SET afterburner=0
 	SET t=0
 
 
@@ -103,12 +113,12 @@ ECHO 			*************************************************************
 	ECHO [36mBrowser[0m		B1) Firefox x64		  B2) Firefox		B3) Firefox installer
 	ECHO			B4) Tor (ITA) x64	  B5) Tor		B6) Tor installer
 	ECHO [36mPlayer[0m		P1) VLC v2.2.8 x64	  P2) VLC		P3) VLC installer
-	ECHO 		P4) Spotify
+	ECHO 		P4) Spotify		  P5) Spotify		P6) Spotify installer
 	ECHO [36mRAR[0m		R1) WinRAR v5.9.1 x64	  R2) WinRAR		R3) WinRAR installer
 	ECHO [36mDownloader[0m	J1) JDownloader 2 x64	  J2) JDown 2		J3) JDownloader 2 installer
 	ECHO [36mTorrent[0m		T1) uTorrent x86	  T2) uTorrent		T3) uTorrent installer
 	ECHO [36mMusica[0m		M1) Mp3tag v3.02 x86	  M2) Mp3tag		M3) Mp3tag installer
-	ECHO 		M4) Spek v.0.8.2 x86
+	ECHO 		M4) Spek v.0.8.2 x86				M5) Spek zip file
 	ECHO [36mDesk Remoto[0m	D1) TeamViewer x86	  D2) TeamViewer 	D3) TeamViewer installer
 	ECHO [36mFileRenamer[0m	F1) FileRen Basic v6.3 	  F2) FileRenamer	F3) FileRenamer installer
 	ECHO [36mSyncronizer[0m	S1) SyncTrayzor x64 	  S2) SyncTrayzor	S3) SyncTrayzor installer
@@ -127,11 +137,11 @@ ECHO 			*************************************************************
 	ECHO [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2
 	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
-	ECHO [36mPC Monitor[0m	A1) MSI Afterburner
+	ECHO [36mPC Monitor[0m	A1) MSI Afterburner				A2) MSI Afterburner zip file
 	ECHO [36mGiochi[0m		G1) Steam Client x86	  G2) Steam 		G3) Steam installer
 	ECHO			G4) Epic Games	  	  G5) Epic Games 	G6) Epic Games installer
 	ECHO [36mPlaystation[0m	G7) PlayStation Now	  G8) PlayStation Now	G9) PlayStation Now installer
-	ECHO [36mController[0m	D4) DS4Windows
+	ECHO [36mController[0m	D4) DS4Windows					D5) DS4Windows zip file
 	ECHO [36mText Editor[0m	E1) Atom x64		  E2) Atom 		E3) Atom installer
 	ECHO			E4) Notepad++ x64	  E5) Notepad++ 	E6) Notepad installer
 	ECHO			E7) Lista pacchetti aggiuntivi Atom
@@ -180,6 +190,10 @@ ECHO 			*************************************************************
 	if "%c%" EQU "p3" Goto :delplayer
 	if "%c%" EQU "P4" START %l_spotify%		
 	if "%c%" EQU "p4" START %l_spotify%
+	if "%c%" EQU "P5" Goto :spotify	
+	if "%c%" EQU "p5" Goto :spotify
+	if "%c%" EQU "P6" Goto :delspotify			
+	if "%c%" EQU "p6" Goto :delspotify
 	if "%c%" EQU "R1" START %l_rar%			::----RAR----------------------------------------
 	if "%c%" EQU "r1" START %l_rar%
 	if "%c%" EQU "R2" Goto :rar
@@ -206,6 +220,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "m3" Goto :delmusic
 	if "%c%" EQU "M4" START %l_spek%
 	if "%c%" EQU "m4" START %l_spek%
+	if "%c%" EQU "M5" Goto :delspek
+	if "%c%" EQU "m5" Goto :delspek
 	if "%c%" EQU "D1" START %l_remoto%		::----DESKTOP REMOTO-----------------------------
 	if "%c%" EQU "d1" START %l_remoto%
 	if "%c%" EQU "D2" Goto :remoto
@@ -238,6 +254,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "O3" Goto :delcapture
 	if "%c%" EQU "A1" START %l_afterburner%		::----PC MONITOR---------------------------------
 	if "%c%" EQU "a1" START %l_afterburner%
+	if "%c%" EQU "A2" Goto :delafterburner
+	if "%c%" EQU "a2" Goto :delafterburner
 	if "%c%" EQU "G1" START %l_steam%		::----GIOCHI-------------------------------------
 	if "%c%" EQU "g1" START %l_steam%
 	if "%c%" EQU "G2" Goto :steam
@@ -258,6 +276,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "g9" Goto :delpsnow
 	if "%c%" EQU "D4" START %l_ds4windows%		::----CONTROLLER---------------------------------
 	if "%c%" EQU "d4" START %l_ds4windows%
+	if "%c%" EQU "D5" Goto :delds4windows
+	if "%c%" EQU "d5" Goto :delds4windows
 	if "%c%" EQU "E1" START %l_atom%		::----EDITOR-------------------------------------
 	if "%c%" EQU "e1" START %l_atom%
 	if "%c%" EQU "E2" Goto :atom
@@ -420,6 +440,28 @@ ECHO 			*************************************************************
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_player% ECHO [43m[Attenzione][0m - L'installer di [31mVLC[0m non esiste
 	)
 	Goto :letsgo
+:spotify
+	IF EXIST D:\Download\%e_spotify% ECHO Installazione di [31mSpotify[0m partita dal disco D
+	IF EXIST D:\Download\%e_spotify% START D:\Download\%e_spotify%
+	IF EXIST D:\Download\%e_spotify% Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\%e_spotify% ECHO Installazione di [31mSpotify[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_spotify% START C:\Users\%username%\Downloads\%e_spotify%
+	IF EXIST C:\Users\%username%\Downloads\%e_spotify% Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mSpotify[0m non esiste
+	Goto :letsgo
+:delspotify
+	set spotify=0
+	IF EXIST D:\Download\%e_spotify% SET spotify=1
+	IF EXIST D:\Download\%e_spotify% ECHO Installer di [31mSpotify[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_spotify% DEL D:\Download\%e_spotify%
+	IF EXIST C:\Users\%username%\Downloads\%e_spotify% SET spotify=1
+	IF EXIST C:\Users\%username%\Downloads\%e_spotify% ECHO Installer di [31mSpotify[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_spotify% DEL C:\Users\%username%\Downloads\%e_spotify%
+	IF %spotify%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\%e_spotify% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_spotify% ECHO [43m[Attenzione][0m - L'installer di [31mSpotify[0m non esiste
+	)
+	Goto :letsgo
 ::----------------------RAR------------
 :rar
 	IF EXIST D:\Download\%e_rar% ECHO Installazione di [31mWinRAR[0m partita dal disco D
@@ -434,7 +476,7 @@ ECHO 			*************************************************************
 	set rar=0
 	IF EXIST D:\Download\%e_rar% SET rar=1
 	IF EXIST D:\Download\%e_rar% ECHO Installer di [31mWinRAR[0m cancellato dal disco D
-	IF EXIST D:\Download\%e_rar% DEL D:\Download\%e_player%
+	IF EXIST D:\Download\%e_rar% DEL D:\Download\%e_rar%
 	IF EXIST C:\Users\%username%\Downloads\%e_rar% SET rar=1
 	IF EXIST C:\Users\%username%\Downloads\%e_rar% ECHO Installer di [31mWinRAR[0m cancellato dal disco C
 	IF EXIST C:\Users\%username%\Downloads\%e_rar% DEL C:\Users\%username%\Downloads\%e_rar%
@@ -510,6 +552,19 @@ ECHO 			*************************************************************
 	IF %music%==1 Goto :letsgo
         IF NOT EXIST D:\Download\%e_music% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_music% ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
+	)
+	Goto :letsgo
+:delspek
+	set spek=0
+	IF EXIST D:\Download\%z_spek% SET spek=1
+	IF EXIST D:\Download\%z_spek% ECHO Il file zip di [31mSpek[0m cancellato dal disco D
+	IF EXIST D:\Download\%z_spek% DEL D:\Download\%z_spek%
+	IF EXIST C:\Users\%username%\Downloads\%z_spek% SET spek=1
+	IF EXIST C:\Users\%username%\Downloads\%z_spek% ECHO Il file zip di [31mSpek[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%z_spek% DEL C:\Users\%username%\Downloads\%z_spek%
+	IF %spek%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\%z_spek% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%z_spek% ECHO [43m[Attenzione][0m - Il file zip di [31mSpek[0m non esiste
 	)
 	Goto :letsgo
 ::----------------------REMOTO----
@@ -627,6 +682,20 @@ ECHO 			*************************************************************
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_capture% ECHO [43m[Attenzione][0m - L'installer di [31mOBS Studio[0m non esiste
 	)
 	Goto :letsgo
+:---------------------PC Monitor---
+:delafterburner
+	set afterburner=0
+	IF EXIST D:\Download\%z_afterburner% SET afterburner=1
+	IF EXIST D:\Download\%z_afterburner% ECHO Il file zip di [31mMSI Afterburner[0m cancellato dal disco D
+	IF EXIST D:\Download\%z_afterburner% DEL D:\Download\%z_afterburner%
+	IF EXIST C:\Users\%username%\Downloads\%z_afterburner% SET afterburner=1
+	IF EXIST C:\Users\%username%\Downloads\%z_afterburner% ECHO Il file zip di [31mMSI Afterburner[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%z_afterburner% DEL C:\Users\%username%\Downloads\%z_afterburner%
+	IF %afterburner%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\%z_afterburner% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%z_afterburner% ECHO [43m[Attenzione][0m - Il file zip di [31mMSI Afterburner[0m non esiste
+	)
+	Goto :letsgo
 ::----------------------GAME-----
 :steam
 	IF EXIST D:\Download\%e_steam% ECHO Installazione di [31mSteam[0m partita dal disco D
@@ -694,6 +763,20 @@ ECHO 			*************************************************************
 	IF %psnow%==1 Goto :letsgo
         IF NOT EXIST D:\Download\%e_psnow% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_psnow% ECHO [43m[Attenzione][0m - L'installer di [31mPlayStation Now[0m non esiste
+	)
+	Goto :letsgo
+::----------------------CONTROLLER-
+:delds4windows
+	set ds4windows=0
+	IF EXIST D:\Download\%z_ds4windows% SET ds4windows=1
+	IF EXIST D:\Download\%z_ds4windows% ECHO Il file zip di [31mDS4Windows[0m cancellato dal disco D
+	IF EXIST D:\Download\%z_ds4windows% DEL D:\Download\%z_ds4windows%
+	IF EXIST C:\Users\%username%\Downloads\%z_ds4windows% SET ds4windows=1
+	IF EXIST C:\Users\%username%\Downloads\%z_ds4windows% ECHO Il file zip di [31mDS4Windows[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%z_ds4windows% DEL C:\Users\%username%\Downloads\%z_ds4windows%
+	IF %ds4windows%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\%z_ds4windows% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%z_ds4windows% ECHO [43m[Attenzione][0m - Il file zip di [31mDS4Windows[0m non esiste
 	)
 	Goto :letsgo
 ::----------------------EDITOR-----
@@ -810,9 +893,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.2.4 		 *
-	ECHO 	    *		  Codename = Glorious Elephant		*
-	ECHO 	     *		 Ultima Release = 09/10/2020	       *
+	ECHO 	   *		     Versione = v.0.3.0 		 *
+	ECHO 	    *		 Codename = Dancing Flamingo		*
+	ECHO 	     *		 Ultima Release = 10/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
@@ -826,14 +909,14 @@ Goto :letsgo
 	ECHO 			!	  	  HidroSaphire - DEBUG ROOM	            !
 	ECHO 			!***********************************************************!
 	ECHO 	 		!							    !
-	ECHO 	  		! Variabili:						    !
 	ECHO 	  		! 	browser=%browser%	player=%player%	rar=%rar%		    !
 	ECHO 	  		! 	rar=%rar%		downloader=%downloader%	torrent=%torrent%	    !
 	ECHO 	  		! 	music=%music%		file=%file%		sync=%sync%		    !
 	ECHO 	  		! 	vm=%vm%		remoto=%remoto%	tor=%tor%	 	    !
 	ECHO 	  		! 	steam=%steam%		epic=%epic%		capture=%capture%	    !
 	ECHO 	  		! 	atom=%atom%		notepad=%notepad%	rainmeter=%rainmeter%	    !
-	ECHO 	  		! 	rocket=%rocket%	psnow=%psnow%				    !
+	ECHO 	  		! 	rocket=%rocket%	psnow=%psnow%		spotify=%spotify%           !
+	ECHO 	  		! 	spek=%spek%		ds4windows=%ds4windows%	afterburner=%afterburner%	    !
 	ECHO 	  		! 			    				    !
 	ECHO 	  		! 	c=%c% (choice)	t=%t%			   	    !
 	ECHO 			\___________________________________________________________/
@@ -937,6 +1020,13 @@ Goto :letsgo
 	IF NOT EXIST D:\Download\%e_player% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_player% ECHO [43m[Attenzione][0m - L'installer di [31mVLC[0m non esiste
 	)
+	IF EXIST D:\Download\%e_spotify% ECHO Installer di [31mSpotify[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_spotify% DEL D:\Download\%e_spotify%
+	IF EXIST C:\Users\%username%\Downloads\%e_spotify% ECHO Installer di [31mSpotify[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_spotify% DEL C:\Users\%username%\Downloads\%e_spotify%
+	IF NOT EXIST D:\Download\%e_spotify% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_spotify% ECHO [43m[Attenzione][0m - L'installer di [31mSpotify[0m non esiste
+	)
 	IF EXIST D:\Download\%e_rar% ECHO Installer di [31mWinRAR[0m cancellato dal disco D
 	IF EXIST D:\Download\%e_rar% DEL D:\Download\%e_player%
 	IF EXIST C:\Users\%username%\Downloads\%e_rar% ECHO Installer di [31mWinRAR[0m cancellato dal disco C
@@ -964,6 +1054,13 @@ Goto :letsgo
 	IF EXIST C:\Users\%username%\Downloads\%e_music% DEL C:\Users\%username%\Downloads\%e_music%
 	IF NOT EXIST D:\Download\%e_music% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_music% ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
+	)
+	IF EXIST D:\Download\%z_spek% ECHO Il file zip di [31mSpek[0m cancellato dal disco D
+	IF EXIST D:\Download\%z_spek% DEL D:\Download\%z_spek%
+	IF EXIST C:\Users\%username%\Downloads\%z_spek% ECHO Il file zip di [31mSpek[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%z_spek% DEL C:\Users\%username%\Downloads\%z_spek%
+        IF NOT EXIST D:\Download\%z_spek% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%z_spek% ECHO [43m[Attenzione][0m - Il file zip di [31mSpek[0m non esiste
 	)
 	IF EXIST D:\Download\%e_remoto% ECHO Installer di [31mTeamViewer[0m cancellato dal disco D
 	IF EXIST D:\Download\%e_remoto% DEL D:\Download\%e_remoto%
@@ -1000,6 +1097,13 @@ Goto :letsgo
 	IF NOT EXIST D:\Download\%e_capture% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_capture% ECHO [43m[Attenzione][0m - L'installer di [31mOBS Studio[0m non esiste
 	)
+	IF EXIST D:\Download\%z_afterburner% ECHO Il file zip di [31mMSI Afterburner[0m cancellato dal disco D
+	IF EXIST D:\Download\%z_afterburner% DEL D:\Download\%z_afterburner%
+	IF EXIST C:\Users\%username%\Downloads\%z_afterburner% ECHO Il file zip di [31mMSI Afterburner[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%z_afterburner% DEL C:\Users\%username%\Downloads\%z_afterburner%
+        IF NOT EXIST D:\Download\%z_afterburner% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%z_afterburner% ECHO [43m[Attenzione][0m - Il file zip di [31mMSI Afterburner[0m non esiste
+	)
 	IF EXIST D:\Download\%e_steam% ECHO Installer di [31mSteam[0m cancellato dal disco D
 	IF EXIST D:\Download\%e_steam% DEL D:\Download\%e_steam%
 	IF EXIST C:\Users\%username%\Downloads\%e_steam% ECHO Installer di [31mSteam[0m cancellato dal disco C
@@ -1020,6 +1124,13 @@ Goto :letsgo
 	IF EXIST C:\Users\%username%\Downloads\%e_psnow% DEL C:\Users\%username%\Downloads\%e_psnow%
         IF NOT EXIST D:\Download\%e_psnow% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_psnow% ECHO [43m[Attenzione][0m - L'installer di [31mPlayStation Now[0m non esiste
+	)
+	IF EXIST D:\Download\%z_ds4windows% ECHO Il file zip di [31mDS4Windows[0m cancellato dal disco D
+	IF EXIST D:\Download\%z_ds4windows% DEL D:\Download\%z_ds4windows%
+	IF EXIST C:\Users\%username%\Downloads\%z_ds4windows% ECHO Il file zip di [31mDS4Windows[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%z_ds4windows% DEL C:\Users\%username%\Downloads\%z_ds4windows%
+        IF NOT EXIST D:\Download\%z_ds4windows% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%z_ds4windows% ECHO [43m[Attenzione][0m - Il file zip di [31mDS4Windows[0m non esiste
 	)
 	IF EXIST D:\Download\%e_atom% ECHO Installer di [31mAtom[0m cancellato dal disco D
 	IF EXIST D:\Download\%e_atom% DEL D:\Download\%e_atom%
