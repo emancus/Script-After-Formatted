@@ -36,7 +36,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_nvidia=https://www.nvidia.it/Download/index.aspx?lang=it
 	SET l_kms1=https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
 	SET l_kms2=https://rapidgator.net/file/2fb3e86836ea43071a026138725a1fdb/KMS_360_Pro_4644.zip
-
+	SET l_codeblocks=https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-20.03mingw-setup.exe
 
 ::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET e_firefox="Firefox Installer.exe"
@@ -59,6 +59,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET e_rainmeter=Rainmeter-4.4-r3404-beta.exe
 	SET e_rocket=RocketDock-v1.3.5.exe
 	SET e_psnow=PlayStationNow-11.2.2.exe
+	SET e_codeblocks=codeblocks-20.03mingw-setup.exe
 
 
 ::----------------------ZIP VARIABLE INIALIZATION----------------------------------------------------------------------------
@@ -92,7 +93,9 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET spek=0
 	SET ds4windows=0
 	SET afterburner=0
+	SET codeblocks=0
 	SET t=0
+	SET choicenic=0
 
 
 ::----------------------PRINT TITLE-------------------------------------------------------------------------------------------
@@ -109,22 +112,22 @@ ECHO 			*************************************************************
 	ECHO [32m--------------------------------------------[Navigazione]--------------------------------------------
 	ECHO [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2
 	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
-	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
-	ECHO [36mBrowser[0m		B1) Firefox x64		  B2) Firefox		B3) Firefox installer
-	ECHO			B4) Tor (ITA) x64	  B5) Tor		B6) Tor installer
-	ECHO [36mPlayer[0m		P1) VLC v2.2.8 x64	  P2) VLC		P3) VLC installer
-	ECHO 		P4) Spotify		  P5) Spotify		P6) Spotify installer
-	ECHO [36mRAR[0m		R1) WinRAR v5.9.1 x64	  R2) WinRAR		R3) WinRAR installer
-	ECHO [36mDownloader[0m	J1) JDownloader 2 x64	  J2) JDown 2		J3) JDownloader 2 installer
-	ECHO [36mTorrent[0m		T1) uTorrent x86	  T2) uTorrent		T3) uTorrent installer
-	ECHO [36mMusica[0m		M1) Mp3tag v3.02 x86	  M2) Mp3tag		M3) Mp3tag installer
-	ECHO 		M4) Spek v.0.8.2 x86				M5) Spek zip file
-	ECHO [36mDesk Remoto[0m	D1) TeamViewer x86	  D2) TeamViewer 	D3) TeamViewer installer
-	ECHO [36mFileRenamer[0m	F1) FileRen Basic v6.3 	  F2) FileRenamer	F3) FileRenamer installer
-	ECHO [36mSyncronizer[0m	S1) SyncTrayzor x64 	  S2) SyncTrayzor	S3) SyncTrayzor installer
-	ECHO [36mVM[0m		V1) VirtualBox v6.1.14    V2) VirtualBox	V3) VirtualBox Installer
-	ECHO [36mScreen Capt[0m	O1) OBS Studio x64        O2) OBS Studio 	O3) OBS Studio installer
-	ECHO									TT) Cancella tutti
+	ECHO [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
+	ECHO [36mBrowser[0m		B1) Firefox x64		      B2) Firefox	      B3) Firefox installer
+	ECHO			B4) Tor (ITA) x64	      B5) Tor		      B6) Tor installer
+	ECHO [36mPlayer[0m		P1) VLC v2.2.8 x64	      P2) VLC		      P3) VLC installer
+	ECHO 		P4) Spotify		      P5) Spotify	      P6) Spotify installer
+	ECHO [36mRAR[0m		R1) WinRAR v5.9.1 x64	      R2) WinRAR	      R3) WinRAR installer
+	ECHO [36mDownloader[0m	J1) JDownloader 2 x64	      J2) JDown 2	      J3) JDownloader 2 installer
+	ECHO [36mTorrent[0m		T1) uTorrent x86	      T2) uTorrent	      T3) uTorrent installer
+	ECHO [36mMusica[0m		M1) Mp3tag v3.02 x86	      M2) Mp3tag	      M3) Mp3tag installer
+	ECHO 		M4) Spek v.0.8.2 x86	      --------		      M5) Spek zip file
+	ECHO [36mDesk Remoto[0m	D1) TeamViewer x86	      D2) TeamViewer 	      D3) TeamViewer installer
+	ECHO [36mFileRenamer[0m	F1) FileRen Basic v6.3 	      F2) FileRenamer	      F3) FileRenamer installer
+	ECHO [36mSyncronizer[0m	S1) SyncTrayzor x64 	      S2) SyncTrayzor	      S3) SyncTrayzor installer
+	ECHO [36mVM[0m		V1) VirtualBox v6.1.14        V2) VirtualBox	      V3) VirtualBox Installer
+	ECHO [36mScreen Capt[0m	O1) OBS Studio x64            O2) OBS Studio 	      O3) OBS Studio installer
+	ECHO									      TT) Cancella tutti
 	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO 0) Esci
@@ -136,25 +139,27 @@ ECHO 			*************************************************************
 	ECHO [32m--------------------------------------------[Navigazione]--------------------------------------------
 	ECHO [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2
 	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
-	ECHO [36m		------Scarica------	  ----Installa---	----Cancella Installer----[0m
-	ECHO [36mPC Monitor[0m	A1) MSI Afterburner				A2) MSI Afterburner zip file
-	ECHO [36mGiochi[0m		G1) Steam Client x86	  G2) Steam 		G3) Steam installer
-	ECHO			G4) Epic Games	  	  G5) Epic Games 	G6) Epic Games installer
-	ECHO [36mPlaystation[0m	G7) PlayStation Now	  G8) PlayStation Now	G9) PlayStation Now installer
-	ECHO [36mController[0m	D4) DS4Windows					D5) DS4Windows zip file
-	ECHO [36mText Editor[0m	E1) Atom x64		  E2) Atom 		E3) Atom installer
-	ECHO			E4) Notepad++ x64	  E5) Notepad++ 	E6) Notepad installer
+	ECHO [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
+	ECHO [36mPC Monitor[0m	A1) MSI Afterburner	      --------		      A2) MSI Afterburner zip file
+	ECHO [36mGiochi[0m		G1) Steam Client x86	      G2) Steam 	      G3) Steam installer
+	ECHO			G4) Epic Games	  	      G5) Epic Games 	      G6) Epic Games installer
+	ECHO [36mPlaystation[0m	G7) PlayStation Now	      G8) PlayStation Now     G9) PlayStation Now installer
+	ECHO [36mController[0m	D4) DS4Windows		      --------	  	      D5) DS4Windows zip file
+	ECHO [36mText Editor[0m	E1) Atom x64		      E2) Atom 		      E3) Atom installer
+	ECHO			E4) Notepad++ x64	      E5) Notepad++ 	      E6) Notepad installer
 	ECHO			E7) Lista pacchetti aggiuntivi Atom
-	ECHO [36mCustomization[0m	C1) Rainmeter 4.4 Beta	  C2) Rainmeter 	C3) Rainmeter installer
-	ECHO 		C4) RocketDock v1.3.5 x86 C5) RocketDock 	C6) RocketDock installer
-	ECHO									TT) Cancella tutti
+	ECHO [36mDeveloper[0m	L1) CodeBlocks + Mingw x64    L2) Code::Blocks	      L3) Code::Blocks installer
+	ECHO [36mCustomization[0m	C1) Rainmeter 4.4 Beta	      C2) Rainmeter 	      C3) Rainmeter installer
+	ECHO 		C4) RocketDock v1.3.5 x86     C5) RocketDock 	      C6) RocketDock installer
+	ECHO									      TT) Cancella tutti
 	ECHO [32m---------------------------------------------[Utility]----------------------------------------------
-	ECHO [36mLink[0m		Q1) Driver video AMD	  	Q2) Driver Video NVIDIA
-	ECHO			Q3) KMS 360 Pro 4644 Link1	Q4) KMS 360 Pro 4644 Link2
-	ECHO [36mUAC[0m		U1) Disabilita UAC	  U2) Abilita UAC
+	ECHO [36mLink[0m		Q1) Driver video AMD	      Q2) Driver Video NVIDIA
+	ECHO			Q3) KMS 360 Pro 4644 Link1    Q4) KMS 360 Pro 4644 Link2
+	ECHO [36mUAC[0m		U1) Disabilita UAC	      U2) Abilita UAC
 	ECHO [36mMix[0m		TR) Controllo TRIM
-	ECHO [36mWin Update[0m	WU1) WU Riconfig	  WU2) WU hard-reset
+	ECHO [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset
 	ECHO [36mWin Store[0m	WS1) WS Reset
+	ECHO [36mNetwork[0m		NR1) Reset scheda di rete     NR2) TODO
 	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO 0) Esci
@@ -294,6 +299,12 @@ ECHO 			*************************************************************
 	if "%c%" EQU "E7" Goto :atomInfoPacket
 	if "%c%" EQU "e7" test&cls
 	if "%c%" EQU "e7" Goto :atomInfoPacket
+	if "%c%" EQU "L1" START %l_codeblocks%		::----DEVELOPER-----------------------------------
+	if "%c%" EQU "l1" START %l_codeblocks%
+	if "%c%" EQU "L2" Goto :codeblocks
+	if "%c%" EQU "l2" Goto :codeblocks
+	if "%c%" EQU "L3" Goto :delcodeblocks
+	if "%c%" EQU "l3" Goto :delcodeblocks
 	if "%c%" EQU "c1" START %l_rainmeter%		::----CUSTOMIZATION-------------------------------
 	if "%c%" EQU "C1" START %l_rainmeter%
 	if "%c%" EQU "c2" Goto :rainmeter
@@ -326,6 +337,10 @@ ECHO 			*************************************************************
 	if "%c%" EQU "wi2" ECHO Non ancora implementato
 	if "%c%" EQU "WS1" Goto :wsreset
 	if "%c%" EQU "ws1" Goto :wsreset
+	if "%c%" EQU "NR1" Goto :nicreset
+	if "%c%" EQU "nr1" Goto :nicreset
+	if "%c%" EQU "NR2" ECHO Non ancora implementato
+	if "%c%" EQU "nr2" ECHO Non ancora implementato
 	::----UAC----------------------------------------
 	if "%c%" EQU "U1" ECHO Ancora non implementato
 	if "%c%" EQU "u1" ECHO Ancora non implementato
@@ -838,6 +853,29 @@ ECHO 			*************************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 Goto :letsgo
+::----------------------DEVELOPER------------
+:codeblocks
+	IF EXIST D:\Download\%e_codeblocks% ECHO Installazione di [31mCode::Blocks + Mingw[0m partita dal disco D
+	IF EXIST D:\Download\%e_codeblocks% START D:\Download\%e_codeblocks%
+	IF EXIST D:\Download\%e_codeblocks% Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\%e_codeblocks% ECHO Installazione di [31mCode::Blocks + Mingw[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_codeblocks% START C:\Users\%username%\Downloads\%e_codeblocks%
+	IF EXIST C:\Users\%username%\Downloads\%e_codeblocks% Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mCode::Blocks + Mingw[0m non esiste
+	Goto :letsgo
+:delcodeblocks
+	set codeblocks=0
+	IF EXIST D:\Download\%e_codeblocks% SET codeblocks=1
+	IF EXIST D:\Download\%e_codeblocks% ECHO Installer di [31mCode::Blocks + Mingw[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_codeblocks% DEL D:\Download\%e_codeblocks%
+	IF EXIST C:\Users\%username%\Downloads\%e_codeblocks% SET codeblocks=1
+	IF EXIST C:\Users\%username%\Downloads\%e_codeblocks% ECHO Installer di [31mCode::Blocks + Mingw[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_codeblocks% DEL C:\Users\%username%\Downloads\%e_codeblocks%
+	IF %codeblocks%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\%e_codeblocks% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_codeblocks% ECHO [43m[Attenzione][0m - L'installer di [31mCode::Blocks + Mingw[0m non esiste
+	)
+	Goto :letsgo
 ::----------------------CUSTOMIZATION-----
 :rainmeter
 	IF EXIST D:\Download\%e_rainmeter% ECHO Installazione di [31mRainmeter[0m partita dal disco D
@@ -893,9 +931,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.3.0 		 *
-	ECHO 	    *		 Codename = Dancing Flamingo		*
-	ECHO 	     *		 Ultima Release = 10/10/2020	       *
+	ECHO 	   *		     Versione = v.0.3.1 		 *
+	ECHO 	    *		 Codename = Dancing Spider		*
+	ECHO 	     *		 Ultima Release = 15/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
@@ -917,8 +955,9 @@ Goto :letsgo
 	ECHO 	  		! 	atom=%atom%		notepad=%notepad%	rainmeter=%rainmeter%	    !
 	ECHO 	  		! 	rocket=%rocket%	psnow=%psnow%		spotify=%spotify%           !
 	ECHO 	  		! 	spek=%spek%		ds4windows=%ds4windows%	afterburner=%afterburner%	    !
+	ECHO 	  		! 	codeblocks=%codeblocks%					    !
 	ECHO 	  		! 			    				    !
-	ECHO 	  		! 	c=%c% (choice)	t=%t%			   	    !
+	ECHO 	  		! 	c=%c% (choice)	t=%t%		choicenic=%choicenic%	    !
 	ECHO 			\___________________________________________________________/
 	ECHO [36m
 	ECHO [36m
@@ -1146,6 +1185,13 @@ Goto :letsgo
         IF NOT EXIST D:\Download\%e_notepad% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_notepad% ECHO [43m[Attenzione][0m - L'installer di [31mNotepad++[0m non esiste
 	)
+	IF EXIST D:\Download\%e_codeblocks% ECHO Installer di [31mCode::Blocks + Mingw[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_codeblocks% DEL D:\Download\%e_codeblocks%
+	IF EXIST C:\Users\%username%\Downloads\%e_codeblocks% ECHO Installer di [31mCode::Blocks + Mingw[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_codeblocks% DEL C:\Users\%username%\Downloads\%e_codeblocks%
+	IF NOT EXIST D:\Download\%e_codeblocks% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_codeblocks% ECHO [43m[Attenzione][0m - L'installer di [31mCode::Blocks + Mingw[0m non esiste
+	)
 	IF EXIST D:\Download\%e_rainmeter% ECHO Installer di [31mRainmeter[0m cancellato dal disco D
 	IF EXIST D:\Download\%e_rainmeter% DEL D:\Download\%e_rainmeter%
 	IF EXIST C:\Users\%username%\Downloads\%e_rainmeter% ECHO Installer di [31mRainmeter[0m cancellato dal disco C
@@ -1214,6 +1260,27 @@ Goto :letsgo
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
 	Goto :letsgo
 
+::----------------------NIC RESET-----------------------
+
+:nicreset
+	test&cls
+	ECHO [43m[Attenzione][0m - Quest'operazione potrebbe richiedere i Privilegi di Amministratore
+	ECHO [0m
+	ECHO [36mElenco schede di rete disponibili[0m
+	wmic nic get name, index
+	ECHO [0m
+	SET /P choicenic=Quale [31mscheda di rete[0m vuoi resettare (inserisci il numero oppure X per tornare al menu) 
+	if /I "%choicenic%" EQU "X" test&cls
+	if /I "%choicenic%" EQU "x" test&cls	
+	if /I "%choicenic%" EQU "X" goto :menu
+	if /I "%choicenic%" EQU "x" goto :menu
+	wmic path win32_networkadapter where index=%choicenic% call disable
+	wmic path win32_networkadapter where index=%choicenic% call enable
+	Timeout /t 3
+	Goto :nicreset
+
+:nicrepair
+	::--SEE NETWORKING LINK
 
 ::----------------------END-------------------------------------------------------------------------------------------
 :end

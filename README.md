@@ -65,6 +65,9 @@ Why? Good controller driver for PS4 controller
 Why? Atom it's a perfect fast editor high customizable!<br/>
 Notepad++ is a valid alternative
 
+**Developer** = Code::Blocks + Mingw (Last Version)<br/>
+Why? Simple and good IDE
+
 **Customizatior** = Rainmeter (Beta Version) + RocketDock (Last Version)<br/>
 Why? Rainmeter is one of most used desktop customizator ever made!<br/>
 RocketDock is a "Mac Dock-like" really good!
@@ -78,6 +81,7 @@ Do you have a request? Open an issue, or write me!
 + TRIM check
 + Windows Update Reconfiguration
 + Windows Store reset
++ NIC (Network Interface Card) reset
 
 [Click Here]: https://github.com/HidroSaphire/Script-After-Formatted/archive/master.zip
 [Enrico Mancuso]: https://github.com/HidroSaphire
