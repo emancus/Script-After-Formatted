@@ -10,7 +10,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 
 ::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
 	::Firefox can't have a variabile link because has a "&" in the link that mess up the output on the prompt
-	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0/torbrowser-install-win64-10.0_it.exe
+	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.1/torbrowser-install-win64-10.0.1_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
 	SET l_spotify=https://download.scdn.co/SpotifySetup.exe
 	SET l_rar=https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-591it.exe
@@ -24,7 +24,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_remoto=https://download.teamviewer.com/full
 	SET l_steam=https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 	SET l_epic=https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi
-	SET l_capture=https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0-Full-Installer-x64.exe
+	SET l_capture=https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0.2-Full-Installer-x64.exe
 	SET l_atom=https://atom.io/download/windows_x64
 	SET l_notepad=https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.9/npp.7.9.Installer.x64.exe
 	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3404/Rainmeter-4.4-r3404-beta.exe
@@ -42,7 +42,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 
 ::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET e_firefox="Firefox Installer.exe"
-	SET e_tor=torbrowser-install-win64-10.0_it.exe
+	SET e_tor=torbrowser-install-win64-10.0.1_it.exe
 	SET e_player=vlc-2.2.8-win64.exe
 	SET e_spotify=SpotifySetup.exe
 	SET e_rar=WinRAR-x64-591it.exe
@@ -55,7 +55,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET e_remoto=TeamViewer_Setup.exe
 	SET e_steam=SteamSetup.exe
 	SET e_epic=EpicInstaller-10.18.8.msi
-	SET e_capture=OBS-Studio-26.0-Full-Installer-x64.exe
+	SET e_capture=OBS-Studio-26.0.2-Full-Installer-x64.exe
 	SET e_atom=AtomSetup-x64.exe
 	SET e_notepad=npp.7.9.Installer.x64.exe
 	SET e_rainmeter=Rainmeter-4.4-r3404-beta.exe
@@ -966,8 +966,8 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.3.2 		 *
-	ECHO 	    *		 Codename = Dancing Squirrel		*
+	ECHO 	   *		     Versione = v.0.3.3 		 *
+	ECHO 	    *		 Codename = Dancing Axolotl 		*
 	ECHO 	     *		 Ultima Release = 16/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m

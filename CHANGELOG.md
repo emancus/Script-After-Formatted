@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.3.3 - Dancing Axolotl
  - v.0.3.2 - Dancing Squirrel
  - v.0.3.1 - Dancing Spider
  - v.0.3.0 - Dancing Flamingo
@@ -22,6 +23,9 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.3.3 - Dancing Axolotl
++ Update support to "Tor" and "OBS Studio"
+
 ### v.0.3.2 - Dancing Squirrel
 + Added support to "Recuva"
 + Bugfix (correct a visual information)
