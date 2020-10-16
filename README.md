@@ -66,11 +66,15 @@ Why? Atom it's a perfect fast editor high customizable!<br/>
 Notepad++ is a valid alternative
 
 **Developer** = Code::Blocks + Mingw (Last Version)<br/>
-Why? Simple and good IDE
+Why? Simple and good IDE with a powerful compiler!
 
 **Customizatior** = Rainmeter (Beta Version) + RocketDock (Last Version)<br/>
 Why? Rainmeter is one of most used desktop customizator ever made!<br/>
 RocketDock is a "Mac Dock-like" really good!
+
+**Recovery** = Recuva (Last Version)<br/>
+Why? Recuva is the best file recovery software I ever used!
+
 
 ## Will you give support to other programs?
 Of couse! I'm working on it!
