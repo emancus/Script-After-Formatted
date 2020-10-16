@@ -37,6 +37,8 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_kms1=https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
 	SET l_kms2=https://rapidgator.net/file/2fb3e86836ea43071a026138725a1fdb/KMS_360_Pro_4644.zip
 	SET l_codeblocks=https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-20.03mingw-setup.exe
+	SET l_recuva=https://download.ccleaner.com/rcsetup153.exe?cc2020
+
 
 ::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET e_firefox="Firefox Installer.exe"
@@ -60,6 +62,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET e_rocket=RocketDock-v1.3.5.exe
 	SET e_psnow=PlayStationNow-11.2.2.exe
 	SET e_codeblocks=codeblocks-20.03mingw-setup.exe
+	SET e_recuva=rcsetup153.exe
 
 
 ::----------------------ZIP VARIABLE INIALIZATION----------------------------------------------------------------------------
@@ -94,6 +97,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET ds4windows=0
 	SET afterburner=0
 	SET codeblocks=0
+	SET recuva=0
 	SET t=0
 	SET choicenic=0
 
@@ -127,6 +131,8 @@ ECHO 			*************************************************************
 	ECHO [36mSyncronizer[0m	S1) SyncTrayzor x64 	      S2) SyncTrayzor	      S3) SyncTrayzor installer
 	ECHO [36mVM[0m		V1) VirtualBox v6.1.14        V2) VirtualBox	      V3) VirtualBox Installer
 	ECHO [36mScreen Capt[0m	O1) OBS Studio x64            O2) OBS Studio 	      O3) OBS Studio installer
+	ECHO [36mGiochi[0m		G1) Steam Client x86	      G2) Steam 	      G3) Steam installer
+	ECHO			G4) Epic Games	  	      G5) Epic Games 	      G6) Epic Games installer
 	ECHO									      TT) Cancella tutti
 	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
@@ -141,16 +147,15 @@ ECHO 			*************************************************************
 	ECHO [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
 	ECHO [36mPC Monitor[0m	A1) MSI Afterburner	      --------		      A2) MSI Afterburner zip file
-	ECHO [36mGiochi[0m		G1) Steam Client x86	      G2) Steam 	      G3) Steam installer
-	ECHO			G4) Epic Games	  	      G5) Epic Games 	      G6) Epic Games installer
 	ECHO [36mPlaystation[0m	G7) PlayStation Now	      G8) PlayStation Now     G9) PlayStation Now installer
 	ECHO [36mController[0m	D4) DS4Windows		      --------	  	      D5) DS4Windows zip file
 	ECHO [36mText Editor[0m	E1) Atom x64		      E2) Atom 		      E3) Atom installer
-	ECHO			E4) Notepad++ x64	      E5) Notepad++ 	      E6) Notepad installer
+	ECHO			E4) Notepad++ x64	      E5) Notepad++ 	      E6) Notepad++ installer
 	ECHO			E7) Lista pacchetti aggiuntivi Atom
 	ECHO [36mDeveloper[0m	L1) CodeBlocks + Mingw x64    L2) Code::Blocks	      L3) Code::Blocks installer
 	ECHO [36mCustomization[0m	C1) Rainmeter 4.4 Beta	      C2) Rainmeter 	      C3) Rainmeter installer
 	ECHO 		C4) RocketDock v1.3.5 x86     C5) RocketDock 	      C6) RocketDock installer
+	ECHO [36mRecovery[0m	H1) Recuva x64     	      H2) Recuva	      H3) Recuva installer
 	ECHO									      TT) Cancella tutti
 	ECHO [32m---------------------------------------------[Utility]----------------------------------------------
 	ECHO [36mLink[0m		Q1) Driver video AMD	      Q2) Driver Video NVIDIA
@@ -317,6 +322,12 @@ ECHO 			*************************************************************
 	if "%c%" EQU "C5" Goto :rocket
 	if "%c%" EQU "c6" Goto :delrocket
 	if "%c%" EQU "C6" Goto :delrocket
+	if "%c%" EQU "H1" START %l_recuva%		::----RECOVERY-----------------------------------
+	if "%c%" EQU "h1" START %l_recuva%
+	if "%c%" EQU "H2" Goto :recuva
+	if "%c%" EQU "h2" Goto :recuva
+	if "%c%" EQU "H3" Goto :delrecuva
+	if "%c%" EQU "h3" Goto :delrecuva
 	if "%c%" EQU "TT" Goto :deltotal		::----TOTAL--------------------------------------
 	if "%c%" EQU "tt" Goto :deltotal
 	if "%c%" EQU "Tt" Goto :deltotal
@@ -921,6 +932,30 @@ Goto :letsgo
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_rocket% ECHO [43m[Attenzione][0m - L'installer di [31mRocketDock[0m non esiste
 	)
 	Goto :letsgo
+::----------------------RECOVERY----------
+:recuva
+	IF EXIST D:\Download\%e_recuva% ECHO Installazione di [31mRecuva[0m partita dal disco D
+	IF EXIST D:\Download\%e_recuva% START D:\Download\%e_recuva%
+	IF EXIST D:\Download\%e_recuva% Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\%e_recuva% ECHO Installazione di [31mRecuva[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_recuva% START C:\Users\%username%\Downloads\%e_recuva%
+	IF EXIST C:\Users\%username%\Downloads\%e_recuva% Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mRecuva[0m non esiste
+	Goto :letsgo
+:delrecuva
+	set recuva=0
+	IF EXIST D:\Download\%e_recuva% SET recuva=1
+	IF EXIST D:\Download\%e_recuva% ECHO Installer di [31mRecuva[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_recuva% DEL D:\Download\%e_recuva%
+	IF EXIST C:\Users\%username%\Downloads\%e_recuva% SET recuva=1
+	IF EXIST C:\Users\%username%\Downloads\%e_recuva% ECHO Installer di [31mRecuva[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_recuva% DEL C:\Users\%username%\Downloads\%e_recuva%
+	IF %recuva%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\%e_recuva% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_recuva% ECHO [43m[Attenzione][0m - L'installer di [31mRecuva[0m non esiste
+	)
+	Goto :letsgo
+
 
 ::----------------------INFO-----------
 :information
@@ -931,9 +966,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.3.1 		 *
-	ECHO 	    *		 Codename = Dancing Spider		*
-	ECHO 	     *		 Ultima Release = 15/10/2020	       *
+	ECHO 	   *		     Versione = v.0.3.2 		 *
+	ECHO 	    *		 Codename = Dancing Squirrel		*
+	ECHO 	     *		 Ultima Release = 16/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
@@ -955,7 +990,7 @@ Goto :letsgo
 	ECHO 	  		! 	atom=%atom%		notepad=%notepad%	rainmeter=%rainmeter%	    !
 	ECHO 	  		! 	rocket=%rocket%	psnow=%psnow%		spotify=%spotify%           !
 	ECHO 	  		! 	spek=%spek%		ds4windows=%ds4windows%	afterburner=%afterburner%	    !
-	ECHO 	  		! 	codeblocks=%codeblocks%					    !
+	ECHO 	  		! 	codeblocks=%codeblocks%	recuva=%recuva%			    !
 	ECHO 	  		! 			    				    !
 	ECHO 	  		! 	c=%c% (choice)	t=%t%		choicenic=%choicenic%	    !
 	ECHO 			\___________________________________________________________/
@@ -1205,6 +1240,13 @@ Goto :letsgo
 	IF EXIST C:\Users\%username%\Downloads\%e_rocket% DEL C:\Users\%username%\Downloads\%e_rocket%
         IF NOT EXIST D:\Download\%e_rocket% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_rocket% ECHO [43m[Attenzione][0m - L'installer di [31mRocketDock[0m non esiste
+	)
+	IF EXIST D:\Download\%e_recuva% ECHO Installer di [31mRecuva[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_recuva% DEL D:\Download\%e_recuva%
+	IF EXIST C:\Users\%username%\Downloads\%e_recuva% ECHO Installer di [31mRecuva[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_recuva% DEL C:\Users\%username%\Downloads\%e_recuva%
+	 IF NOT EXIST D:\Download\%e_recuva% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_recuva% ECHO [43m[Attenzione][0m - L'installer di [31mRecuva[0m non esiste
 	)
 
 :endTotal

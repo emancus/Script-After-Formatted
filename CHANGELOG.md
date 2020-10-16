@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.3.2 - Dancing Squirrel
  - v.0.3.1 - Dancing Spider
  - v.0.3.0 - Dancing Flamingo
  - v.0.2.4 - Glorious Elephant
@@ -21,10 +22,14 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.3.2 - Dancing Squirrel
++ Added support to "Recuva"
++ Bugfix (correct a visual information)
++ Better UI Layout
+
 ### v.0.3.1 - Dancing Spider
 + Added support to "Code::Blocks + Mingw x64"
 + Added NIC Reset functionality
-+ Better UI Layout
 
 ### v.0.3.0 - Dancing Flamingo
 + Added support to "Spotify"
