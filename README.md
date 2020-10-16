@@ -86,6 +86,7 @@ Do you have a request? Open an issue, or write me!
 + Windows Update Reconfiguration
 + Windows Store reset
 + NIC (Network Interface Card) reset
++ DHCP, ARP, NetBIOS, DNS and IP reset
 
 [Click Here]: https://github.com/HidroSaphire/Script-After-Formatted/archive/master.zip
 [Enrico Mancuso]: https://github.com/HidroSaphire

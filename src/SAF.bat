@@ -164,7 +164,7 @@ ECHO 			*************************************************************
 	ECHO [36mMix[0m		TR) Controllo TRIM
 	ECHO [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset
 	ECHO [36mWin Store[0m	WS1) WS Reset
-	ECHO [36mNetwork[0m		NR1) Reset scheda di rete     NR2) TODO
+	ECHO [36mNetwork[0m		NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP.
 	ECHO [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO 0) Esci
@@ -350,8 +350,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "ws1" Goto :wsreset
 	if "%c%" EQU "NR1" Goto :nicreset
 	if "%c%" EQU "nr1" Goto :nicreset
-	if "%c%" EQU "NR2" ECHO Non ancora implementato
-	if "%c%" EQU "nr2" ECHO Non ancora implementato
+	if "%c%" EQU "NR2" Goto :nicrepair
+	if "%c%" EQU "nr2" Goto :nicrepair
 	::----UAC----------------------------------------
 	if "%c%" EQU "U1" ECHO Ancora non implementato
 	if "%c%" EQU "u1" ECHO Ancora non implementato
@@ -966,8 +966,8 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.3.3 		 *
-	ECHO 	    *		 Codename = Dancing Axolotl 		*
+	ECHO 	   *		     Versione = v.0.3.4 		 *
+	ECHO 	    *		 Codename = Dancing Magpie		*
 	ECHO 	     *		 Ultima Release = 16/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
@@ -1318,11 +1318,45 @@ Goto :letsgo
 	if /I "%choicenic%" EQU "x" goto :menu
 	wmic path win32_networkadapter where index=%choicenic% call disable
 	wmic path win32_networkadapter where index=%choicenic% call enable
+	ECHO	[42m[COMPLETATO][0m - Reset della scheda eseguito.
 	Timeout /t 3
 	Goto :nicreset
 
 :nicrepair
-	::--SEE NETWORKING LINK
+	test&cls
+	ECHO [43m[Attenzione][0m - Quest'operazione [31mrichiede NECESSARIAMENTE i Privilegi di Amministratore[0m
+	ECHO [0m
+	ECHO [0mQuest'operazione permette di:[36m
+	ECHO 	1) Rilasciare la configurazione DHCP corrente e degli indirizzi IP per tutti gli adapter
+	ECHO 	2) Rinnovare la configurazione DHCP per tutte le schede
+ 	ECHO 	3) Cancellare tutte le voci dalla cache ARP
+	ECHO 	4) Svuotare la cache dei nomi NetBIOS e ricaricare le voci dal file LMHOSTS
+	ECHO 	5) Rilasciare e aggiornare i nomi NetBIOS per il computer locale registrato con i server WINS.
+	ECHO 	6) Cancellare e reimpostare il contenuto della cache del resolver client DNS.
+	ECHO 	7) Avviare la registrazione dinamica manuale per i nomi DNS e indirizzi IP configurati nel computer
+	ECHO [0m
+	SET /P choicenic=Vuoi continuare [S/N]? 
+	if /I "%choicenic%" EQU "N" test&cls
+	if /I "%choicenic%" EQU "N" goto :menu
+	if /I "%choicenic%" EQU "S" test&cls
+	if /I "%choicenic%" EQU "S" goto :nicrepairyes
+	if /I "%choicenic%" EQU "n" test&cls
+	if /I "%choicenic%" EQU "n" goto :menu
+	if /I "%choicenic%" EQU "s" test&cls
+	if /I "%choicenic%" EQU "s" goto :nicrepairyes
+	Goto :nicrepair
+
+:nicrepairyes
+	ipconfig /release
+	ipconfig /renew
+	arp -d *
+	nbtstat -R
+	nbtstat -RR
+	ipconfig /flushdns
+	ipconfig /registerdns
+	ECHO [42m[COMPLETATO][0m - Reset DHCP, ARP, NetBIOS, DNS e IP eseguito.
+	Timeout /t 3
+	Goto :menu
 
 ::----------------------END-------------------------------------------------------------------------------------------
 :end

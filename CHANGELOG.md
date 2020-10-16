@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.3.4 - Dancing Magpie
  - v.0.3.3 - Dancing Axolotl
  - v.0.3.2 - Dancing Squirrel
  - v.0.3.1 - Dancing Spider
@@ -23,6 +24,9 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.3.4 - Dancing Magpie
++ Add a functionality that reset "DHCP, ARP, NetBIOS, DNS and IP"
+
 ### v.0.3.3 - Dancing Axolotl
 + Update support to "Tor" and "OBS Studio"
 
