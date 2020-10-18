@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.4.0 - Gigant Kangaroo
  - v.0.3.4 - Dancing Magpie
  - v.0.3.3 - Dancing Axolotl
  - v.0.3.2 - Dancing Squirrel
@@ -24,6 +25,11 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.4.0 - Gigant Kangaroo
++ Add Fullscreen Mode
++ Bugfix (in Easter Egg)
++ Better Layout with spacing
+
 ### v.0.3.4 - Dancing Magpie
 + Add a functionality that reset "DHCP, ARP, NetBIOS, DNS and IP"
 
