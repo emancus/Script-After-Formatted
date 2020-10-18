@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.4.1 - Gigant Chimpanzee
  - v.0.4.0 - Gigant Kangaroo
  - v.0.3.4 - Dancing Magpie
  - v.0.3.3 - Dancing Axolotl
@@ -25,6 +26,10 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.4.1 - Gigant Chimpanzee
++ Add Minimize functionality when you are in "FullScreen Mode"
++ Bugfix (in FullScreen Mode)
+
 ### v.0.4.0 - Gigant Kangaroo
 + Add Fullscreen Mode
 + Bugfix (in Easter Egg)
