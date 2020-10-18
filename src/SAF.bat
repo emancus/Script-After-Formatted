@@ -114,7 +114,7 @@ ECHO 			*************************************************************
 :menu
 	ECHO  [31m[Pag 1/2][0m
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
-	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	FS) FullScreen
+	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
 	ECHO  [36mBrowser[0m	B1) Firefox x64		      B2) Firefox	      B3) Firefox installer
@@ -143,7 +143,7 @@ ECHO 			*************************************************************
 :menu2
 	ECHO  [31m[Pag 2/2][0m
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
-	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	FS) FullScreen   
+	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen   
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
 	ECHO  [36mPC Monitor[0m	A1) MSI Afterburner	      --------		      A2) MSI Afterburner zip file
@@ -183,7 +183,7 @@ ECHO 			*************************************************************
 	ECHO [0m
 	ECHO  	[32m-------------------------------------------------------------------------------------------------[Navigazione]----------------------------------------------------------------------------------------------/
 	ECHO 	[32m/ [0m											              												            [32m/  [0m
-	ECHO 	[32m/ [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen              												           	    [32m/  [0m
+	ECHO 	[32m/ [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	M) Minimizza              												           	    [32m/  [0m
 	ECHO 	[32m/ [0m											              												            [32m/  [0m
 	ECHO 	[32m/[32m--------------------------------------------[Programmi]----------------------------------------------/---------------------------------------------[Utility]-----------------------------------------------/
 	ECHO 	[32m/ [0m											              [32m/  [0m											            [32m/  [0m
@@ -223,6 +223,10 @@ ECHO 			*************************************************************
 	ECHO  	[32m/[32m-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------/[0m
 	Goto :letsgo
 
+::----------------------MINIMIZE MODE-------------------------------------------------------------------------------------------
+:minimize
+	MODE con: cols=121 lines=30
+	Goto :menu
 
 ::----------------------LOOP-------------------------------------------------------------------------------------------
 :letsgo
@@ -237,6 +241,10 @@ ECHO 			*************************************************************
 	if "%c%" EQU "F"	Goto :fullscreen
 	if "%c%" EQU "f"	test&cls
 	if "%c%" EQU "f"	Goto :fullscreen
+	if "%c%" EQU "M"	test&cls
+	if "%c%" EQU "M"	Goto :minimize
+	if "%c%" EQU "m"	test&cls
+	if "%c%" EQU "m"	Goto :minimize
 	::----PROGRAM-----------------------------------
 	if "%c%" EQU "B1" START https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"	::----Browser------------
 	if "%c%" EQU "b1" START https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"
@@ -1024,8 +1032,8 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.4.0			 *
-	ECHO 	    *		 Codename = Gigant Kangaroo		*
+	ECHO 	   *		     Versione = v.0.4.1			 *
+	ECHO 	    *		 Codename = Gigant Chimpanzee		*
 	ECHO 	     *		 Ultima Release = 18/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
