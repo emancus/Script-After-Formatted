@@ -7,7 +7,7 @@ An useful script (written in Batch) for Windows to download and install programs
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/HidroSaphire/Script-After-Formatted)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/HidroSaphire/Script-After-Formatted)
 ![GitHub top language](https://img.shields.io/github/languages/top/HidroSaphire/Script-After-Formatted)
-[![HitCount](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted.svg)](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted)
+[![HitCount](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted.svg)](https://github.com/HidroSaphire/Script-After-Formatted)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FHidroSaphire%2FScript-After-Formatted&count_bg=%2379C83D&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://github.com/HidroSaphire/Script-After-Formatted)
 
 ## Download last version (.zip) - [Click Here]
