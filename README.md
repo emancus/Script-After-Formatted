@@ -1,9 +1,9 @@
 <div align="center">
   <h1>SAF - Script After Formatted</h1><br>
 An useful script (written in Batch) for Windows to download and install programs from web after formatted</br>
-[![HitCount](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted.svg)](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted)
 </div>
 
+[![HitCount](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted.svg)](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted)
 ## Download last version (.zip) - [Click Here]
 
 ## Author & Developers
