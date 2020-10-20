@@ -3,7 +3,7 @@
 An useful script (written in Batch) for Windows to download and install programs from web after formatted</br>
 </div>
 
-[![HitCount](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted.svg)](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted)
+[![HitCount](http://hits.dwyl.com/HidroSaphire/Script-After-Formatted.svg)](https://github.com/HidroSaphire/Script-After-Formatted)
 ## Download last version (.zip) - [Click Here]
 
 ## Author & Developers
