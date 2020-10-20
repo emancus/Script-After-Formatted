@@ -1,8 +1,7 @@
 <div align="center">
-  <h1>SAF - Script After Formatted</h1><br>
-An useful script (written in Batch) for Windows to download and install programs from web after formatted</br>
+  <h1>SAF - Script After Formatted</h1>
 </div>
-
+	
 ![GitHub last commit](https://img.shields.io/github/last-commit/HidroSaphire/Script-After-Formatted)
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/HidroSaphire/Script-After-Formatted)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/HidroSaphire/Script-After-Formatted)
@@ -12,14 +11,17 @@ An useful script (written in Batch) for Windows to download and install programs
 
 ## Download last version (.zip) - [Click Here]
 
-## Author & Developers
- - [Enrico Mancuso] :computer:
+## What is it?
+SAF is an useful script (written in [Batch]) for [Microsoft Windows] that allow to download and install easily programs from web pages. Includes a number of features to test the operating system and the computer, useful after installing Windows (after formatting)
 
 ## Screenshot
 <div align="center">
 	<img src="media/screenshot.png">
 	<br>
 </div>
+
+## Author & Developers
+ - [Enrico Mancuso] :computer:
 
 ## What program is supported?
 **Web Browser** = Firefox (Last Version) + Tor (Last Version)<br/>
@@ -99,3 +101,5 @@ Do you have a request? Open an issue, or write me!
 
 [Click Here]: https://github.com/HidroSaphire/Script-After-Formatted/archive/master.zip
 [Enrico Mancuso]: https://github.com/HidroSaphire
+[Batch]: https://en.wikipedia.org/wiki/Batch_file
+[Microsoft Windows]: https://en.wikipedia.org/wiki/Windows_10
