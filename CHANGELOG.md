@@ -1,5 +1,6 @@
 ## Version List
- - v.0.4.2 - Gigant Sheep
+ - v.0.4.4 - Gigant Lamb
+ - v.0.4.3 - Gigant Sheep
  - v.0.4.2 - Gigant Prolemur
  - v.0.4.1 - Gigant Chimpanzee
  - v.0.4.0 - Gigant Kangaroo
@@ -28,6 +29,9 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.4.4 - Gigant Lamb
++ Bugfix (correct an issue with fullscreen)
+
 ### v.0.4.3 - Gigant Sheep
 + Update support to "Tor"
 
