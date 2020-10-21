@@ -1,4 +1,5 @@
 ## Version List
+ - v.0.4.2 - Gigant Sheep
  - v.0.4.2 - Gigant Prolemur
  - v.0.4.1 - Gigant Chimpanzee
  - v.0.4.0 - Gigant Kangaroo
@@ -27,6 +28,9 @@
  - v.0.0.1 - Sparkling Atom
 
 ## Changelog
+### v.0.4.3 - Gigant Sheep
++ Update support to "Tor"
+
 ### v.0.4.2 - Gigant Prolemur
 + Add color to architecture (x86/x64) in menu
 + Fix some info of Menu

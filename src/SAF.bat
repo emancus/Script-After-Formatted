@@ -10,7 +10,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 
 ::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
 	::Firefox can't have a variabile link because has a "&" in the link that mess up the output on the prompt
-	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.1/torbrowser-install-win64-10.0.1_it.exe
+	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.1/torbrowser-install-win64-10.0.2_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
 	SET l_spotify=https://download.scdn.co/SpotifySetup.exe
 	SET l_rar=https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-591it.exe
@@ -42,7 +42,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 
 ::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET e_firefox="Firefox Installer.exe"
-	SET e_tor=torbrowser-install-win64-10.0.1_it.exe
+	SET e_tor=torbrowser-install-win64-10.0.2_it.exe
 	SET e_player=vlc-2.2.8-win64.exe
 	SET e_spotify=SpotifySetup.exe
 	SET e_rar=WinRAR-x64-591it.exe
@@ -1032,8 +1032,8 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.4.2			 *
-	ECHO 	    *		 Codename = Gigant Prolemur		*
+	ECHO 	   *		     Versione = v.0.4.3			 *
+	ECHO 	    *		   Codename = Gigant Sheep 		*
 	ECHO 	     *		 Ultima Release = 18/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
