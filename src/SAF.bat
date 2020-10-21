@@ -114,7 +114,7 @@ ECHO 			*************************************************************
 :menu
 	ECHO  [31m[Pag 1/2][0m
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
-	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen
+	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen       M) Minimizza
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
 	ECHO  [36mBrowser[0m	B1) Firefox [33mx64[0m		      B2) Firefox	      B3) Firefox installer
@@ -143,7 +143,7 @@ ECHO 			*************************************************************
 :menu2
 	ECHO  [31m[Pag 2/2][0m
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
-	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen   
+	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen       M) Minimizza   
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
 	ECHO  [36mPC Monitor[0m	A1) MSI Afterburner	      --------		      A2) MSI Afterburner zip file
@@ -173,9 +173,8 @@ ECHO 			*************************************************************
 
 ::----------------------FULLSCREEN MODE-------------------------------------------------------------------------------------------
 :fullscreen
-	MODE 800
+	MODE con: cols=230 lines=60
 	COLOR 9
-		
 	ECHO 										  *********************************************************
 	ECHO 										 *	   HidroSaphire SAF - Script After Formatted	   *
 	ECHO 										*************************************************************
@@ -183,7 +182,7 @@ ECHO 			*************************************************************
 	ECHO [0m
 	ECHO  	[32m-------------------------------------------------------------------------------------------------[Navigazione]----------------------------------------------------------------------------------------------/
 	ECHO 	[32m/ [0m											              												            [32m/  [0m
-	ECHO 	[32m/ [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	M) Minimizza              												           	    [32m/  [0m
+	ECHO 	[32m/ [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen	    M) Minimizza              												           	    [32m/  [0m
 	ECHO 	[32m/ [0m											              												            [32m/  [0m
 	ECHO 	[32m/[32m--------------------------------------------[Programmi]----------------------------------------------/---------------------------------------------[Utility]-----------------------------------------------/
 	ECHO 	[32m/ [0m											              [32m/  [0m											            [32m/  [0m
@@ -1032,9 +1031,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.4.3			 *
-	ECHO 	    *		   Codename = Gigant Sheep 		*
-	ECHO 	     *		 Ultima Release = 18/10/2020	       *
+	ECHO 	   *		     Versione = v.0.4.4			 *
+	ECHO 	    *		   Codename = Gigant Lamb 		*
+	ECHO 	     *		 Ultima Release = 21/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
