@@ -10,7 +10,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 
 ::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
 	::Firefox can't have a variabile link because has a "&" in the link that mess up the output on the prompt
-	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.1/torbrowser-install-win64-10.0.2_it.exe
+	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.2/torbrowser-install-win64-10.0.2_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
 	SET l_spotify=https://download.scdn.co/SpotifySetup.exe
 	SET l_rar=https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-591it.exe
@@ -71,6 +71,16 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET z_afterburner=MSIAfterburnerSetup.zip
 
 
+::----------------------PORTABLE VARIABLE INIALIZATION-----------------------------------------------------------------------
+	SET pl_cpuz=http://download.cpuid.com/cpu-z/cpu-z_1.94-en.zip
+	SET pz_cpuz=cpu-z_1.94-en.zip
+	SET pl_gpuz=http://dl1.hwupgrade.it/dl/7ad61bc4d26503965cab6c6cf380b1c0/5f921535/utilita/schede_video/gpu-z/GPU-Z.2.35.0.exe
+	::--pz_gpuz=NO-ZIP-FILE-------------
+	SET pl_coretemp=https://www.alcpu.com/CoreTemp/CoreTemp64.zip
+	SET pz_coretemp=CoreTemp64.zip
+:: - INVALID - FIND ANOTHER LINK! 	SET pl_crystaldisk=https://osdn.net/frs/redir.php?m=dotsrc&f=crystaldiskinfo%2F73507%2FCrystalDiskInfo8_8_9.zip
+	SET pz_crystaldisk=CrystalDiskInfo8_8_9.zip
+
 ::----------------------VARIABLE INITIALIZATION-------------------------------------------------------------------------------
 :: Isn't necessary, but required for have the variable initializate to 0 in the debug room
 	SET browser=0
@@ -112,9 +122,9 @@ ECHO 			*************************************************************
 
 ::----------------------PRINT MENU [PAG 1]------------------------------------------------------------------------------------------
 :menu
-	ECHO  [31m[Pag 1/2][0m
+	ECHO  [31m[Pag 1/3][0m
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
-	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen       M) Minimizza
+	ECHO  [36mMenu[0m		1) Pagina 1	2) Pagina 2 	3) Pagina 3	F) FullScreen	   M) Minimizza
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
 	ECHO  [36mBrowser[0m	B1) Firefox [33mx64[0m		      B2) Firefox	      B3) Firefox installer
@@ -133,7 +143,7 @@ ECHO 			*************************************************************
 	ECHO  [36mScreen Capt[0m	O1) OBS Studio [33mx64[0m            O2) OBS Studio 	      O3) OBS Studio installer
 	ECHO  [36mGiochi[0m		G1) Steam Client [33mx86[0m	      G2) Steam 	      G3) Steam installer
 	ECHO 		G4) Epic Games	  	      G5) Epic Games 	      G6) Epic Games installer
-	ECHO 								      TT) Cancella tutti
+	ECHO 					      CK) Check Presenza      TT) Cancella tutti
 	ECHO  [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO  [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO  0) Esci
@@ -141,9 +151,9 @@ ECHO 			*************************************************************
 
 ::----------------------PRINT MENU [PAG 2]------------------------------------------------------------------------------------------
 :menu2
-	ECHO  [31m[Pag 2/2][0m
+	ECHO  [31m[Pag 2/3][0m
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
-	ECHO  [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen       M) Minimizza   
+	ECHO  [36mMenu[0m		1) Pagina 1	2) Pagina 2 	3) Pagina 3	F) FullScreen	   M) Minimizza  
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
 	ECHO  [36mPC Monitor[0m	A1) MSI Afterburner	      --------		      A2) MSI Afterburner zip file
@@ -156,7 +166,7 @@ ECHO 			*************************************************************
 	ECHO  [36mCustomization[0m	C1) Rainmeter 4.4 Beta	      C2) Rainmeter 	      C3) Rainmeter installer
 	ECHO  		C4) RocketDock v1.3.5 [33mx86[0m     C5) RocketDock 	      C6) RocketDock installer
 	ECHO  [36mRecovery[0m	H1) Recuva [33mx64[0m     	      H2) Recuva	      H3) Recuva installer
-	ECHO 								      TT) Cancella tutti
+	ECHO 					      CK) Check Presenza      TT) Cancella tutti
 	ECHO  [32m---------------------------------------------[Utility]----------------------------------------------
 	ECHO  [36mLink[0m		Q1) Driver video AMD	      Q2) Driver Video NVIDIA
 	ECHO 		Q3) KMS 360 Pro 4644 Link1    Q4) KMS 360 Pro 4644 Link2
@@ -165,6 +175,24 @@ ECHO 			*************************************************************
 	ECHO  [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset
 	ECHO  [36mWin Store[0m	WS1) WS Reset
 	ECHO  [36mNetwork[0m	NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP
+	ECHO  [32m----------------------------------------------[Extra]--------------------------------------------------
+	ECHO  [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
+	ECHO  0) Esci
+	Goto :letsgo
+
+::----------------------PRINT MENU [PAG 3]------------------------------------------------------------------------------------------
+:menu3
+	ECHO  [31m[Pag 3/3][0m
+	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
+	ECHO  [36mMenu[0m		1) Pagina 1	2) Pagina 2 	3) Pagina 3	F) FullScreen	   M) Minimizza  
+	ECHO  [32m-----------------------------------------[Programmi Portable]-----------------------------------------
+	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
+	ECHO  [36mPC Monitor[0m	PT1) CPU-Z		      --------		      PT2) CPU-Z zip file
+	ECHO  		PT3) GPU-Z		      --------		      PT4) GPU-Z zip file
+	ECHO  		PT5) CoreTemp [33mx64[0m	      --------		      PT6) CoreTemp zip file
+	ECHO  		PT7) CrystalDiskInfo	      --------		      PT8) CrystalDiskInfo zip file
+	ECHO 								      PTT) Cancella tutti i portabili
+	
 	ECHO  [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO  [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO  0) Esci
@@ -182,7 +210,7 @@ ECHO 			*************************************************************
 	ECHO [0m
 	ECHO  	[32m-------------------------------------------------------------------------------------------------[Navigazione]----------------------------------------------------------------------------------------------/
 	ECHO 	[32m/ [0m											              												            [32m/  [0m
-	ECHO 	[32m/ [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen	    M) Minimizza              												           	    [32m/  [0m
+	ECHO 	[32m/ [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen	    M) Minimizza              											  	    [32m/  [0m
 	ECHO 	[32m/ [0m											              												            [32m/  [0m
 	ECHO 	[32m/[32m--------------------------------------------[Programmi]----------------------------------------------/---------------------------------------------[Utility]-----------------------------------------------/
 	ECHO 	[32m/ [0m											              [32m/  [0m											            [32m/  [0m
@@ -236,6 +264,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "1"	(Goto :menu)
 	if "%c%" EQU "2"	test&cls
 	if "%c%" EQU "2"	(Goto :menu2)
+	if "%c%" EQU "3"	test&cls
+	if "%c%" EQU "3"	(Goto :menu3)
 	if "%c%" EQU "F"	test&cls
 	if "%c%" EQU "F"	Goto :fullscreen
 	if "%c%" EQU "f"	test&cls
@@ -393,9 +423,11 @@ ECHO 			*************************************************************
 	if "%c%" EQU "h2" Goto :recuva
 	if "%c%" EQU "H3" Goto :delrecuva
 	if "%c%" EQU "h3" Goto :delrecuva
+	if "%c%" EQU "CK" Goto :checkpresence		::----CHECK PRESENCE-----------------------------
+	if "%c%" EQU "ck" Goto :checkpresence
+	if "%c%" EQU "Ck" Goto :checkpresence
 	if "%c%" EQU "TT" Goto :deltotal		::----TOTAL--------------------------------------
 	if "%c%" EQU "tt" Goto :deltotal
-	if "%c%" EQU "Tt" Goto :deltotal
 	if "%c%" EQU "Tt" Goto :deltotal
 	
 	::----PAG2 UTILITY--------------------------------------
@@ -439,8 +471,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "i" Goto :information
 	if "%c%" EQU "C" test&cls
 	if "%c%" EQU "c" test&cls
-	if "%c%" EQU "C" ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
-	if "%c%" EQU "c" ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	if "%c%" EQU "C" ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+	if "%c%" EQU "c" ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 	if "%c%" EQU "D" test&cls
 	if "%c%" EQU "d" test&cls
 	if "%c%" EQU "D" Goto :debugRoom
@@ -453,9 +485,27 @@ ECHO 			*************************************************************
 	if "%c%" EQU "e" test&cls
 	if "%c%" EQU "E" Goto :easterEgg
 	if "%c%" EQU "e" Goto :easterEgg
-	
+
+	::----PAG3 PORTABILI-----------------------------
+	if "%c%" EQU "PT1" START %pl_cpuz%
+	if "%c%" EQU "pt1" START %pl_cpuz%
+	if "%c%" EQU "PT2" ECHO Non implementato
+	if "%c%" EQU "pt2" ECHO Non implementato
+	if "%c%" EQU "PT3" START %pl_gpuz%
+	if "%c%" EQU "pt3" START %pl_gpuz%
+	if "%c%" EQU "PT4" ECHO Non implementato
+	if "%c%" EQU "pt4" ECHO Non implementato
+	if "%c%" EQU "PT5" START %pl_coretemp%
+	if "%c%" EQU "pt5" START %pl_coretemp%
+	if "%c%" EQU "PT6" ECHO Non implementato
+	if "%c%" EQU "pt6" ECHO Non implementato
+	if "%c%" EQU "PT7" START %pl_crystaldisk%
+	if "%c%" EQU "pt7" START %pl_crystaldisk%
+	if "%c%" EQU "PT8" ECHO Non implementato
+	if "%c%" EQU "pt8" ECHO Non implementato
+
 	::----ERRORI-------------------------------------
-	if "%c%" EQU "," ECHO [43m[ERRORE][0m - Comando non ammesso - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	if "%c%" EQU "," ECHO [43m[ERRORE][0m - Comando non ammesso - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 
 	::----END----------------------------------------
 	if %c%==0 Goto :end
@@ -927,7 +977,7 @@ ECHO 			*************************************************************
 	ECHO [33mLista impostazioni utili per Atom
 	ECHO [0mEditor / "Mostra Guida Indentazione" - [36mAbilitare[0m
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 Goto :letsgo
 ::----------------------DEVELOPER------------
 :codeblocks
@@ -1031,12 +1081,12 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		     Versione = v.0.4.4			 *
-	ECHO 	    *		   Codename = Gigant Lamb 		*
-	ECHO 	     *		 Ultima Release = 21/10/2020	       *
+	ECHO 	   *		      Versione = v0.5.0			 *
+	ECHO 	    *		 Codename = Mysterious Turkey 		*
+	ECHO 	     *		 Ultima Release = 23/10/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 Goto :letsgo
 
 
@@ -1069,7 +1119,7 @@ Goto :letsgo
 	ECHO [36m
 	ECHO											     (HidroSaphire)
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 Goto :letsgo
 
 
@@ -1086,7 +1136,7 @@ Goto :letsgo
 	ECHO [32mIl path del File di Paging:[0m
 	wmic pagefile list /format:list | find "Name"
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 Goto :letsgo
 
 
@@ -1120,7 +1170,7 @@ Goto :letsgo
 	ECHO [36m                                                (HidroSaphire)[0m
 	ECHO [0m
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 Goto :letsgo
 
 
@@ -1318,7 +1368,7 @@ Goto :letsgo
 :endTotal
 	ECHO [42m[COMPLETATO][0m - Tutti gli installer sono stati cancellati
 	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 	GOTO :letsgo
 
 
@@ -1343,7 +1393,7 @@ Goto :letsgo
 	SC config cryptsvc start=auto
 	SC config trustedinstaller start=auto
 	ECHO	[42m[COMPLETATO][0m - Reset completato. Adesso devi riavviare il computer
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 	Goto :letsgo
 
 ::----------------------WINDOWS STORE RESET-----------------------
@@ -1365,7 +1415,7 @@ Goto :letsgo
 	netsh winsock reset
 	wsreset.exe
 	ECHO	[42m[COMPLETATO][0m - Reset completato. Dovresti vedere adesso Windows Store aperto
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m o [31m2[0m per visualizzare il Menu
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 	Goto :letsgo
 
 ::----------------------NIC RESET-----------------------
@@ -1422,7 +1472,196 @@ Goto :letsgo
 	ipconfig /registerdns
 	ECHO [42m[COMPLETATO][0m - Reset DHCP, ARP, NetBIOS, DNS e IP eseguito.
 	Timeout /t 3
+	test&cls
 	Goto :menu
+
+
+::----------------------CHECK PRESENTI--------------------------------------------------------------------------------
+:checkpresence
+
+	test&cls
+	ECHO [36m   Controllo presenza di file installer su disco C e D
+	ECHO [0m
+
+	SET check=0
+	IF EXIST D:\Download\%e_firefox% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_firefox% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mFirefox[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mFirefox[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mFirefox[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_tor% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_tor% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mTor[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mTor[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mTor[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_player% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_player% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mVLC[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mVLC[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mVLC[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_spotify% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_spotify% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mSpotify[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mSpotify[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mSpotify[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_rar% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_rar% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mWinRAR[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mWinRAR[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mWinRAR[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_downloader% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_downloader% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mJDownloader 2[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mJDownloader 2[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mJDownloader 2[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_torrent% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_torrent% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31muTorrent[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31muTorrent[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31muTorrent[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_music% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_music% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mMp3tag[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mMp3tag[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mMp3tag[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%z_spek% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%z_spek% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - Il file zip di [31mSpek[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Il file zip di [31mSpek[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Il file zip di [31mSpek[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_remoto% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_remoto% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mTeamViewer[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mTeamViewer[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mTeamViewer[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_file% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_file% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mFile Renamer Basic[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mFile Renamer Basic[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mFile Renamer Basic[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_sync% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_sync% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mSyncTrayzor[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mSyncTrayzor[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mSyncTrayzor[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_vm% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_vm% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mVirtualBox[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mVirtualBox[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mVirtualBox[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_capture% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_capture% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mOBS Studio[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mOBS Studio[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mOBS Studio[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%z_afterburner% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%z_afterburner% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - Il file zip di [31mMSI Afterburner[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Il file zip di [31mMSI Afterburner[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Il file zip di [31mMSI Afterburner[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_steam% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_steam% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mSteam[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mSteam[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mSteam[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_epic% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_epic% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mEpic Games Launcher[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mEpic Games Launcher[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mEpic Games Launcher[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_psnow% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_psnow% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mPlayStation Now[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mPlayStation Now[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mPlayStation Now[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%z_ds4windows% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%z_ds4windows% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - Il file zip di [31mDS4Windows[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Il file zip di [31mDS4Windows[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Il file zip di [31mDS4Windows[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_atom% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_atom% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mAtom[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mAtom[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mAtom[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_notepad% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_notepad% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mNotepad++[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mNotepad++[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mNotepad++[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_codeblocks% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_codeblocks% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mCode::Blocks + Mingw[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mCode::Blocks + Mingw[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mCode::Blocks + Mingw[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_rainmeter% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_rainmeter% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mRainmeter[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mRainmeter[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mRainmeter[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_rocket% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_rocket% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mRocketDock[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mRocketDock[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mRocketDock[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_recuva% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_recuva% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mRecuva[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mRecuva[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mRecuva[0m su disco C
+	
+	ECHO [0m
+	ECHO [42m[COMPLETATO][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+	GOTO :letsgo
+
 
 ::----------------------END-------------------------------------------------------------------------------------------
 :end
