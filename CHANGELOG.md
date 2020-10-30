@@ -1,4 +1,5 @@
 ## Version List
+ - v0.5.1 - Mysterious Chicken
  - v0.5.0 - Mysterious Turkey
  - v0.4.4 - Gigant Lamb
  - v0.4.3 - Gigant Sheep
@@ -30,10 +31,14 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.5.1 - Mysterious Chicken
++ Added "Quick Access reset" functionality
++ Code Review
+
 ### v0.5.0 - Mysterious Turkey
 + Revisited Menu (now has 3 pages)
-+ Add "Check installer file" functionality
-+ Add support to Portable version of "CPU-Z" /  "GPU-Z" / "CoreTemp"  
++ Added "Check installer file" functionality
++ Added support to Portable version of "CPU-Z" /  "GPU-Z" / "CoreTemp"  
 + Bugfix (correct support to "Tor")
 + Bugfix (cleaned screen after "NR2" options)
 + Layout Fix
@@ -45,20 +50,20 @@
 + Update support to "Tor"
 
 ### v0.4.2 - Gigant Prolemur
-+ Add color to architecture (x86/x64) in menu
++ Added color to architecture (x86/x64) in menu
 + Fix some info of Menu
 
 ### v0.4.1 - Gigant Chimpanzee
-+ Add Minimize functionality when you are in "FullScreen Mode"
++ Added Minimize functionality when you are in "FullScreen Mode"
 + Bugfix (in FullScreen Mode)
 
 ### v0.4.0 - Gigant Kangaroo
-+ Add Fullscreen Mode
++ Added Fullscreen Mode
 + Bugfix (in Easter Egg)
 + Better Layout with spacing
 
 ### v0.3.4 - Dancing Magpie
-+ Add a functionality that reset "DHCP, ARP, NetBIOS, DNS and IP"
++ Added a functionality that reset "DHCP, ARP, NetBIOS, DNS and IP"
 
 ### v0.3.3 - Dancing Axolotl
 + Update support to "Tor" and "OBS Studio"

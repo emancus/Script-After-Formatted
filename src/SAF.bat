@@ -175,6 +175,7 @@ ECHO 			*************************************************************
 	ECHO  [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset
 	ECHO  [36mWin Store[0m	WS1) WS Reset
 	ECHO  [36mNetwork[0m	NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP
+	ECHO  [36mExplorer[0m	ER1) Reset "accesso rapido"
 	ECHO  [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO  [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO  0) Esci
@@ -222,7 +223,7 @@ ECHO 			*************************************************************
 	ECHO 	[32m/ [36mRAR[0m		R1) WinRAR [33mx64[0m	      	      R2) WinRAR	      R3) WinRAR installer	      [32m/  [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset        			    [32m/  [0m
 	ECHO 	[32m/ [36mDownloader[0m	J1) JDownloader 2 [33mx64[0m	      J2) JDownloader 2	      J3) JDownloader 2 installer     [32m/  [36mWin Store[0m	WS1) WS Reset         								    [32m/  [0m
 	ECHO 	[32m/ [36mTorrent[0m	T1) uTorrent [33mx86[0m	      T2) uTorrent	      T3) uTorrent installer          [32m/  [36mNetwork[0m	NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP               [32m/  [0m
-	ECHO 	[32m/ [36mMusica[0m	M1) Mp3tag [33mx86[0m	              M2) Mp3tag	      M3) Mp3tag installer            [32m/ [0m 											            [32m/  [0m
+	ECHO 	[32m/ [36mMusica[0m	M1) Mp3tag [33mx86[0m	              M2) Mp3tag	      M3) Mp3tag installer            [32m/  [36mExplorer[0m	ER1) Reset "Accesso Rapido"    							    [32m/  [0m
 	ECHO 	[32m/ [0m		M4) Spek v.0.8.2 [33mx86[0m	      --------		      M5) Spek zip file        	      [32m/  [0m											            [32m/  [0m
 	ECHO 	[32m/ [36mDesk Remoto[0m	D1) TeamViewer [33mx86[0m	      D2) TeamViewer 	      D3) TeamViewer installer        [32m/  [0m											            [32m/  [0m
 	ECHO 	[32m/ [36mFileRenamer[0m	F1) FileRen Basic v6.3 	      F2) FileRenamer	      F3) FileRenamer installer       [32m/  [0m											            [32m/  [0m
@@ -449,6 +450,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "nr1" Goto :nicreset
 	if "%c%" EQU "NR2" Goto :nicrepair
 	if "%c%" EQU "nr2" Goto :nicrepair
+	if "%c%" EQU "ER1" Goto :accessorapidorepair
+	if "%c%" EQU "er1" Goto :accessorapidorepair
 	::----UAC----------------------------------------
 	if "%c%" EQU "U1" ECHO Ancora non implementato
 	if "%c%" EQU "u1" ECHO Ancora non implementato
@@ -1072,24 +1075,6 @@ Goto :letsgo
 	Goto :letsgo
 
 
-::----------------------INFO-----------
-:information
-	ECHO [33m
-	ECHO 	  *********************************************************
-	ECHO 	 *	  HidroSaphire SAF - Script After Formatted	   *
-	ECHO 	*************************************************************
-	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
-	ECHO 	 *	      https://github.com/HidroSaphire		   *
-	ECHO 	  *	      					          *
-	ECHO 	   *		      Versione = v0.5.0			 *
-	ECHO 	    *		 Codename = Mysterious Turkey 		*
-	ECHO 	     *		 Ultima Release = 23/10/2020	       *
-	ECHO 	      *************************************************
-	ECHO [0m
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-Goto :letsgo
-
-
 ::----------------------DEBUG Room-----------
 :debugRoom
 	ECHO [31m
@@ -1396,6 +1381,7 @@ Goto :letsgo
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 	Goto :letsgo
 
+
 ::----------------------WINDOWS STORE RESET-----------------------
 
 :wsreset
@@ -1417,6 +1403,7 @@ Goto :letsgo
 	ECHO	[42m[COMPLETATO][0m - Reset completato. Dovresti vedere adesso Windows Store aperto
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 	Goto :letsgo
+
 
 ::----------------------NIC RESET-----------------------
 
@@ -1471,6 +1458,39 @@ Goto :letsgo
 	ipconfig /flushdns
 	ipconfig /registerdns
 	ECHO [42m[COMPLETATO][0m - Reset DHCP, ARP, NetBIOS, DNS e IP eseguito.
+	Timeout /t 3
+	test&cls
+	Goto :menu
+
+
+::----------------------EXPLORER--------------------------------------------------------------------------------------
+:accessorapidorepair
+	test&cls
+	ECHO [43m[Attenzione][0m - Quest'operazione [31mrichiede NECESSARIAMENTE i Privilegi di Amministratore[0m
+	ECHO [43m[Attenzione][0m - Il reset di "Accesso Rapido" rimuovera' i link alle cartelle aggiungte manualmente
+	ECHO [0m
+	ECHO [0mQuest'operazione permette di:[36m
+	ECHO Ripristinare la funzione "Accesso Rapido" di Windows 10 a seguito di probabili guasti come:
+	ECHO 	- Impossibilita' di aggiungere cartella ad "Accesso Rapido"; 
+ 	ECHO 	- Lista "Accesso Rapido" vuota;
+	ECHO 	- Nessun file in "Accesso Rapido";
+	ECHO 	- Caricamento infinito di "Accesso Rapido";
+	ECHO 	- ...
+	ECHO [0m
+	SET /P choiceaccessorapido=Vuoi continuare [S/N]? 
+	if /I "%choiceaccessorapido%" EQU "N" test&cls
+	if /I "%choiceaccessorapido%" EQU "N" goto :menu
+	if /I "%choiceaccessorapido%" EQU "S" test&cls
+	if /I "%choiceaccessorapido%" EQU "S" goto :accessorapidorepairyes
+	if /I "%choiceaccessorapido%" EQU "n" test&cls
+	if /I "%choiceaccessorapido%" EQU "n" goto :menu
+	if /I "%choiceaccessorapido%" EQU "s" test&cls
+	if /I "%choiceaccessorapido%" EQU "s" goto :accessorapidorepairyes
+	Goto :nicrepair
+
+:accessorapidorepairyes
+	del /F /Q %APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations
+	ECHO [42m[COMPLETATO][0m - Reset "Accesso Rapido" eseguito.
 	Timeout /t 3
 	test&cls
 	Goto :menu
@@ -1661,6 +1681,24 @@ Goto :letsgo
 	ECHO [0m
 	ECHO [42m[COMPLETATO][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 	GOTO :letsgo
+
+
+::----------------------INFO-----------
+:information
+	ECHO [33m
+	ECHO 	  *********************************************************
+	ECHO 	 *	  HidroSaphire SAF - Script After Formatted	   *
+	ECHO 	*************************************************************
+	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
+	ECHO 	 *	      https://github.com/HidroSaphire		   *
+	ECHO 	  *	      					          *
+	ECHO 	   *		      Versione = v0.5.1			 *
+	ECHO 	    *		Codename = Mysterious Chicken 		*
+	ECHO 	     *		 Ultima Release = 30/10/2020	       *
+	ECHO 	      *************************************************
+	ECHO [0m
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+Goto :letsgo
 
 
 ::----------------------END-------------------------------------------------------------------------------------------
