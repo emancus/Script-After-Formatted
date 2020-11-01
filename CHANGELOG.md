@@ -1,4 +1,5 @@
 ## Version List
+ - v0.5.2 - Mysterious Hens
  - v0.5.1 - Mysterious Chicken
  - v0.5.0 - Mysterious Turkey
  - v0.4.4 - Gigant Lamb
@@ -31,6 +32,9 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.5.2 - Mysterious Hens
++ Update support to "VirtualBox" and "Rainmeter"
+
 ### v0.5.1 - Mysterious Chicken
 + Added "Quick Access reset" functionality
 + Code Review

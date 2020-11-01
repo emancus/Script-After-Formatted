@@ -20,14 +20,14 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_spek=https://github.com/alexkay/spek/releases/download/v0.8.2/spek-0.8.2.zip
 	SET l_file=http://www.sherrodcomputers.com/downloads/FileRenamerBasic.exe
 	SET l_sync=https://github.com/canton7/SyncTrayzor/releases/download/v1.1.24/SyncTrayzorSetup-x64.exe
-	SET l_vm=https://download.virtualbox.org/virtualbox/6.1.14/VirtualBox-6.1.14-140239-Win.exe
+	SET l_vm=https://download.virtualbox.org/virtualbox/6.1.16/VirtualBox-6.1.16-140961-Win.exe
 	SET l_remoto=https://download.teamviewer.com/full
 	SET l_steam=https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 	SET l_epic=https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi
 	SET l_capture=https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0.2-Full-Installer-x64.exe
 	SET l_atom=https://atom.io/download/windows_x64
 	SET l_notepad=https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.9/npp.7.9.Installer.x64.exe
-	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3404/Rainmeter-4.4-r3404-beta.exe
+	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3408/Rainmeter-4.4-r3408-beta.exe
 	SET l_rocket=https://punklabs.com/downloads/RocketDock-v1.3.5.exe
 	SET l_psnow=https://download-psnow.playstation.com/downloads/psnow/pc/latest
 	SET l_ds4windows=https://github.com/Jays2Kings/DS4Windows/releases/download/v1.4.52/DS4Windows.zip
@@ -51,14 +51,14 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET e_music=mp3tagv303setup.exe
 	SET e_file=FileRenamerBasic.exe
 	SET e_sync=SyncTrayzorSetup-x64.exe
-	SET e_vm=VirtualBox-6.1.14-140239-Win.exe
+	SET e_vm=VirtualBox-6.1.16-140961-Win.exe
 	SET e_remoto=TeamViewer_Setup.exe
 	SET e_steam=SteamSetup.exe
 	SET e_epic=EpicInstaller-10.18.8.msi
 	SET e_capture=OBS-Studio-26.0.2-Full-Installer-x64.exe
 	SET e_atom=AtomSetup-x64.exe
 	SET e_notepad=npp.7.9.Installer.x64.exe
-	SET e_rainmeter=Rainmeter-4.4-r3404-beta.exe
+	SET e_rainmeter=Rainmeter-4.4-r3408-beta.exe
 	SET e_rocket=RocketDock-v1.3.5.exe
 	SET e_psnow=PlayStationNow-11.2.2.exe
 	SET e_codeblocks=codeblocks-20.03mingw-setup.exe
@@ -1692,9 +1692,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		      Versione = v0.5.1			 *
-	ECHO 	    *		Codename = Mysterious Chicken 		*
-	ECHO 	     *		 Ultima Release = 30/10/2020	       *
+	ECHO 	   *		      Versione = v0.5.2			 *
+	ECHO 	    *		 Codename = Mysterious Hens 		*
+	ECHO 	     *		 Ultima Release = 01/11/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
