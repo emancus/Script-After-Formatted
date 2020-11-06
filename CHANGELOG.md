@@ -1,4 +1,5 @@
 ## Version List
+ - v0.5.3 - Mysterious Brahma
  - v0.5.2 - Mysterious Hens
  - v0.5.1 - Mysterious Chicken
  - v0.5.0 - Mysterious Turkey
@@ -32,6 +33,14 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.5.3 - Mysterious Brahma
++ Added support to Portable version of "CrystalDiskInfo"
++ New error message for unexpected inputs
++ New variable for "Firefox"
++ New function for delete portable apps
++ New function for delete all portable apps
++ Fullscreen information missing fixed
+
 ### v0.5.2 - Mysterious Hens
 + Update support to "VirtualBox" and "Rainmeter"
 
