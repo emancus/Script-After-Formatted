@@ -128,24 +128,24 @@ ECHO 			*************************************************************
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
 	ECHO  [36mMenu[0m		1) Pagina 1	2) Pagina 2 	3) Pagina 3	F) FullScreen	   M) Minimizza
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
-	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
-	ECHO  [36mBrowser[0m	B1) Firefox [33mx64[0m		      B2) Firefox	      B3) Firefox installer
-	ECHO 		B4) Tor (ITA) [33mx64[0m	      B5) Tor		      B6) Tor installer
-	ECHO  [36mPlayer[0m		P1) VLC v2.2.8 [33mx64[0m	      P2) VLC		      P3) VLC installer
-	ECHO  		P4) Spotify		      P5) Spotify	      P6) Spotify installer
-	ECHO  [36mRAR[0m		R1) WinRAR [33mx64[0m	      	      R2) WinRAR	      R3) WinRAR installer
-	ECHO  [36mDownloader[0m	J1) JDownloader 2 [33mx64[0m	      J2) JDownloader 2	      J3) JDownloader 2 installer
-	ECHO  [36mTorrent[0m	T1) uTorrent [33mx86[0m	      T2) uTorrent	      T3) uTorrent installer
-	ECHO  [36mMusica[0m		M1) Mp3tag [33mx86[0m	      	      M2) Mp3tag	      M3) Mp3tag installer
-	ECHO  		M4) Spek v.0.8.2 [33mx86[0m	      --------		      M5) Spek zip file
-	ECHO  [36mDesk Remoto[0m	D1) TeamViewer [33mx86[0m	      D2) TeamViewer 	      D3) TeamViewer installer
-	ECHO  [36mFileRenamer[0m	F1) FileRen Basic v6.3 	      F2) FileRenamer	      F3) FileRenamer installer
-	ECHO  [36mSyncronizer[0m	S1) SyncTrayzor [33mx64[0m 	      S2) SyncTrayzor	      S3) SyncTrayzor installer
-	ECHO  [36mVM[0m		V1) VirtualBox        	      V2) VirtualBox	      V3) VirtualBox Installer
-	ECHO  [36mScreen Capt[0m	O1) OBS Studio [33mx64[0m            O2) OBS Studio 	      O3) OBS Studio installer
-	ECHO  [36mGiochi[0m		G1) Steam Client [33mx86[0m	      G2) Steam 	      G3) Steam installer
-	ECHO 		G4) Epic Games	  	      G5) Epic Games 	      G6) Epic Games installer
-	ECHO 					      CK) Check Presenza      TT) Cancella tutti
+	ECHO  [36m		------Scarica------	     ----Installa---	    ----Cancella Installer----[0m
+	ECHO  [36mBrowser[0m	B1) Firefox [33mx64[0m		     B2) Firefox	    B3) Firefox installer
+	ECHO 		B4) Tor (ITA) [33mx64[0m	     B5) Tor		    B6) Tor installer
+	ECHO  [36mPlayer[0m		P1) VLC v2.2.8 [33mx64[0m	     P2) VLC		    P3) VLC installer
+	ECHO  		P4) Spotify		     P5) Spotify	    P6) Spotify installer
+	ECHO  [36mRAR[0m		R1) WinRAR [33mx64[0m	      	     R2) WinRAR	     	    R3) WinRAR installer
+	ECHO  [36mDownloader[0m	J1) JDownloader 2 [33mx64[0m	     J2) JDownloader 2	    J3) JDownloader 2 installer
+	ECHO  [36mTorrent[0m	T1) uTorrent [33mx86[0m	     T2) uTorrent	    T3) uTorrent installer
+	ECHO  [36mMusica[0m		M1) Mp3tag [33mx86[0m	             M2) Mp3tag	     	    M3) Mp3tag installer
+	ECHO  		M4) Spek v.0.8.2 [33mx86[0m	     --------		    M5) Spek zip file
+	ECHO  [36mDesk Remoto[0m	D1) TeamViewer [33mx86[0m	     D2) TeamViewer 	    D3) TeamViewer installer
+	ECHO  [36mFileRenamer[0m	F1) FileRen Basic v6.3 	     F2) FileRenamer	    F3) FileRenamer installer
+	ECHO  [36mSyncronizer[0m	S1) SyncTrayzor [33mx64[0m 	     S2) SyncTrayzor	    S3) SyncTrayzor installer
+	ECHO  [36mVM[0m		V1) VirtualBox        	     V2) VirtualBox	    V3) VirtualBox Installer
+	ECHO  [36mScreen Capt[0m	O1) OBS Studio [33mx64[0m           O2) OBS Studio 	    O3) OBS Studio installer
+	ECHO  [36mGiochi[0m		G1) Steam Client [33mx86[0m	     G2) Steam 	     	    G3) Steam installer
+	ECHO 		G4) Epic Games	  	     G5) Epic Games 	    G6) Epic Games installer
+	ECHO 					     CK) Check Presenza     TT) Cancella tutti
 	ECHO  [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO  [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO  0) Esci
@@ -157,21 +157,21 @@ ECHO 			*************************************************************
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
 	ECHO  [36mMenu[0m		1) Pagina 1	2) Pagina 2 	3) Pagina 3	F) FullScreen	   M) Minimizza  
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
-	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
-	ECHO  [36mPC Monitor[0m	A1) MSI Afterburner	      --------		      A2) MSI Afterburner zip file
-	ECHO  [36mPlaystation[0m	G7) PlayStation Now	      G8) PlayStation Now     G9) PlayStation Now installer
-	ECHO  [36mController[0m	D4) DS4Windows		      --------	  	      D5) DS4Windows zip file
-	ECHO  [36mText Editor[0m	E1) Atom [33mx64[0m		      E2) Atom 		      E3) Atom installer
-	ECHO 		E4) Notepad++ [33mx64[0m	      E5) Notepad++ 	      E6) Notepad++ installer
-	ECHO 		E7) Lista pacchetti aggiuntivi Atom
-	ECHO  [36mDeveloper[0m	L1) CodeBlocks + Mingw [33mx64[0m    L2) Code::Blocks	      L3) Code::Blocks installer
-	ECHO  [36mCustomization[0m	C1) Rainmeter 4.4 Beta	      C2) Rainmeter 	      C3) Rainmeter installer
-	ECHO  		C4) RocketDock v1.3.5 [33mx86[0m     C5) RocketDock 	      C6) RocketDock installer
-	ECHO  [36mRecovery[0m	H1) Recuva [33mx64[0m     	      H2) Recuva	      H3) Recuva installer
-	ECHO 					      CK) Check Presenza      TT) Cancella tutti
+	ECHO  [36m		------Scarica------	     ----Installa---	    ----Cancella Installer----[0m
+	ECHO  [36mPC Monitor[0m	A1) MSI Afterburner	     --------		    A2) MSI Afterburner zip file
+	ECHO  [36mPlaystation[0m	G7) PlayStation Now	     G8) PlayStation Now    G9) PlayStation Now installer
+	ECHO  [36mController[0m	D4) DS4Windows		     --------	  	    D5) DS4Windows zip file
+	ECHO  [36mText Editor[0m	E1) Atom [33mx64[0m		     E2) Atom 		    E3) Atom installer
+	ECHO 		E4) Notepad++ [33mx64[0m	     E5) Notepad++ 	    E6) Notepad++ installer
+	ECHO 		E7) Lista pack Atom
+	ECHO  [36mDeveloper[0m	L1) CodeBlocks + Mingw [33mx64[0m   L2) Code::Blocks	    L3) Code::Blocks installer
+	ECHO  [36mCustomization[0m	C1) Rainmeter 4.4 Beta	     C2) Rainmeter 	    C3) Rainmeter installer
+	ECHO  		C4) RocketDock v1.3.5 [33mx86[0m    C5) RocketDock 	    C6) RocketDock installer
+	ECHO  [36mRecovery[0m	H1) Recuva [33mx64[0m     	     H2) Recuva	     	    H3) Recuva installer
+	ECHO 					     CK) Check Presenza     TT) Cancella tutti
 	ECHO  [32m---------------------------------------------[Utility]----------------------------------------------
 	ECHO  [36mLink[0m		Q1) Driver video AMD	      Q2) Driver Video NVIDIA
-	ECHO 		Q3) KMS 360 Pro 4644 Link1    Q4) KMS 360 Pro 4644 Link2
+	ECHO 		Q3) KMS 360 Pro Link1         Q4) KMS 360 Pro Link2
 	ECHO  [36mUAC[0m		U1) Disabilita UAC	      U2) Abilita UAC
 	ECHO  [36mMix[0m		TR) Controllo TRIM
 	ECHO  [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset
@@ -189,12 +189,12 @@ ECHO 			*************************************************************
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
 	ECHO  [36mMenu[0m		1) Pagina 1	2) Pagina 2 	3) Pagina 3	F) FullScreen	   M) Minimizza  
 	ECHO  [32m-----------------------------------------[Programmi Portable]-----------------------------------------
-	ECHO  [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m
-	ECHO  [36mPC Monitor[0m	PT1) CPU-Z		      --------		      PT2) CPU-Z zip file
-	ECHO  		PT3) GPU-Z		      --------		      PT4) GPU-Z zip file
-	ECHO  		PT5) CoreTemp [33mx64[0m	      --------		      PT6) CoreTemp zip file
-	ECHO  		PT7) CrystalDiskInfo	      --------		      PT8) CrystalDiskInfo zip file
-	ECHO 								      PTT) Cancella tutti i portabili
+	ECHO  [36m		------Scarica------	    ----Cancella zip file----[0m
+	ECHO  [36mPC Monitor[0m	PT1) CPU-Z		    PT2) CPU-Z zip file
+	ECHO  		PT3) GPU-Z		    PT4) GPU-Z zip file
+	ECHO  		PT5) CoreTemp [33mx64[0m	    PT6) CoreTemp zip file
+	ECHO  		PT7) CrystalDiskInfo	    PT8) CrystalDiskInfo zip file
+	ECHO 					    PTT) Cancella tutti i portabili
 	
 	ECHO  [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO  [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
@@ -213,38 +213,38 @@ ECHO 			*************************************************************
 	ECHO [0m
 	ECHO  	[32m------------------------------------------------------------------------------------------------[Navigazione]-------------------------------------------------------------------------------------------------/
 	ECHO 	[32m/ [0m											              												              [32m/  [0m
-	ECHO 	[32m/ [36mMenu[0m		1) Mostra Pagina 1	2) Mostra Pagina 2	F) FullScreen	    M) Minimizza              											  	      [32m/  [0m
+	ECHO 	[32m/ [36mMenu[0m		1) Pagina 1	2) Pagina 2	3) Pagina 3	F) FullScreen	    M) Minimizza              											  	      [32m/  [0m
 	ECHO 	[32m/ [0m											              												              [32m/  [0m
-	ECHO 	[32m/[32m--------------------------------------------[Programmi]----------------------------------------------/----------------------------------------------[Utility]------------------------------------------------/
+	ECHO 	[32m/[32m--------------------------------------------[Programmi]----------------------------------------------/---------------------------------------------[Utility]-------------------------------------------------/
 	ECHO 	[32m/ [0m											              [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----[0m      [32m/	  [0m										         	      [32m/  [0m
-	ECHO 	[32m/ [36mBrowser[0m	B1) Firefox [33mx64[0m		      B2) Firefox	      B3) Firefox installer	      [32m/ [36mLink[0m		Q1) Driver video AMD	      Q2) Driver Video NVIDIA        		  	      [32m/  [0m
-	ECHO 	[32m/ [0m 		B4) Tor (ITA) [33mx64[0m	      B5) Tor		      B6) Tor installer		      [32m/ [0m		Q3) KMS 360 Pro 4644 Link1    Q4) KMS 360 Pro 4644 Link2         		      [32m/  [0m
-	ECHO 	[32m/ [0m[36mPlayer[0m	P1) VLC v2.2.8 [33mx64[0m	      P2) VLC		      P3) VLC installer		      [32m/ [36mUAC[0m		U1) Disabilita UAC	      U2) Abilita UAC    			              [32m/  [0m
-	ECHO 	[32m/ [0m		P4) Spotify		      P5) Spotify	      P6) Spotify installer	      [32m/ [36mMix[0m		TR) Controllo TRIM           						 	      [32m/  [0m
-	ECHO 	[32m/ [36mRAR[0m		R1) WinRAR [33mx64[0m	      	      R2) WinRAR	      R3) WinRAR installer	      [32m/ [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset        			      [32m/  [0m
-	ECHO 	[32m/ [36mDownloader[0m	J1) JDownloader 2 [33mx64[0m	      J2) JDownloader 2	      J3) JDownloader 2 installer     [32m/ [36mWin Store[0m	WS1) WS Reset         								      [32m/  [0m
-	ECHO 	[32m/ [36mTorrent[0m	T1) uTorrent [33mx86[0m	      T2) uTorrent	      T3) uTorrent installer          [32m/ [36mNetwork[0m		NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP                 [32m/  [0m
-	ECHO 	[32m/ [36mMusica[0m	M1) Mp3tag [33mx86[0m	              M2) Mp3tag	      M3) Mp3tag installer            [32m/ [36mExplorer[0m	ER1) Reset "Accesso Rapido"    							      [32m/  [0m
-	ECHO 	[32m/ [0m		M4) Spek v.0.8.2 [33mx86[0m	      --------		      M5) Spek zip file        	      [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [36mDesk Remoto[0m	D1) TeamViewer [33mx86[0m	      D2) TeamViewer 	      D3) TeamViewer installer        [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [36mFileRenamer[0m	F1) FileRen Basic v6.3 	      F2) FileRenamer	      F3) FileRenamer installer       [32m/-----------------------------------------[Programmi Portable]------------------------------------------[32m/  [0m
-	ECHO 	[32m/ [36mSyncronizer[0m	S1) SyncTrayzor [33mx64[0m 	      S2) SyncTrayzor	      S3) SyncTrayzor installer       [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [36mVM[0m		V1) VirtualBox		      V2) VirtualBox	      V3) VirtualBox Installer        [32m/ [36m		------Scarica------	      ----Installa---	      ----Cancella Installer----      [32m/  [0m
-	ECHO 	[32m/ [36mScreen Capt[0m	O1) OBS Studio [33mx64[0m            O2) OBS Studio 	      O3) OBS Studio installer        [32m/ [36mPC Monitor[0m	PT1) CPU-Z		      --------		      PT2) CPU-Z zip file      	      [32m/  [0m
-	ECHO 	[32m/ [36mGiochi[0m	G1) Steam Client [33mx86[0m	      G2) Steam 	      G3) Steam installer             [32m/  [0m		PT3) GPU-Z		      --------		      PT4) GPU-Z zip file	      [32m/  [0m
-	ECHO 	[32m/ [0m		G4) Epic Games	  	      G5) Epic Games 	      G6) Epic Games installer        [32m/  [0m		PT5) CoreTemp [33mx64[0m	      --------		      PT6) CoreTemp zip file	      [32m/  [0m
-	ECHO 	[32m/ [36mPC Monitor[0m	A1) MSI Afterburner	      --------		      A2) MSI Afterburner zip file    [32m/  [0m		PT7) CrystalDiskInfo	      --------		      PT8) CrystalDiskInfo zip file   [32m/  [0m
-	ECHO 	[32m/ [36mPlaystation[0m	G7) PlayStation Now	      G8) PlayStation Now     G9) PlayStation Now installer   [32m/  [0m								      PTT) Cancella tutti i portabili [32m/  [0m
-	ECHO 	[32m/ [36mController[0m	D4) DS4Windows		      --------	  	      D5) DS4Windows zip file         [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [36mText Editor[0m	E1) Atom [33mx64[0m		      E2) Atom 		      E3) Atom installer              [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [0m		E4) Notepad++ [33mx64[0m	      E5) Notepad++ 	      E6) Notepad++ installer         [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [0m		E7) Lista pacchetti aggiuntivi Atom						      [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [36mDeveloper[0m	L1) CodeBlocks + Mingw [33mx64[0m    L2) Code::Blocks	      L3) Code::Blocks installer      [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [36mCustomization[0m	C1) Rainmeter 4.4 Beta	      C2) Rainmeter 	      C3) Rainmeter installer         [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [0m 		C4) RocketDock v1.3.5 [33mx86[0m     C5) RocketDock 	      C6) RocketDock installer        [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [36mRecovery[0m	H1) Recuva [33mx64[0m     	      H2) Recuva	      H3) Recuva installer            [32m/  [0m											              [32m/  [0m
-	ECHO 	[32m/ [0m					      CK) Check Presenza      TT) Cancella tutti	      [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [36m		------Scarica------	     ----Installa---	    ----Cancella Installer----[0m        [32m/	  [0m										         	      [32m/  [0m
+	ECHO 	[32m/ [36mBrowser[0m	B1) Firefox [33mx64[0m		     B2) Firefox	    B3) Firefox installer	      [32m/ [36mLink[0m		Q1) Driver video AMD	      Q2) Driver Video NVIDIA        		  	      [32m/  [0m
+	ECHO 	[32m/ [0m 		B4) Tor (ITA) [33mx64[0m	     B5) Tor		    B6) Tor installer		      [32m/ [0m		Q3) KMS 360 Pro 4644 Link1    Q4) KMS 360 Pro 4644 Link2         		      [32m/  [0m
+	ECHO 	[32m/ [0m[36mPlayer[0m	P1) VLC v2.2.8 [33mx64[0m	     P2) VLC		    P3) VLC installer		      [32m/ [36mUAC[0m		U1) Disabilita UAC	      U2) Abilita UAC    			              [32m/  [0m
+	ECHO 	[32m/ [0m		P4) Spotify		     P5) Spotify	    P6) Spotify installer	      [32m/ [36mMix[0m		TR) Controllo TRIM           						 	      [32m/  [0m
+	ECHO 	[32m/ [36mRAR[0m		R1) WinRAR [33mx64[0m	     	     R2) WinRAR		    R3) WinRAR installer	      [32m/ [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset        			      [32m/  [0m
+	ECHO 	[32m/ [36mDownloader[0m	J1) JDownloader 2 [33mx64[0m	     J2) JDownloader 2	    J3) JDownloader 2 installer       [32m/ [36mWin Store[0m	WS1) WS Reset         								      [32m/  [0m
+	ECHO 	[32m/ [36mTorrent[0m	T1) uTorrent [33mx86[0m	     T2) uTorrent	    T3) uTorrent installer            [32m/ [36mNetwork[0m		NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP                 [32m/  [0m
+	ECHO 	[32m/ [36mMusica[0m	M1) Mp3tag [33mx86[0m	             M2) Mp3tag	 	    M3) Mp3tag installer              [32m/ [36mExplorer[0m	ER1) Reset "Accesso Rapido"    							      [32m/  [0m
+	ECHO 	[32m/ [0m		M4) Spek v.0.8.2 [33mx86[0m	     --------		    M5) Spek zip file        	      [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [36mDesk Remoto[0m	D1) TeamViewer [33mx86[0m	     D2) TeamViewer 	    D3) TeamViewer installer          [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [36mFileRenamer[0m	F1) FileRen Basic v6.3 	     F2) FileRenamer	    F3) FileRenamer installer         [32m/----------------------------------------[Programmi Portable]-------------------------------------------[32m/  [0m
+	ECHO 	[32m/ [36mSyncronizer[0m	S1) SyncTrayzor [33mx64[0m 	     S2) SyncTrayzor	    S3) SyncTrayzor installer         [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [36mVM[0m		V1) VirtualBox		     V2) VirtualBox	    V3) VirtualBox Installer          [32m/ [36m		------Scarica------	    ----Cancella zip file----				      [32m/  [0m
+	ECHO 	[32m/ [36mScreen Capt[0m	O1) OBS Studio [33mx64[0m           O2) OBS Studio 	    O3) OBS Studio installer          [32m/ [36mPC Monitor[0m	PT1) CPU-Z		    PT2) CPU-Z zip file   			   	      [32m/  [0m
+	ECHO 	[32m/ [36mGiochi[0m	G1) Steam Client [33mx86[0m	     G2) Steam 		    G3) Steam installer        	      [32m/  [0m		PT3) GPU-Z		    PT4) GPU-Z zip file	    				      [32m/  [0m
+	ECHO 	[32m/ [0m		G4) Epic Games	  	     G5) Epic Games 	    G6) Epic Games installer          [32m/  [0m		PT5) CoreTemp [33mx64[0m	    PT6) CoreTemp zip file				      [32m/  [0m
+	ECHO 	[32m/ [36mPC Monitor[0m	A1) MSI Afterburner	     --------		    A2) MSI Afterburner zip file      [32m/  [0m		PT7) CrystalDiskInfo	    PT8) CrystalDiskInfo zip file  			      [32m/  [0m
+	ECHO 	[32m/ [36mPlaystation[0m	G7) PlayStation Now	     G8) PlayStation Now    G9) PlayStation Now installer     [32m/  [0m					    PTT) Cancella tutti i portabili 			      [32m/  [0m
+	ECHO 	[32m/ [36mController[0m	D4) DS4Windows		     --------	  	    D5) DS4Windows zip file           [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [36mText Editor[0m	E1) Atom [33mx64[0m		     E2) Atom 	      	    E3) Atom installer                [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [0m		E4) Notepad++ [33mx64[0m	     E5) Notepad++ 	    E6) Notepad++ installer           [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [0m		E7) Lista pack Atom								      [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [36mDeveloper[0m	L1) CodeBlocks + Mingw [33mx64[0m   L2) Code::Blocks	    L3) Code::Blocks installer        [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [36mCustomization[0m	C1) Rainmeter 4.4 Beta	     C2) Rainmeter 	    C3) Rainmeter installer           [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [0m 		C4) RocketDock v1.3.5 [33mx86[0m    C5) RocketDock 	    C6) RocketDock installer          [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [36mRecovery[0m	H1) Recuva [33mx64[0m     	     H2) Recuva		    H3) Recuva installer              [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [0m					     CK) Check Presenza     TT) Cancella tutti	  	      [32m/  [0m											              [32m/  [0m
 	ECHO 	[32m/ [0m											              [32m/  [0m											              [32m/  [0m
 	ECHO  	[32m/[32m--------------------------------------------------------------------------------------------------[Extra]----------------------------------------------------------------------------------------------------/
 	ECHO 	[32m/ [0m											              												              [32m/  [0m
@@ -1778,9 +1778,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		      Versione = v0.5.3			 *
-	ECHO 	    *		 Codename = Mysterious Brahma 		*
-	ECHO 	     *		 Ultima Release = 06/11/2020	       *
+	ECHO 	   *		      Versione = v0.5.4			 *
+	ECHO 	    *		 Codename = Mysterious Chick 		*
+	ECHO 	     *		 Ultima Release = 07/11/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu

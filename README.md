@@ -86,6 +86,11 @@ RocketDock is a "Mac Dock-like" really good!
 **Recovery** = Recuva (Last Version)<br/>
 Why? Recuva is the best file recovery software I ever used!
 
+**Portable Apps** = <br/>
+CPU-Z<br/>
+GPU-Z<br/>
+CoreTemp<br/>
+CrystalDiskInfo<br/>
 
 ## Will you give support to other programs?
 Of couse! I'm working on it! :wrench:
