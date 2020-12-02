@@ -11,13 +11,13 @@ title HidroSaphrie SAF - (Script After Formatted)
 ::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
 	
 	SET l_firefox=https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"
-	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.2/torbrowser-install-win64-10.0.2_it.exe
+	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.5/torbrowser-install-win64-10.0.5_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
 	SET l_spotify=https://download.scdn.co/SpotifySetup.exe
 	SET l_rar=https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-591it.exe
 	SET l_downloader=https://jdownloader.org/dl?v=101
 	SET l_torrent=https://download-hr.utorrent.com/track/stable/endpoint/utorrent/os/windows
-	SET l_music=https://download.mp3tag.de/mp3tagv303setup.exe
+	SET l_music=https://download.mp3tag.de/mp3tagv304asetup.exe
 	SET l_spek=https://github.com/alexkay/spek/releases/download/v0.8.2/spek-0.8.2.zip
 	SET l_file=http://www.sherrodcomputers.com/downloads/FileRenamerBasic.exe
 	SET l_sync=https://github.com/canton7/SyncTrayzor/releases/download/v1.1.24/SyncTrayzorSetup-x64.exe
@@ -43,25 +43,25 @@ title HidroSaphrie SAF - (Script After Formatted)
 
 ::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET e_firefox="Firefox Installer.exe"
-	SET e_tor=torbrowser-install-win64-10.0.2_it.exe
+	SET e_tor=torbrowser-install-win64-10.0.5_it.exe
 	SET e_player=vlc-2.2.8-win64.exe
 	SET e_spotify=SpotifySetup.exe
 	SET e_rar=WinRAR-x64-591it.exe
 	SET e_downloader=JDownloaderSetup.exe
 	SET e_torrent=uTorrent.exe
-	SET e_music=mp3tagv303setup.exe
+	SET e_music=mp3tagv304asetup.exe
 	SET e_file=FileRenamerBasic.exe
 	SET e_sync=SyncTrayzorSetup-x64.exe
 	SET e_vm=VirtualBox-6.1.16-140961-Win.exe
 	SET e_remoto=TeamViewer_Setup.exe
 	SET e_steam=SteamSetup.exe
-	SET e_epic=EpicInstaller-10.18.8.msi
+	SET e_epic=EpicInstaller-10.19.2.msi
 	SET e_capture=OBS-Studio-26.0.2-Full-Installer-x64.exe
 	SET e_atom=AtomSetup-x64.exe
 	SET e_notepad=npp.7.9.Installer.x64.exe
 	SET e_rainmeter=Rainmeter-4.4-r3408-beta.exe
 	SET e_rocket=RocketDock-v1.3.5.exe
-	SET e_psnow=PlayStationNow-11.2.2.exe
+	SET e_psnow=PlayStationNow-11.2.3.exe
 	SET e_codeblocks=codeblocks-20.03mingw-setup.exe
 	SET e_recuva=rcsetup153.exe
 
@@ -1778,9 +1778,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		      Versione = v0.5.4			 *
-	ECHO 	    *		 Codename = Mysterious Chick 		*
-	ECHO 	     *		 Ultima Release = 07/11/2020	       *
+	ECHO 	   *		      Versione = v0.5.5			 *
+	ECHO 	    *		 Codename = Mysterious Duck		*
+	ECHO 	     *		 Ultima Release = 02/12/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu

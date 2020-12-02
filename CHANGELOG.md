@@ -1,5 +1,6 @@
 ## Version List
- - v0.5.3 - Mysterious Chick
+ - v0.5.5 - Mysterious Duck
+ - v0.5.4 - Mysterious Chick
  - v0.5.3 - Mysterious Brahma
  - v0.5.2 - Mysterious Hens
  - v0.5.1 - Mysterious Chicken
@@ -34,6 +35,9 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.5.5 - Mysterious Duck
++ Added support to "Tor" /  "Mp3tag" / "Epic Games" / "PlayStation Now"  
+
 ### v0.5.4 - Mysterious Chick
 + Adjust Menu Layout
 + Fix information for fullscreen
