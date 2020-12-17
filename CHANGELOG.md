@@ -1,4 +1,5 @@
 ## Version List
+ - v0.5.7 - Mysterious Albatros
  - v0.5.6 - Mysterious Peacock
  - v0.5.5 - Mysterious Duck
  - v0.5.4 - Mysterious Chick
@@ -36,6 +37,9 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.5.7 - Mysterious Albatros
++ Cheching Admin Rights where necessary before some "Utility Function"
+
 ### v0.5.6 - Mysterious Peacock
 + Update support to "Tor" / "WinRAR" / "OBS" / "Rainmeter" / "PlayStation Now"
 

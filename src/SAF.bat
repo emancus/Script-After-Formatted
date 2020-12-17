@@ -1364,7 +1364,15 @@ Goto :letsgo
 ::----------------------WINDOWS UPDATE RECONFIGURATION----------
 
 :wureset
-	ECHO [43m[Attenzione][0m - Quest'operazione potrebbe richiedere i Privilegi di Amministratore
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	net session >nul 2>&1
+    	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
 	SET /P t=Vuoi effettuare un reset di Windows Update [S/N]?
 	if /I "%t%" EQU "S" test&cls
 	if /I "%t%" EQU "S" goto :wuresetconfirm
@@ -1375,7 +1383,8 @@ Goto :letsgo
 	if /I "%t%" EQU "n" test&cls
 	if /I "%t%" EQU "n" goto :menu
 	Goto :wureset
-
+   	
+	
 :wuresetconfirm
 	SC config wuauserv start=auto
 	SC config bits start=auto
@@ -1389,7 +1398,14 @@ Goto :letsgo
 ::----------------------WINDOWS STORE RESET-----------------------
 
 :wsreset
-	ECHO [43m[Attenzione][0m - Quest'operazione potrebbe richiedere i Privilegi di Amministratore
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
 	SET /P t=Vuoi effettuare un reset di Windows Store [S/N]?
 	if /I "%t%" EQU "S" test&cls
 	if /I "%t%" EQU "S" goto :wsresetconfirm
@@ -1400,7 +1416,7 @@ Goto :letsgo
 	if /I "%t%" EQU "n" test&cls
 	if /I "%t%" EQU "n" goto :menu
 	Goto :wsreset
-
+	
 :wsresetconfirm
 	netsh winsock reset
 	wsreset.exe
@@ -1413,12 +1429,20 @@ Goto :letsgo
 
 :nicreset
 	test&cls
-	ECHO [43m[Attenzione][0m - Quest'operazione potrebbe richiedere i Privilegi di Amministratore
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	net session >nul 2>&1
+    	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
 	ECHO [0m
 	ECHO [36mElenco schede di rete disponibili[0m
 	wmic nic get name, index
 	ECHO [0m
-	SET /P choicenic=Quale [31mscheda di rete[0m vuoi resettare (inserisci il numero oppure X per tornare al menu) 
+	SET /P choicenic=Quale [31mscheda di rete[0m vuoi resettare (inserisci il numero oppure [31mX[0m, per tornare al menu) 
 	if /I "%choicenic%" EQU "X" test&cls
 	if /I "%choicenic%" EQU "x" test&cls	
 	if /I "%choicenic%" EQU "X" goto :menu
@@ -1428,10 +1452,19 @@ Goto :letsgo
 	ECHO	[42m[COMPLETATO][0m - Reset della scheda eseguito.
 	Timeout /t 3
 	Goto :nicreset
+	
 
 :nicrepair
 	test&cls
-	ECHO [43m[Attenzione][0m - Quest'operazione [31mrichiede NECESSARIAMENTE i Privilegi di Amministratore[0m
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	net session >nul 2>&1
+    	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
 	ECHO [0m
 	ECHO [0mQuest'operazione permette di:[36m
 	ECHO 	1) Rilasciare la configurazione DHCP corrente e degli indirizzi IP per tutti gli adapter
@@ -1452,6 +1485,7 @@ Goto :letsgo
 	if /I "%choicenic%" EQU "s" test&cls
 	if /I "%choicenic%" EQU "s" goto :nicrepairyes
 	Goto :nicrepair
+	
 
 :nicrepairyes
 	ipconfig /release
@@ -1470,7 +1504,15 @@ Goto :letsgo
 ::----------------------EXPLORER--------------------------------------------------------------------------------------
 :accessorapidorepair
 	test&cls
-	ECHO [43m[Attenzione][0m - Quest'operazione [31mrichiede NECESSARIAMENTE i Privilegi di Amministratore[0m
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	net session >nul 2>&1
+    	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
 	ECHO [43m[Attenzione][0m - Il reset di "Accesso Rapido" rimuovera' i link alle cartelle aggiungte manualmente
 	ECHO [0m
 	ECHO [0mQuest'operazione permette di:[36m
@@ -1490,7 +1532,8 @@ Goto :letsgo
 	if /I "%choiceaccessorapido%" EQU "n" goto :menu
 	if /I "%choiceaccessorapido%" EQU "s" test&cls
 	if /I "%choiceaccessorapido%" EQU "s" goto :accessorapidorepairyes
-	Goto :nicrepair
+	Goto :accessorapidorepair
+
 
 :accessorapidorepairyes
 	del /F /Q %APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations
@@ -1778,9 +1821,9 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		      Versione = v0.5.6			 *
-	ECHO 	    *		Codename = Mysterious Peacock		*
-	ECHO 	     *		 Ultima Release = 02/12/2020	       *
+	ECHO 	   *		      Versione = v0.5.7			 *
+	ECHO 	    *		Codename = Mysterious Albatros		*
+	ECHO 	     *		 Ultima Release = 17/12/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
