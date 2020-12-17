@@ -11,10 +11,10 @@ title HidroSaphrie SAF - (Script After Formatted)
 ::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
 	
 	SET l_firefox=https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"
-	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.5/torbrowser-install-win64-10.0.5_it.exe
+	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.7/torbrowser-install-win64-10.0.7_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
 	SET l_spotify=https://download.scdn.co/SpotifySetup.exe
-	SET l_rar=https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-591it.exe
+	SET l_rar=https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-600it.exe
 	SET l_downloader=https://jdownloader.org/dl?v=101
 	SET l_torrent=https://download-hr.utorrent.com/track/stable/endpoint/utorrent/os/windows
 	SET l_music=https://download.mp3tag.de/mp3tagv304asetup.exe
@@ -25,10 +25,10 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_remoto=https://download.teamviewer.com/full
 	SET l_steam=https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 	SET l_epic=https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi
-	SET l_capture=https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.0.2-Full-Installer-x64.exe
+	SET l_capture=https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.1-Full-Installer-x64.exe
 	SET l_atom=https://atom.io/download/windows_x64
 	SET l_notepad=https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.9/npp.7.9.Installer.x64.exe
-	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3408/Rainmeter-4.4-r3408-beta.exe
+	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3410/Rainmeter-4.4-r3410-beta.exe
 	SET l_rocket=https://punklabs.com/downloads/RocketDock-v1.3.5.exe
 	SET l_psnow=https://download-psnow.playstation.com/downloads/psnow/pc/latest
 	SET l_ds4windows=https://github.com/Jays2Kings/DS4Windows/releases/download/v1.4.52/DS4Windows.zip
@@ -43,10 +43,10 @@ title HidroSaphrie SAF - (Script After Formatted)
 
 ::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET e_firefox="Firefox Installer.exe"
-	SET e_tor=torbrowser-install-win64-10.0.5_it.exe
+	SET e_tor=torbrowser-install-win64-10.0.7_it.exe
 	SET e_player=vlc-2.2.8-win64.exe
 	SET e_spotify=SpotifySetup.exe
-	SET e_rar=WinRAR-x64-591it.exe
+	SET e_rar=WinRAR-x64-600it.exe
 	SET e_downloader=JDownloaderSetup.exe
 	SET e_torrent=uTorrent.exe
 	SET e_music=mp3tagv304asetup.exe
@@ -56,12 +56,12 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET e_remoto=TeamViewer_Setup.exe
 	SET e_steam=SteamSetup.exe
 	SET e_epic=EpicInstaller-10.19.2.msi
-	SET e_capture=OBS-Studio-26.0.2-Full-Installer-x64.exe
+	SET e_capture=OBS-Studio-26.1-Full-Installer-x64.exe
 	SET e_atom=AtomSetup-x64.exe
 	SET e_notepad=npp.7.9.Installer.x64.exe
-	SET e_rainmeter=Rainmeter-4.4-r3408-beta.exe
+	SET e_rainmeter=Rainmeter-4.4-r3410-beta.exe
 	SET e_rocket=RocketDock-v1.3.5.exe
-	SET e_psnow=PlayStationNow-11.2.3.exe
+	SET e_psnow=PlayStationNow-11.3.4.exe
 	SET e_codeblocks=codeblocks-20.03mingw-setup.exe
 	SET e_recuva=rcsetup153.exe
 
@@ -1778,8 +1778,8 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		      Versione = v0.5.5			 *
-	ECHO 	    *		 Codename = Mysterious Duck		*
+	ECHO 	   *		      Versione = v0.5.6			 *
+	ECHO 	    *		Codename = Mysterious Peacock		*
 	ECHO 	     *		 Ultima Release = 02/12/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m

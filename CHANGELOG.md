@@ -1,4 +1,5 @@
 ## Version List
+ - v0.5.6 - Mysterious Peacock
  - v0.5.5 - Mysterious Duck
  - v0.5.4 - Mysterious Chick
  - v0.5.3 - Mysterious Brahma
@@ -35,8 +36,11 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.5.6 - Mysterious Peacock
++ Update support to "Tor" / "WinRAR" / "OBS" / "Rainmeter" / "PlayStation Now"
+
 ### v0.5.5 - Mysterious Duck
-+ Added support to "Tor" /  "Mp3tag" / "Epic Games" / "PlayStation Now"  
++ Update support to "Tor" /  "Mp3tag" / "Epic Games" / "PlayStation Now"  
 
 ### v0.5.4 - Mysterious Chick
 + Adjust Menu Layout
