@@ -1,4 +1,6 @@
 ## Version List
+ - v0.6.1 - Majestic Falcon
+ - v0.6.0 - Majestic Eagle
  - v0.5.7 - Mysterious Albatros
  - v0.5.6 - Mysterious Peacock
  - v0.5.5 - Mysterious Duck
@@ -37,6 +39,14 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.6.1 - Majestic Falcon (next version - Unreleased)
+
+### v0.6.0 - Majestic Eagle
++ New Feature: program package
++ Better organization of code
++ Trim check function is now a standalone procedure (Bugfix)
++ Version is shown also in the windows title
+
 ### v0.5.7 - Mysterious Albatros
 + Cheching Admin Rights where necessary before some "Utility Function"
 
