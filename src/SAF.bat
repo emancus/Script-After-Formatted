@@ -1,15 +1,15 @@
 ::----------------------------------------------------------
-::		HidroSaphire Script for Install
+::		HidroSaphire SAF Source Code
 ::----------------------------------------------------------
 @echo off
-
-
-::----------------------TITLE OF WINDOWS--------------------------------------------------------------------------------------
-title HidroSaphrie SAF - (Script After Formatted)
-
-
-::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
 	
+	SET version=v0.6.0
+
+	::----------------------TITLE OF WINDOWS--------------------------------------------------------------------------------------
+	title HidroSaphrie SAF %version% - (Script After Formatted)
+
+	
+	::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET l_firefox=https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"
 	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.7/torbrowser-install-win64-10.0.7_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
@@ -39,9 +39,7 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET l_kms2=https://rapidgator.net/file/2fb3e86836ea43071a026138725a1fdb/KMS_360_Pro_4644.zip
 	SET l_codeblocks=https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-20.03mingw-setup.exe
 	SET l_recuva=https://download.ccleaner.com/rcsetup153.exe?cc2020
-
-
-::----------------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
+	::-------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET e_firefox="Firefox Installer.exe"
 	SET e_tor=torbrowser-install-win64-10.0.7_it.exe
 	SET e_player=vlc-2.2.8-win64.exe
@@ -64,27 +62,22 @@ title HidroSaphrie SAF - (Script After Formatted)
 	SET e_psnow=PlayStationNow-11.3.4.exe
 	SET e_codeblocks=codeblocks-20.03mingw-setup.exe
 	SET e_recuva=rcsetup153.exe
-
-
-::----------------------ZIP VARIABLE INIALIZATION----------------------------------------------------------------------------
+	::-----------ZIP VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET z_spek=spek-0.8.2.zip
 	SET z_ds4windows=DS4Windows.zip
 	SET z_afterburner=MSIAfterburnerSetup.zip
-
-
-::----------------------PORTABLE VARIABLE INIALIZATION-----------------------------------------------------------------------
+	::----------PORTABLE VARIABLE INIALIZATION-----------------------------------------------------------------------
 	SET pl_cpuz=http://download.cpuid.com/cpu-z/cpu-z_1.94-en.zip
 	SET pz_cpuz=cpu-z_1.94-en.zip
 	SET pl_gpuz=http://dl1.hwupgrade.it/dl/7ad61bc4d26503965cab6c6cf380b1c0/5f921535/utilita/schede_video/gpu-z/GPU-Z.2.35.0.exe
-	::--pz_gpuz=NO-ZIP-FILE-------------
+	::WARNING----------------------------------------------------pz_gpuz=NO-ZIP-FILE-------------
 	SET pl_coretemp=https://www.alcpu.com/CoreTemp/CoreTemp64.zip
 	SET pz_coretemp=CoreTemp64.zip
 	SET pl_crystaldisk=https://dotsrc.dl.osdn.net/osdn/crystaldiskinfo/73507/CrystalDiskInfo8_8_9.zip
 	SET pz_crystaldisk=CrystalDiskInfo8_8_9.zip
-
-
-::----------------------VARIABLE INITIALIZATION-------------------------------------------------------------------------------
-:: Isn't necessary, but required for have the variable initializate to 0 in the debug room
+	::----------------------OTHER VARIABLE INIALIZATION--------------------------------------------------------------------------
+ 	SET downloadpath=D:\Download\
+	::-----------------------------------The following variable is initializated for having the initial value set to 0 in the debug room
 	SET browser=0
 	SET tor=0
 	SET player=0
@@ -169,15 +162,13 @@ ECHO 			*************************************************************
 	ECHO  		C4) RocketDock v1.3.5 [33mx86[0m    C5) RocketDock 	    C6) RocketDock installer
 	ECHO  [36mRecovery[0m	H1) Recuva [33mx64[0m     	     H2) Recuva	     	    H3) Recuva installer
 	ECHO 					     CK) Check Presenza     TT) Cancella tutti
-	ECHO  [32m---------------------------------------------[Utility]----------------------------------------------
-	ECHO  [36mLink[0m		Q1) Driver video AMD	      Q2) Driver Video NVIDIA
-	ECHO 		Q3) KMS 360 Pro Link1         Q4) KMS 360 Pro Link2
-	ECHO  [36mUAC[0m		U1) Disabilita UAC	      U2) Abilita UAC
-	ECHO  [36mMix[0m		TR) Controllo TRIM
-	ECHO  [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset
-	ECHO  [36mWin Store[0m	WS1) WS Reset
-	ECHO  [36mNetwork[0m	NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP
-	ECHO  [36mExplorer[0m	ER1) Reset "accesso rapido"
+	ECHO  [32m-----------------------------------------[Programmi Portable]-----------------------------------------
+	ECHO  [36m		------Scarica------	    ----Cancella zip file----[0m
+	ECHO  [36mPC Monitor[0m	PT1) CPU-Z		    PT2) CPU-Z zip file
+	ECHO  		PT3) GPU-Z		    PT4) GPU-Z zip file
+	ECHO  		PT5) CoreTemp [33mx64[0m	    PT6) CoreTemp zip file
+	ECHO  		PT7) CrystalDiskInfo	    PT8) CrystalDiskInfo zip file
+	ECHO 					    PTT) Cancella tutti i portabili
 	ECHO  [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO  [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO  0) Esci
@@ -188,14 +179,19 @@ ECHO 			*************************************************************
 	ECHO  [31m[Pag 3/3][0m
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
 	ECHO  [36mMenu[0m		1) Pagina 1	2) Pagina 2 	3) Pagina 3	F) FullScreen	   M) Minimizza  
-	ECHO  [32m-----------------------------------------[Programmi Portable]-----------------------------------------
-	ECHO  [36m		------Scarica------	    ----Cancella zip file----[0m
-	ECHO  [36mPC Monitor[0m	PT1) CPU-Z		    PT2) CPU-Z zip file
-	ECHO  		PT3) GPU-Z		    PT4) GPU-Z zip file
-	ECHO  		PT5) CoreTemp [33mx64[0m	    PT6) CoreTemp zip file
-	ECHO  		PT7) CrystalDiskInfo	    PT8) CrystalDiskInfo zip file
-	ECHO 					    PTT) Cancella tutti i portabili
-	
+	ECHO  [32m----------------------------------------------[Utility]-----------------------------------------------
+	ECHO  [36mLink[0m		Q1) Driver video AMD	      Q2) Driver Video NVIDIA
+	ECHO 		Q3) KMS 360 Pro Link1         Q4) KMS 360 Pro Link2
+	ECHO  [36mUAC[0m		U1) Disabilita UAC	      U2) Abilita UAC
+	ECHO  [36mMix[0m		TR) Controllo TRIM
+	ECHO  [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset
+	ECHO  [36mWin Store[0m	WS1) WS Reset
+	ECHO  [36mNetwork[0m	NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP
+	ECHO  [36mExplorer[0m	ER1) Reset "accesso rapido"
+	ECHO  [32m------------------------------------------[Package Programmi]------------------------------------------[0m
+	ECHO  [45m[Base Pack][0m	PAK1) Firefox, VLC, WinRAR, JDown2, uTorrent, Mp3tag, FileRenamer, TeamViewer
+	ECHO  [45m[Game Pack][0m	PAK2) Steam, EpicGames, MSI Afterburner, PSNow, DS4Windows
+	ECHO  [45m[Dev  Pack][0m	PAK3) Atom, Notepad++, CodeBlocks+Mingw, VirtualBox
 	ECHO  [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO  [32mAltro[0m		I) Informazioni	   C) Clear Screen    PC) InfoPC     D) DebugRoom    E) Easter Egg
 	ECHO  0) Esci
@@ -262,7 +258,7 @@ ECHO 			*************************************************************
 :letsgo
 	set /P c=
 
-	::----MENU---------------------------------------
+		::----MENU---------------------------------------
 	if "%c%" EQU "1"	test&cls
 	if "%c%" EQU "1"	(Goto :menu)
 	if "%c%" EQU "2"	test&cls
@@ -277,7 +273,7 @@ ECHO 			*************************************************************
 	if "%c%" EQU "M"	Goto :minimize
 	if "%c%" EQU "m"	test&cls
 	if "%c%" EQU "m"	Goto :minimize
-	::----PROGRAM-----------------------------------
+		::----PROGRAM-----------------------------------
 	if "%c%" EQU "B1" START %l_firefox%		::----Browser------------
 	if "%c%" EQU "b1" START %l_firefox%
 	if "%c%" EQU "B2" Goto :browser
@@ -432,8 +428,7 @@ ECHO 			*************************************************************
 	if "%c%" EQU "TT" Goto :deltotal		::----TOTAL--------------------------------------
 	if "%c%" EQU "tt" Goto :deltotal
 	if "%c%" EQU "Tt" Goto :deltotal
-	
-	::----PAG2 UTILITY--------------------------------------
+		::----UTILITY--------------------------------------
 	if "%c%" EQU "Q1" START %l_amd%
 	if "%c%" EQU "q1" START %l_amd%
 	if "%c%" EQU "Q2" START %l_nvidia%
@@ -445,7 +440,7 @@ ECHO 			*************************************************************
 	if "%c%" EQU "WU1" Goto :wureset
 	if "%c%" EQU "wu1" Goto :wureset
 	if "%c%" EQU "wu2" ECHO Non ancora implementato
-	if "%c%" EQU "wi2" ECHO Non ancora implementato
+	if "%c%" EQU "wu2" ECHO Non ancora implementato
 	if "%c%" EQU "WS1" Goto :wsreset
 	if "%c%" EQU "ws1" Goto :wsreset
 	if "%c%" EQU "NR1" Goto :nicreset
@@ -460,15 +455,8 @@ ECHO 			*************************************************************
 	if "%c%" EQU "U2" ECHO Ancora non implementato
 	if "%c%" EQU "u2" ECHO Ancora non implementato
 	::----MIX----------------------------------------
-	if "%c%" EQU "tr" (	ECHO [32m
-				ECHO 0=TRIM Abilitato / 1=TRIM Disabilitato [0m
-				fsutil behavior query DisableDeleteNotify
-			   )
-	if "%c%" EQU "TR" (	ECHO [32m
-				ECHO 0=TRIM Abilitato / 1= TRIM Disabilitato [0m
-				fsutil behavior query DisableDeleteNotify
-			   )
-
+	if "%c%" EQU "tr" Goto :checktrim
+	if "%c%" EQU "TR" Goto :checktrim
 	::----EXTRA--------------------------------------
 	if "%c%" EQU "I" test&cls
 	if "%c%" EQU "i" test&cls
@@ -490,8 +478,7 @@ ECHO 			*************************************************************
 	if "%c%" EQU "e" test&cls
 	if "%c%" EQU "E" Goto :easterEgg
 	if "%c%" EQU "e" Goto :easterEgg
-
-	::----PAG3 PORTABILI-----------------------------
+		::----PORTABILI-----------------------------
 	if "%c%" EQU "PT1" START %pl_cpuz%		::---PC MONITOR----------------------------------
 	if "%c%" EQU "pt1" START %pl_cpuz%
 	if "%c%" EQU "PT2" Goto :delcpuz
@@ -510,13 +497,17 @@ ECHO 			*************************************************************
 	if "%c%" EQU "pt8" Goto :delcrystaldisk
 	if "%c%" EQU "PTT" Goto :delportable
 	if "%c%" EQU "ptt" Goto :delportable
-
-	::----END----------------------------------------
+		::----PACKAGE OF FILE-----------------------------
+	if "%c%" EQU "PAK1" Goto :package1
+	if "%c%" EQU "pak1" Goto :package1
+	if "%c%" EQU "PAK2" Goto :package2
+	if "%c%" EQU "pak2" Goto :package2
+	if "%c%" EQU "PAK3" Goto :package3
+	if "%c%" EQU "pak3" Goto :package3
+		::----END----------------------------------------
 	if %c%==0 Goto :end
-
-	::----ERRORI-------------------------------------
+		::----ERRORI-------------------------------------
 	ECHO [43m[ERRORE][0m - Comando non ammesso - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-
 	Goto :letsgo
 
 
@@ -1361,188 +1352,6 @@ Goto :letsgo
 	GOTO :letsgo
 
 
-::----------------------WINDOWS UPDATE RECONFIGURATION----------
-
-:wureset
-	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
-	net session >nul 2>&1
-    	if %errorLevel% == 0 (
-		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
-	) else (
-        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
-		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-		Goto :letsgo
-   	)
-	SET /P t=Vuoi effettuare un reset di Windows Update [S/N]?
-	if /I "%t%" EQU "S" test&cls
-	if /I "%t%" EQU "S" goto :wuresetconfirm
-	if /I "%t%" EQU "N" test&cls
-	if /I "%t%" EQU "N" goto :menu
-	if /I "%t%" EQU "S" test&cls
-	if /I "%t%" EQU "S" goto :wuresetconfirm
-	if /I "%t%" EQU "n" test&cls
-	if /I "%t%" EQU "n" goto :menu
-	Goto :wureset
-   	
-	
-:wuresetconfirm
-	SC config wuauserv start=auto
-	SC config bits start=auto
-	SC config cryptsvc start=auto
-	SC config trustedinstaller start=auto
-	ECHO	[42m[COMPLETATO][0m - Reset completato. Adesso devi riavviare il computer
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-	Goto :letsgo
-
-
-::----------------------WINDOWS STORE RESET-----------------------
-
-:wsreset
-	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
-	if %errorLevel% == 0 (
-		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
-	) else (
-        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
-		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-		Goto :letsgo
-   	)
-	SET /P t=Vuoi effettuare un reset di Windows Store [S/N]?
-	if /I "%t%" EQU "S" test&cls
-	if /I "%t%" EQU "S" goto :wsresetconfirm
-	if /I "%t%" EQU "N" test&cls
-	if /I "%t%" EQU "N" goto :menu
-	if /I "%t%" EQU "S" test&cls
-	if /I "%t%" EQU "S" goto :wsresetconfirm
-	if /I "%t%" EQU "n" test&cls
-	if /I "%t%" EQU "n" goto :menu
-	Goto :wsreset
-	
-:wsresetconfirm
-	netsh winsock reset
-	wsreset.exe
-	ECHO	[42m[COMPLETATO][0m - Reset completato. Dovresti vedere adesso Windows Store aperto
-	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-	Goto :letsgo
-
-
-::----------------------NIC RESET-----------------------
-
-:nicreset
-	test&cls
-	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
-	net session >nul 2>&1
-    	if %errorLevel% == 0 (
-		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
-	) else (
-        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
-		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-		Goto :letsgo
-   	)
-	ECHO [0m
-	ECHO [36mElenco schede di rete disponibili[0m
-	wmic nic get name, index
-	ECHO [0m
-	SET /P choicenic=Quale [31mscheda di rete[0m vuoi resettare (inserisci il numero oppure [31mX[0m, per tornare al menu) 
-	if /I "%choicenic%" EQU "X" test&cls
-	if /I "%choicenic%" EQU "x" test&cls	
-	if /I "%choicenic%" EQU "X" goto :menu
-	if /I "%choicenic%" EQU "x" goto :menu
-	wmic path win32_networkadapter where index=%choicenic% call disable
-	wmic path win32_networkadapter where index=%choicenic% call enable
-	ECHO	[42m[COMPLETATO][0m - Reset della scheda eseguito.
-	Timeout /t 3
-	Goto :nicreset
-	
-
-:nicrepair
-	test&cls
-	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
-	net session >nul 2>&1
-    	if %errorLevel% == 0 (
-		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
-	) else (
-        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
-		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-		Goto :letsgo
-   	)
-	ECHO [0m
-	ECHO [0mQuest'operazione permette di:[36m
-	ECHO 	1) Rilasciare la configurazione DHCP corrente e degli indirizzi IP per tutti gli adapter
-	ECHO 	2) Rinnovare la configurazione DHCP per tutte le schede
- 	ECHO 	3) Cancellare tutte le voci dalla cache ARP
-	ECHO 	4) Svuotare la cache dei nomi NetBIOS e ricaricare le voci dal file LMHOSTS
-	ECHO 	5) Rilasciare e aggiornare i nomi NetBIOS per il computer locale registrato con i server WINS.
-	ECHO 	6) Cancellare e reimpostare il contenuto della cache del resolver client DNS.
-	ECHO 	7) Avviare la registrazione dinamica manuale per i nomi DNS e indirizzi IP configurati nel computer
-	ECHO [0m
-	SET /P choicenic=Vuoi continuare [S/N]? 
-	if /I "%choicenic%" EQU "N" test&cls
-	if /I "%choicenic%" EQU "N" goto :menu
-	if /I "%choicenic%" EQU "S" test&cls
-	if /I "%choicenic%" EQU "S" goto :nicrepairyes
-	if /I "%choicenic%" EQU "n" test&cls
-	if /I "%choicenic%" EQU "n" goto :menu
-	if /I "%choicenic%" EQU "s" test&cls
-	if /I "%choicenic%" EQU "s" goto :nicrepairyes
-	Goto :nicrepair
-	
-
-:nicrepairyes
-	ipconfig /release
-	ipconfig /renew
-	arp -d *
-	nbtstat -R
-	nbtstat -RR
-	ipconfig /flushdns
-	ipconfig /registerdns
-	ECHO [42m[COMPLETATO][0m - Reset DHCP, ARP, NetBIOS, DNS e IP eseguito.
-	Timeout /t 3
-	test&cls
-	Goto :menu
-
-
-::----------------------EXPLORER--------------------------------------------------------------------------------------
-:accessorapidorepair
-	test&cls
-	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
-	net session >nul 2>&1
-    	if %errorLevel% == 0 (
-		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
-	) else (
-        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
-		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-		Goto :letsgo
-   	)
-	ECHO [43m[Attenzione][0m - Il reset di "Accesso Rapido" rimuovera' i link alle cartelle aggiungte manualmente
-	ECHO [0m
-	ECHO [0mQuest'operazione permette di:[36m
-	ECHO Ripristinare la funzione "Accesso Rapido" di Windows 10 a seguito di probabili guasti come:
-	ECHO 	- Impossibilita' di aggiungere cartella ad "Accesso Rapido"; 
- 	ECHO 	- Lista "Accesso Rapido" vuota;
-	ECHO 	- Nessun file in "Accesso Rapido";
-	ECHO 	- Caricamento infinito di "Accesso Rapido";
-	ECHO 	- ...
-	ECHO [0m
-	SET /P choiceaccessorapido=Vuoi continuare [S/N]? 
-	if /I "%choiceaccessorapido%" EQU "N" test&cls
-	if /I "%choiceaccessorapido%" EQU "N" goto :menu
-	if /I "%choiceaccessorapido%" EQU "S" test&cls
-	if /I "%choiceaccessorapido%" EQU "S" goto :accessorapidorepairyes
-	if /I "%choiceaccessorapido%" EQU "n" test&cls
-	if /I "%choiceaccessorapido%" EQU "n" goto :menu
-	if /I "%choiceaccessorapido%" EQU "s" test&cls
-	if /I "%choiceaccessorapido%" EQU "s" goto :accessorapidorepairyes
-	Goto :accessorapidorepair
-
-
-:accessorapidorepairyes
-	del /F /Q %APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations
-	ECHO [42m[COMPLETATO][0m - Reset "Accesso Rapido" eseguito.
-	Timeout /t 3
-	test&cls
-	Goto :menu
-
-
 ::----------------------CHECK PRESENTI--------------------------------------------------------------------------------
 :checkpresence
 
@@ -1811,6 +1620,224 @@ Goto :letsgo
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 	GOTO :letsgo
 
+::----------------------------------------------------------------UTILITY-------------------------------------------------
+::----------------------CHECK TRIM------------------------------
+:checktrim
+	ECHO [32m
+	ECHO 0=TRIM Abilitato / 1= TRIM Disabilitato [0m
+	fsutil behavior query DisableDeleteNotify
+	ECHO [0m
+	Goto :letsgo
+	
+
+::----------------------WINDOWS UPDATE RECONFIGURATION----------
+
+:wureset
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	net session >nul 2>&1
+    	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
+	SET /P t=Vuoi effettuare un reset di Windows Update [S/N]?
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :wuresetconfirm
+	if /I "%t%" EQU "N" test&cls
+	if /I "%t%" EQU "N" goto :menu
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :wuresetconfirm
+	if /I "%t%" EQU "n" test&cls
+	if /I "%t%" EQU "n" goto :menu
+	Goto :wureset
+   	
+	
+:wuresetconfirm
+	SC config wuauserv start=auto
+	SC config bits start=auto
+	SC config cryptsvc start=auto
+	SC config trustedinstaller start=auto
+	ECHO	[42m[COMPLETATO][0m - Reset completato. Adesso devi riavviare il computer
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+	Goto :letsgo
+
+
+::----------------------WINDOWS STORE RESET-----------------------
+
+:wsreset
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
+	SET /P t=Vuoi effettuare un reset di Windows Store [S/N]?
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :wsresetconfirm
+	if /I "%t%" EQU "N" test&cls
+	if /I "%t%" EQU "N" goto :menu
+	if /I "%t%" EQU "S" test&cls
+	if /I "%t%" EQU "S" goto :wsresetconfirm
+	if /I "%t%" EQU "n" test&cls
+	if /I "%t%" EQU "n" goto :menu
+	Goto :wsreset
+	
+:wsresetconfirm
+	netsh winsock reset
+	wsreset.exe
+	ECHO	[42m[COMPLETATO][0m - Reset completato. Dovresti vedere adesso Windows Store aperto
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+	Goto :letsgo
+
+
+::----------------------NIC RESET-----------------------
+
+:nicreset
+	test&cls
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	net session >nul 2>&1
+    	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
+	ECHO [0m
+	ECHO [36mElenco schede di rete disponibili[0m
+	wmic nic get name, index
+	ECHO [0m
+	SET /P choicenic=Quale [31mscheda di rete[0m vuoi resettare (inserisci il numero oppure [31mX[0m, per tornare al menu) 
+	if /I "%choicenic%" EQU "X" test&cls
+	if /I "%choicenic%" EQU "x" test&cls	
+	if /I "%choicenic%" EQU "X" goto :menu
+	if /I "%choicenic%" EQU "x" goto :menu
+	wmic path win32_networkadapter where index=%choicenic% call disable
+	wmic path win32_networkadapter where index=%choicenic% call enable
+	ECHO	[42m[COMPLETATO][0m - Reset della scheda eseguito.
+	Timeout /t 3
+	Goto :nicreset
+	
+
+:nicrepair
+	test&cls
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	net session >nul 2>&1
+    	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
+	ECHO [0m
+	ECHO [0mQuest'operazione permette di:[36m
+	ECHO 	1) Rilasciare la configurazione DHCP corrente e degli indirizzi IP per tutti gli adapter
+	ECHO 	2) Rinnovare la configurazione DHCP per tutte le schede
+ 	ECHO 	3) Cancellare tutte le voci dalla cache ARP
+	ECHO 	4) Svuotare la cache dei nomi NetBIOS e ricaricare le voci dal file LMHOSTS
+	ECHO 	5) Rilasciare e aggiornare i nomi NetBIOS per il computer locale registrato con i server WINS.
+	ECHO 	6) Cancellare e reimpostare il contenuto della cache del resolver client DNS.
+	ECHO 	7) Avviare la registrazione dinamica manuale per i nomi DNS e indirizzi IP configurati nel computer
+	ECHO [0m
+	SET /P choicenic=Vuoi continuare [S/N]? 
+	if /I "%choicenic%" EQU "N" test&cls
+	if /I "%choicenic%" EQU "N" goto :menu
+	if /I "%choicenic%" EQU "S" test&cls
+	if /I "%choicenic%" EQU "S" goto :nicrepairyes
+	if /I "%choicenic%" EQU "n" test&cls
+	if /I "%choicenic%" EQU "n" goto :menu
+	if /I "%choicenic%" EQU "s" test&cls
+	if /I "%choicenic%" EQU "s" goto :nicrepairyes
+	Goto :nicrepair
+	
+
+:nicrepairyes
+	ipconfig /release
+	ipconfig /renew
+	arp -d *
+	nbtstat -R
+	nbtstat -RR
+	ipconfig /flushdns
+	ipconfig /registerdns
+	ECHO [42m[COMPLETATO][0m - Reset DHCP, ARP, NetBIOS, DNS e IP eseguito.
+	Timeout /t 3
+	test&cls
+	Goto :menu
+
+
+::----------------------EXPLORER--------------------------------------------------------------------------------------
+:accessorapidorepair
+	test&cls
+	ECHO [43m[Attenzione][0m - Quest'operazione richiede i Privilegi di Amministratore
+	net session >nul 2>&1
+    	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Hai i Privilegi di Amministratore[0m
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+		Goto :letsgo
+   	)
+	ECHO [43m[Attenzione][0m - Il reset di "Accesso Rapido" rimuovera' i link alle cartelle aggiungte manualmente
+	ECHO [0m
+	ECHO [0mQuest'operazione permette di:[36m
+	ECHO Ripristinare la funzione "Accesso Rapido" di Windows 10 a seguito di probabili guasti come:
+	ECHO 	- Impossibilita' di aggiungere cartella ad "Accesso Rapido"; 
+ 	ECHO 	- Lista "Accesso Rapido" vuota;
+	ECHO 	- Nessun file in "Accesso Rapido";
+	ECHO 	- Caricamento infinito di "Accesso Rapido";
+	ECHO 	- ...
+	ECHO [0m
+	SET /P choiceaccessorapido=Vuoi continuare [S/N]? 
+	if /I "%choiceaccessorapido%" EQU "N" test&cls
+	if /I "%choiceaccessorapido%" EQU "N" goto :menu
+	if /I "%choiceaccessorapido%" EQU "S" test&cls
+	if /I "%choiceaccessorapido%" EQU "S" goto :accessorapidorepairyes
+	if /I "%choiceaccessorapido%" EQU "n" test&cls
+	if /I "%choiceaccessorapido%" EQU "n" goto :menu
+	if /I "%choiceaccessorapido%" EQU "s" test&cls
+	if /I "%choiceaccessorapido%" EQU "s" goto :accessorapidorepairyes
+	Goto :accessorapidorepair
+
+
+:accessorapidorepairyes
+	del /F /Q %APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations
+	ECHO [42m[COMPLETATO][0m - Reset "Accesso Rapido" eseguito.
+	Timeout /t 3
+	test&cls
+	Goto :menu
+
+
+::----------------------PACKAGE HANDLER------------------------------------------------------------------------------
+:package1
+	START %l_firefox%
+	START %l_player%
+	START %l_rar%
+	START %l_downloader%
+	START %l_torrent%
+	START %l_music%
+	START %l_file%
+	START %l_remoto%
+	GOTO :letsgo
+
+:package2
+	START %l_steam%
+	START %l_epic%
+	START %l_afterburner%
+	START %l_psnow%
+	START %l_ds4windows%
+	GOTO :letsgo
+
+:package3
+	START %l_atom%
+	START %l_notepad%
+	START %l_codeblocks%
+	START %l_vm%
+	GOTO :letsgo
 
 ::----------------------INFO-----------
 :information
@@ -1821,8 +1848,8 @@ Goto :letsgo
 	ECHO 	*	  Developed by Enrico Mancuso (HidroSaphire)	    *
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
-	ECHO 	   *		      Versione = v0.5.7			 *
-	ECHO 	    *		Codename = Mysterious Albatros		*
+	ECHO 	   *		      Versione = %version%			 *
+	ECHO 	    *		  Codename = Majestic Eagle		*
 	ECHO 	     *		 Ultima Release = 17/12/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
