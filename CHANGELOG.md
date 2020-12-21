@@ -1,4 +1,5 @@
 ## Version List
+ - v0.6.2 - Majestic Swan
  - v0.6.1 - Majestic Falcon
  - v0.6.0 - Majestic Eagle
  - v0.5.7 - Mysterious Albatros
@@ -39,6 +40,10 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.6.2 - Majestic Swan
++ Added support for "Python 3"
++ Bugfix (fixed visualization problem with "not ammitted" command)
+
 ### v0.6.1 - Majestic Falcon
 + Fix information for FullScreen Mode
 

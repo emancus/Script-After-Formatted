@@ -3,7 +3,7 @@
 ::----------------------------------------------------------
 @echo off
 	
-	SET version=v0.6.1
+	SET version=v0.6.2
 
 	::----------------------TITLE OF WINDOWS--------------------------------------------------------------------------------------
 	title HidroSaphrie SAF %version% - (Script After Formatted)
@@ -38,6 +38,7 @@
 	SET l_kms1=https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
 	SET l_kms2=https://rapidgator.net/file/2fb3e86836ea43071a026138725a1fdb/KMS_360_Pro_4644.zip
 	SET l_codeblocks=https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-20.03mingw-setup.exe
+	SET l_python=https://www.python.org/ftp/python/3.9.1/python-3.9.1-amd64.exe
 	SET l_recuva=https://download.ccleaner.com/rcsetup153.exe?cc2020
 	::-------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET e_firefox="Firefox Installer.exe"
@@ -61,6 +62,7 @@
 	SET e_rocket=RocketDock-v1.3.5.exe
 	SET e_psnow=PlayStationNow-11.3.4.exe
 	SET e_codeblocks=codeblocks-20.03mingw-setup.exe
+	SET e_python=python-3.9.1-amd64.exe
 	SET e_recuva=rcsetup153.exe
 	::-----------ZIP VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET z_spek=spek-0.8.2.zip
@@ -102,6 +104,7 @@
 	SET ds4windows=0
 	SET afterburner=0
 	SET codeblocks=0
+	SET python=0
 	SET recuva=0
 	SET t=0
 	SET choicenic=0
@@ -159,6 +162,7 @@ ECHO 			*************************************************************
 	ECHO 		E4) Notepad++ [33mx64[0m	     E5) Notepad++ 	    E6) Notepad++ installer
 	ECHO 		E7) Lista pack Atom
 	ECHO  [36mDeveloper[0m	L1) CodeBlocks + Mingw [33mx64[0m   L2) Code::Blocks	    L3) Code::Blocks installer
+	ECHO  		L4) Python 3 [33mx64[0m   	     L5) Python 3	    L6) Python 3 installer
 	ECHO  [36mCustomization[0m	C1) Rainmeter 4.4 Beta	     C2) Rainmeter 	    C3) Rainmeter installer
 	ECHO  		C4) RocketDock v1.3.5 [33mx86[0m    C5) RocketDock 	    C6) RocketDock installer
 	ECHO  [36mRecovery[0m	H1) Recuva [33mx64[0m     	     H2) Recuva	     	    H3) Recuva installer
@@ -260,261 +264,254 @@ ECHO 			*************************************************************
 :letsgo
 	set /P c=
 		::----MENU---------------------------------------
-	if "%c%" EQU "1"	test&cls
-	if "%c%" EQU "1"	(Goto :menu)
-	if "%c%" EQU "2"	test&cls
-	if "%c%" EQU "2"	(Goto :menu2)
-	if "%c%" EQU "3"	test&cls
-	if "%c%" EQU "3"	(Goto :menu3)
-	if "%c%" EQU "F"	test&cls
-	if "%c%" EQU "F"	Goto :fullscreen
-	if "%c%" EQU "f"	test&cls
-	if "%c%" EQU "f"	Goto :fullscreen
-	if "%c%" EQU "M"	test&cls
-	if "%c%" EQU "M"	Goto :minimize
-	if "%c%" EQU "m"	test&cls
-	if "%c%" EQU "m"	Goto :minimize
-		::----PROGRAM-----------------------------------
-	if "%c%" EQU "B1" START %l_firefox%		::----Browser------------
-	if "%c%" EQU "b1" START %l_firefox%
-	if "%c%" EQU "B2" Goto :browser
-	if "%c%" EQU "b2" Goto :browser
-	if "%c%" EQU "B3" Goto :delbrowser
-	if "%c%" EQU "b3" Goto :delbrowser
-	if "%c%" EQU "B4" START %l_tor%
-	if "%c%" EQU "b4" START %l_tor%
-	if "%c%" EQU "B5" Goto :tor
-	if "%c%" EQU "b5" Goto :tor
-	if "%c%" EQU "B6" Goto :deltor
-	if "%c%" EQU "b6" Goto :deltor
-	if "%c%" EQU "P1" START %l_player%		::----PLAYER-------------------------------------
-	if "%c%" EQU "p1" START %l_player%
-	if "%c%" EQU "P2" Goto :player
-	if "%c%" EQU "p2" Goto :player
-	if "%c%" EQU "P3" Goto :delplayer
-	if "%c%" EQU "p3" Goto :delplayer
-	if "%c%" EQU "P4" START %l_spotify%		
-	if "%c%" EQU "p4" START %l_spotify%
-	if "%c%" EQU "P5" Goto :spotify	
-	if "%c%" EQU "p5" Goto :spotify
-	if "%c%" EQU "P6" Goto :delspotify			
-	if "%c%" EQU "p6" Goto :delspotify
-	if "%c%" EQU "R1" START %l_rar%			::----RAR----------------------------------------
-	if "%c%" EQU "r1" START %l_rar%
-	if "%c%" EQU "R2" Goto :rar
-	if "%c%" EQU "r2" Goto :rar
-	if "%c%" EQU "R3" Goto :delrar
-	if "%c%" EQU "r3" Goto :delrar
-	if "%c%" EQU "J1" START %l_downloader%		::----DOWNLOADER---------------------------------
-	if "%c%" EQU "j1" START %l_downloader%
-	if "%c%" EQU "J2" Goto :downloader
-	if "%c%" EQU "j2" Goto :downloader
-	if "%c%" EQU "J3" Goto :deldownloader
-	if "%c%" EQU "j3" Goto :deldownloader
-	if "%c%" EQU "T1" START %l_torrent%		::----TORRENT------------------------------------
-	if "%c%" EQU "t1" START %l_torrent%
-	if "%c%" EQU "T2" Goto :torrent
-	if "%c%" EQU "t2" Goto :torrent
-	if "%c%" EQU "T3" Goto :deltorrent
-	if "%c%" EQU "t3" Goto :deltorrent
-	if "%c%" EQU "M1" START %l_music%		::----MUSIC--------------------------------------
-	if "%c%" EQU "m1" START %l_music%
-	if "%c%" EQU "M2" Goto :music
-	if "%c%" EQU "m2" Goto :music
-	if "%c%" EQU "M3" Goto :delmusic
-	if "%c%" EQU "m3" Goto :delmusic
-	if "%c%" EQU "M4" START %l_spek%
-	if "%c%" EQU "m4" START %l_spek%
-	if "%c%" EQU "M5" Goto :delspek
-	if "%c%" EQU "m5" Goto :delspek
-	if "%c%" EQU "D1" START %l_remoto%		::----DESKTOP REMOTO-----------------------------
-	if "%c%" EQU "d1" START %l_remoto%
-	if "%c%" EQU "D2" Goto :remoto
-	if "%c%" EQU "d2" Goto :remoto
-	if "%c%" EQU "D3" Goto :delremoto
-	if "%c%" EQU "d3" Goto :delremoto
-	if "%c%" EQU "F1" START %l_file%		::----FILE RENAMER-------------------------------
-	if "%c%" EQU "f1" START %l_file%
-	if "%c%" EQU "F2" Goto :file
-	if "%c%" EQU "f2" Goto :file
-	if "%c%" EQU "F3" Goto :delfile
-	if "%c%" EQU "f3" Goto :delfile
-	if "%c%" EQU "s1" START %l_sync%		::----SYNCRONIZER-------------------------------
-	if "%c%" EQU "S1" START %l_sync%
-	if "%c%" EQU "s2" Goto :sync
-	if "%c%" EQU "S2" Goto :sync
-	if "%c%" EQU "s3" Goto :delsync
-	if "%c%" EQU "S3" Goto :delsync
-	if "%c%" EQU "v1" START %l_vm%			::----VIRTUAL MACHINE----------------------------
-	if "%c%" EQU "V1" START %l_vm%
-	if "%c%" EQU "v2" Goto :vm
-	if "%c%" EQU "V2" Goto :vm
-	if "%c%" EQU "v3" Goto :delvm
-	if "%c%" EQU "V3" Goto :delvm
-	if "%c%" EQU "o1" START %l_capture%		::----SCREEN CAPTURE----------------------------
-	if "%c%" EQU "O1" START %l_capture%
-	if "%c%" EQU "o2" Goto :capture
-	if "%c%" EQU "O2" Goto :capture
-	if "%c%" EQU "o3" Goto :delcapture
-	if "%c%" EQU "O3" Goto :delcapture
-	if "%c%" EQU "A1" START %l_afterburner%		::----PC MONITOR---------------------------------
-	if "%c%" EQU "a1" START %l_afterburner%
-	if "%c%" EQU "A2" Goto :delafterburner
-	if "%c%" EQU "a2" Goto :delafterburner
-	if "%c%" EQU "G1" START %l_steam%		::----GIOCHI-------------------------------------
-	if "%c%" EQU "g1" START %l_steam%
-	if "%c%" EQU "G2" Goto :steam
-	if "%c%" EQU "g2" Goto :steam
-	if "%c%" EQU "G3" Goto :delsteam
-	if "%c%" EQU "g3" Goto :delsteam
-	if "%c%" EQU "G4" START %l_epic%
-	if "%c%" EQU "g4" START %l_epic%
-	if "%c%" EQU "G5" Goto :epic
-	if "%c%" EQU "g5" Goto :epic
-	if "%c%" EQU "G6" Goto :delepic
-	if "%c%" EQU "g6" Goto :delepic
-	if "%c%" EQU "G7" START %l_psnow%		::----PLAYSTATION--------------------------------
-	if "%c%" EQU "g7" START %l_psnow%
-	if "%c%" EQU "G8" Goto :psnow
-	if "%c%" EQU "g8" Goto :psnow
-	if "%c%" EQU "G9" Goto :delpsnow
-	if "%c%" EQU "g9" Goto :delpsnow
-	if "%c%" EQU "D4" START %l_ds4windows%		::----CONTROLLER---------------------------------
-	if "%c%" EQU "d4" START %l_ds4windows%
-	if "%c%" EQU "D5" Goto :delds4windows
-	if "%c%" EQU "d5" Goto :delds4windows
-	if "%c%" EQU "E1" START %l_atom%		::----EDITOR-------------------------------------
-	if "%c%" EQU "e1" START %l_atom%
-	if "%c%" EQU "E2" Goto :atom
-	if "%c%" EQU "e2" Goto :atom
-	if "%c%" EQU "E3" Goto :delatom
-	if "%c%" EQU "e3" Goto :delatom
-	if "%c%" EQU "E4" START %l_notepad%
-	if "%c%" EQU "e4" START %l_notepad%
-	if "%c%" EQU "E5" Goto :notepad
-	if "%c%" EQU "e5" Goto :notepad
-	if "%c%" EQU "E6" Goto :delnotepad
-	if "%c%" EQU "e6" Goto :delnotepad
-	if "%c%" EQU "E7" test&cls
-	if "%c%" EQU "E7" Goto :atomInfoPacket
-	if "%c%" EQU "e7" test&cls
-	if "%c%" EQU "e7" Goto :atomInfoPacket
-	if "%c%" EQU "L1" START %l_codeblocks%		::----DEVELOPER-----------------------------------
-	if "%c%" EQU "l1" START %l_codeblocks%
-	if "%c%" EQU "L2" Goto :codeblocks
-	if "%c%" EQU "l2" Goto :codeblocks
-	if "%c%" EQU "L3" Goto :delcodeblocks
-	if "%c%" EQU "l3" Goto :delcodeblocks
-	if "%c%" EQU "L4" ECHO Non implementato - START %l_python%		
-	if "%c%" EQU "l4" ECHO Non implementato - START %l_python%
-	if "%c%" EQU "L5" ECHO Non implementato - Goto :python
-	if "%c%" EQU "l5" ECHO Non implementato - Goto :python
-	if "%c%" EQU "L6" ECHO Non implementato - Goto :delpython
-	if "%c%" EQU "l6" ECHO Non implementato - Goto :delpython
-	if "%c%" EQU "c1" START %l_rainmeter%		::----CUSTOMIZATION-------------------------------
-	if "%c%" EQU "C1" START %l_rainmeter%
-	if "%c%" EQU "c2" Goto :rainmeter
-	if "%c%" EQU "C2" Goto :rainmeter
-	if "%c%" EQU "c3" Goto :delrainmeter
-	if "%c%" EQU "C3" Goto :delrainmeter
-	if "%c%" EQU "c4" START %l_rocket%
-	if "%c%" EQU "C4" START %l_rocket%
-	if "%c%" EQU "c5" Goto :rocket
-	if "%c%" EQU "C5" Goto :rocket
-	if "%c%" EQU "c6" Goto :delrocket
-	if "%c%" EQU "C6" Goto :delrocket
-	if "%c%" EQU "H1" START %l_recuva%		::----RECOVERY-----------------------------------
-	if "%c%" EQU "h1" START %l_recuva%
-	if "%c%" EQU "H2" Goto :recuva
-	if "%c%" EQU "h2" Goto :recuva
-	if "%c%" EQU "H3" Goto :delrecuva
-	if "%c%" EQU "h3" Goto :delrecuva
-	if "%c%" EQU "CK" Goto :checkpresence		::----CHECK PRESENCE-----------------------------
-	if "%c%" EQU "ck" Goto :checkpresence
-	if "%c%" EQU "Ck" Goto :checkpresence
-	if "%c%" EQU "TT" Goto :deltotal		::----TOTAL--------------------------------------
-	if "%c%" EQU "tt" Goto :deltotal
-	if "%c%" EQU "Tt" Goto :deltotal
-		::----UTILITY--------------------------------------
-	if "%c%" EQU "Q1" START %l_amd%
-	if "%c%" EQU "q1" START %l_amd%
-	if "%c%" EQU "Q2" START %l_nvidia%
-	if "%c%" EQU "q2" START %l_nvidia%
-	if "%c%" EQU "Q3" START %l_kms1%
-	if "%c%" EQU "q3" START %l_kms1%
-	if "%c%" EQU "Q4" START %l_kms2%
-	if "%c%" EQU "q4" START %l_kms2%
-	if "%c%" EQU "WU1" Goto :wureset
-	if "%c%" EQU "wu1" Goto :wureset
-	if "%c%" EQU "wu2" ECHO Non ancora implementato
-	if "%c%" EQU "wu2" ECHO Non ancora implementato
-	if "%c%" EQU "WS1" Goto :wsreset
-	if "%c%" EQU "ws1" Goto :wsreset
-	if "%c%" EQU "NR1" Goto :nicreset
-	if "%c%" EQU "nr1" Goto :nicreset
-	if "%c%" EQU "NR2" Goto :nicrepair
-	if "%c%" EQU "nr2" Goto :nicrepair
-	if "%c%" EQU "ER1" Goto :accessorapidorepair
-	if "%c%" EQU "er1" Goto :accessorapidorepair
-	::----UAC----------------------------------------
-	if "%c%" EQU "U1" ECHO Ancora non implementato
-	if "%c%" EQU "u1" ECHO Ancora non implementato
-	if "%c%" EQU "U2" ECHO Ancora non implementato
-	if "%c%" EQU "u2" ECHO Ancora non implementato
-	::----MIX----------------------------------------
-	if "%c%" EQU "tr" Goto :checktrim
-	if "%c%" EQU "TR" Goto :checktrim
-	::----EXTRA--------------------------------------
-	if "%c%" EQU "I" test&cls
-	if "%c%" EQU "i" test&cls
-	if "%c%" EQU "I" Goto :information
-	if "%c%" EQU "i" Goto :information
-	if "%c%" EQU "C" test&cls
-	if "%c%" EQU "c" test&cls
-	if "%c%" EQU "C" ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-	if "%c%" EQU "c" ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
-	if "%c%" EQU "D" test&cls
-	if "%c%" EQU "d" test&cls
-	if "%c%" EQU "D" Goto :debugRoom
-	if "%c%" EQU "d" Goto :debugRoom
-	if "%c%" EQU "PC" test&cls
-	if "%c%" EQU "pc" test&cls
-	if "%c%" EQU "PC" Goto :infoPC
-	if "%c%" EQU "pc" Goto :infoPC
-	if "%c%" EQU "E" test&cls
-	if "%c%" EQU "e" test&cls
-	if "%c%" EQU "E" Goto :easterEgg
-	if "%c%" EQU "e" Goto :easterEgg
-		::----PORTABILI-----------------------------
-	if "%c%" EQU "PT1" START %pl_cpuz%		::---PC MONITOR----------------------------------
-	if "%c%" EQU "pt1" START %pl_cpuz%
-	if "%c%" EQU "PT2" Goto :delcpuz
-	if "%c%" EQU "pt2" Goto :delcpuz
-	if "%c%" EQU "PT3" START %pl_gpuz%
-	if "%c%" EQU "pt3" START %pl_gpuz%
-	if "%c%" EQU "PT4" ECHO [43m[Attenzione][0m - [31mGPU-Z[0 ha solo l'eseguibie, non ha file zip
-	if "%c%" EQU "pt4" ECHO [43m[Attenzione][0m - [31mGPU-Z[0 ha solo l'eseguibie, non ha file zip
-	if "%c%" EQU "PT5" START %pl_coretemp%
-	if "%c%" EQU "pt5" START %pl_coretemp%
-	if "%c%" EQU "PT6" Goto :delcoretemp
-	if "%c%" EQU "pt6" Goto :delcoretemp
-	if "%c%" EQU "PT7" START %pl_crystaldisk%
-	if "%c%" EQU "pt7" START %pl_crystaldisk%
-	if "%c%" EQU "PT8" Goto :delcrystaldisk
-	if "%c%" EQU "pt8" Goto :delcrystaldisk
-	if "%c%" EQU "PTT" Goto :delportable
-	if "%c%" EQU "ptt" Goto :delportable
-		::----PACKAGE OF FILE-----------------------------
-	if "%c%" EQU "PAK1" Goto :package1
-	if "%c%" EQU "pak1" Goto :package1
-	if "%c%" EQU "PAK2" Goto :package2
-	if "%c%" EQU "pak2" Goto :package2
-	if "%c%" EQU "PAK3" Goto :package3
-	if "%c%" EQU "pak3" Goto :package3
-		::----END----------------------------------------
-	if %c%==0 Goto :end
-		::----ERRORI-------------------------------------
-	ECHO [43m[ERRORE][0m - Comando non ammesso - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+	IF "%c%" EQU "1" (test&cls
+		Goto :menu
+	) else if "%c%" EQU "2" (test&cls
+		Goto :menu2
+	) else if "%c%" EQU "3" (test&cls
+		Goto :menu3
+	) else if "%c%" EQU "F" (test&cls
+		Goto :fullscreen
+	) else if "%c%" EQU "f"	(test&cls
+		Goto :fullscreen
+	) else if "%c%" EQU "M"	(test&cls
+		Goto :minimize
+	) else if "%c%" EQU "m"	(test&cls
+		Goto :minimize
+	) else if "%c%" EQU "B1" ( START %l_firefox%	::----BROWSER-------------------------------------
+	) else if "%c%" EQU "b1" ( START %l_firefox%
+	) else if "%c%" EQU "B2" ( Goto :browser
+	) else if "%c%" EQU "b2" ( Goto :browser
+	) else if "%c%" EQU "B3" ( Goto :delbrowser
+	) else if "%c%" EQU "b3" ( Goto :delbrowser
+	) else if "%c%" EQU "B4" ( START %l_tor%
+	) else if "%c%" EQU "b4" ( START %l_tor%
+	) else if "%c%" EQU "B5" ( Goto :tor
+	) else if "%c%" EQU "b5" ( Goto :tor 
+	) else if "%c%" EQU "B6" ( Goto :deltor
+	) else if "%c%" EQU "b6" ( Goto :deltor
+	) else if "%c%" EQU "P1" ( START %l_player%		::----PLAYER-------------------------------------
+	) else if "%c%" EQU "p1" ( START %l_player%
+	) else if "%c%" EQU "P2" ( Goto :player
+	) else if "%c%" EQU "p2" ( Goto :player
+	) else if "%c%" EQU "P3" ( Goto :delplayer
+	) else if "%c%" EQU "p3" ( Goto :delplayer
+	) else if "%c%" EQU "P4" ( START %l_spotify%		
+	) else if "%c%" EQU "p4" ( START %l_spotify%
+	) else if "%c%" EQU "P5" ( Goto :spotify	
+	) else if "%c%" EQU "p5" ( Goto :spotify
+	) else if "%c%" EQU "P6" ( Goto :delspotify			
+	) else if "%c%" EQU "p6" ( Goto :delspotify
+	) else if "%c%" EQU "R1" ( START %l_rar%			::----RAR----------------------------------------
+	) else if "%c%" EQU "r1" ( START %l_rar%
+	) else if "%c%" EQU "R2" ( Goto :rar
+	) else if "%c%" EQU "r2" ( Goto :rar
+	) else if "%c%" EQU "R3" ( Goto :delrar
+	) else if "%c%" EQU "r3" ( Goto :delrar
+	) else if "%c%" EQU "J1" ( START %l_downloader%		::----DOWNLOADER---------------------------------
+	) else if "%c%" EQU "j1" ( START %l_downloader%
+	) else if "%c%" EQU "J2" ( Goto :downloader
+	) else if "%c%" EQU "j2" ( Goto :downloader
+	) else if "%c%" EQU "J3" ( Goto :deldownloader
+	) else if "%c%" EQU "j3" ( Goto :deldownloader
+	) else if "%c%" EQU "T1" ( START %l_torrent%		::----TORRENT------------------------------------
+	) else if "%c%" EQU "t1" ( START %l_torrent%
+	) else if "%c%" EQU "T2" ( Goto :torrent
+	) else if "%c%" EQU "t2" ( Goto :torrent
+	) else if "%c%" EQU "T3" ( Goto :deltorrent
+	) else if "%c%" EQU "t3" ( Goto :deltorrent
+	) else if "%c%" EQU "M1" ( START %l_music%		::----MUSIC--------------------------------------
+	) else if "%c%" EQU "m1" ( START %l_music%
+	) else if "%c%" EQU "M2" ( Goto :music
+	) else if "%c%" EQU "m2" ( Goto :music
+	) else if "%c%" EQU "M3" ( Goto :delmusic
+	) else if "%c%" EQU "m3" ( Goto :delmusic
+	) else if "%c%" EQU "M4" ( START %l_spek%
+	) else if "%c%" EQU "m4" ( START %l_spek%
+	) else if "%c%" EQU "M5" ( Goto :delspek
+	) else if "%c%" EQU "m5" ( Goto :delspek
+	) else if "%c%" EQU "D1" ( START %l_remoto%		::----DESKTOP REMOTO-----------------------------
+	) else if "%c%" EQU "d1" ( START %l_remoto%
+	) else if "%c%" EQU "D2" ( Goto :remoto
+	) else if "%c%" EQU "d2" ( Goto :remoto
+	) else if "%c%" EQU "D3" ( Goto :delremoto
+	) else if "%c%" EQU "d3" ( Goto :delremoto
+	) else if "%c%" EQU "F1" ( START %l_file%		::----FILE RENAMER-------------------------------
+	) else if "%c%" EQU "f1" ( START %l_file%
+	) else if "%c%" EQU "F2" ( Goto :file
+	) else if "%c%" EQU "f2" ( Goto :file
+	) else if "%c%" EQU "F3" ( Goto :delfile
+	) else if "%c%" EQU "f3" ( Goto :delfile
+	) else if "%c%" EQU "s1" ( START %l_sync%		::----SYNCRONIZER-------------------------------
+	) else if "%c%" EQU "S1" ( START %l_sync%
+	) else if "%c%" EQU "s2" ( Goto :sync
+	) else if "%c%" EQU "S2" ( Goto :sync
+	) else if "%c%" EQU "s3" ( Goto :delsync
+	) else if "%c%" EQU "S3" ( Goto :delsync
+	) else if "%c%" EQU "v1" ( START %l_vm%			::----VIRTUAL MACHINE----------------------------
+	) else if "%c%" EQU "V1" ( START %l_vm%
+	) else if "%c%" EQU "v2" ( Goto :vm
+	) else if "%c%" EQU "V2" ( Goto :vm
+	) else if "%c%" EQU "v3" ( Goto :delvm
+	) else if "%c%" EQU "V3" ( Goto :delvm
+	) else if "%c%" EQU "o1" ( START %l_capture%		::----SCREEN CAPTURE----------------------------
+	) else if "%c%" EQU "O1" ( START %l_capture%
+	) else if "%c%" EQU "o2" ( Goto :capture
+	) else if "%c%" EQU "O2" ( Goto :capture
+	) else if "%c%" EQU "o3" ( Goto :delcapture
+	) else if "%c%" EQU "O3" ( Goto :delcapture
+	) else if "%c%" EQU "A1" ( START %l_afterburner%		::----PC MONITOR---------------------------------
+	) else if "%c%" EQU "a1" ( START %l_afterburner%
+	) else if "%c%" EQU "A2" ( Goto :delafterburner
+	) else if "%c%" EQU "a2" ( Goto :delafterburner
+	) else if "%c%" EQU "G1" ( START %l_steam%		::----GIOCHI-------------------------------------
+	) else if "%c%" EQU "g1" ( START %l_steam%
+	) else if "%c%" EQU "G2" ( Goto :steam
+	) else if "%c%" EQU "g2" ( Goto :steam
+	) else if "%c%" EQU "G3" ( Goto :delsteam
+	) else if "%c%" EQU "g3" ( Goto :delsteam
+	) else if "%c%" EQU "G4" ( START %l_epic%
+	) else if "%c%" EQU "g4" ( START %l_epic%
+	) else if "%c%" EQU "G5" ( Goto :epic
+	) else if "%c%" EQU "g5" ( Goto :epic
+	) else if "%c%" EQU "G6" ( Goto :delepic
+	) else if "%c%" EQU "g6" ( Goto :delepic
+	) else if "%c%" EQU "G7" ( START %l_psnow%		::----PLAYSTATION--------------------------------
+	) else if "%c%" EQU "g7" ( START %l_psnow%
+	) else if "%c%" EQU "G8" ( Goto :psnow
+	) else if "%c%" EQU "g8" ( Goto :psnow
+	) else if "%c%" EQU "G9" ( Goto :delpsnow
+	) else if "%c%" EQU "g9" ( Goto :delpsnow
+	) else if "%c%" EQU "D4" ( START %l_ds4windows%		::----CONTROLLER---------------------------------
+	) else if "%c%" EQU "d4" ( START %l_ds4windows%
+	) else if "%c%" EQU "D5" ( Goto :delds4windows
+	) else if "%c%" EQU "d5" ( Goto :delds4windows
+	) else if "%c%" EQU "E1" ( START %l_atom%		::----EDITOR-------------------------------------
+	) else if "%c%" EQU "e1" ( START %l_atom%
+	) else if "%c%" EQU "E2" ( Goto :atom
+	) else if "%c%" EQU "e2" ( Goto :atom
+	) else if "%c%" EQU "E3" ( Goto :delatom
+	) else if "%c%" EQU "e3" ( Goto :delatom
+	) else if "%c%" EQU "E4" ( START %l_notepad%
+	) else if "%c%" EQU "e4" ( START %l_notepad%
+	) else if "%c%" EQU "E5" ( Goto :notepad
+	) else if "%c%" EQU "e5" ( Goto :notepad
+	) else if "%c%" EQU "E6" ( Goto :delnotepad
+	) else if "%c%" EQU "e6" ( Goto :delnotepad
+	) else if "%c%" EQU "E7" ( test&cls
+	) else if "%c%" EQU "E7" ( Goto :atomInfoPacket
+	) else if "%c%" EQU "e7" ( test&cls
+	) else if "%c%" EQU "e7" ( Goto :atomInfoPacket
+	) else if "%c%" EQU "L1" ( START %l_codeblocks%		::----DEVELOPER-----------------------------------
+	) else if "%c%" EQU "l1" ( START %l_codeblocks%
+	) else if "%c%" EQU "L2" ( Goto :codeblocks
+	) else if "%c%" EQU "l2" ( Goto :codeblocks
+	) else if "%c%" EQU "L3" ( Goto :delcodeblocks
+	) else if "%c%" EQU "l3" ( Goto :delcodeblocks
+	) else if "%c%" EQU "L4" ( START %l_python%		
+	) else if "%c%" EQU "l4" ( START %l_python%
+	) else if "%c%" EQU "L5" ( Goto :python
+	) else if "%c%" EQU "l5" ( Goto :python
+	) else if "%c%" EQU "L6" ( Goto :delpython
+	) else if "%c%" EQU "l6" ( Goto :delpython
+	) else if "%c%" EQU "c1" ( START %l_rainmeter%		::----CUSTOMIZATION-------------------------------
+	) else if "%c%" EQU "C1" ( START %l_rainmeter%
+	) else if "%c%" EQU "c2" ( Goto :rainmeter
+	) else if "%c%" EQU "C2" ( Goto :rainmeter
+	) else if "%c%" EQU "c3" ( Goto :delrainmeter
+	) else if "%c%" EQU "C3" ( Goto :delrainmeter
+	) else if "%c%" EQU "c4" ( START %l_rocket%
+	) else if "%c%" EQU "C4" ( START %l_rocket%
+	) else if "%c%" EQU "c5" ( Goto :rocket
+	) else if "%c%" EQU "C5" ( Goto :rocket
+	) else if "%c%" EQU "c6" ( Goto :delrocket
+	) else if "%c%" EQU "C6" ( Goto :delrocket
+	) else if "%c%" EQU "H1" ( START %l_recuva%		::----RECOVERY-----------------------------------
+	) else if "%c%" EQU "h1" ( START %l_recuva%
+	) else if "%c%" EQU "H2" ( Goto :recuva
+	) else if "%c%" EQU "h2" ( Goto :recuva
+	) else if "%c%" EQU "H3" ( Goto :delrecuva
+	) else if "%c%" EQU "h3" ( Goto :delrecuva
+	) else if "%c%" EQU "CK" ( Goto :checkpresence		::----CHECK PRESENCE-----------------------------
+	) else if "%c%" EQU "ck" ( Goto :checkpresence
+	) else if "%c%" EQU "Ck" ( Goto :checkpresence
+	) else if "%c%" EQU "TT" ( Goto :deltotal		::----TOTAL--------------------------------------
+	) else if "%c%" EQU "tt" ( Goto :deltotal
+	) else if "%c%" EQU "Tt" ( Goto :deltotal
+	) else if "%c%" EQU "Q1" ( START %l_amd%				::----UTILITY--------------------------------------
+	) else if "%c%" EQU "q1" ( START %l_amd%
+	) else if "%c%" EQU "Q2" ( START %l_nvidia%
+	) else if "%c%" EQU "q2" ( START %l_nvidia%
+	) else if "%c%" EQU "Q3" ( START %l_kms1%
+	) else if "%c%" EQU "q3" ( START %l_kms1%
+	) else if "%c%" EQU "Q4" ( START %l_kms2%
+	) else if "%c%" EQU "q4" ( START %l_kms2%
+	) else if "%c%" EQU "WU1" ( Goto :wureset
+	) else if "%c%" EQU "wu1" ( Goto :wureset
+	) else if "%c%" EQU "wu2" ( ECHO Non ancora implementato
+	) else if "%c%" EQU "wu2" ( ECHO Non ancora implementato
+	) else if "%c%" EQU "WS1" ( Goto :wsreset
+	) else if "%c%" EQU "ws1" ( Goto :wsreset
+	) else if "%c%" EQU "NR1" ( Goto :nicreset
+	) else if "%c%" EQU "nr1" ( Goto :nicreset
+	) else if "%c%" EQU "NR2" ( Goto :nicrepair
+	) else if "%c%" EQU "nr2" ( Goto :nicrepair
+	) else if "%c%" EQU "ER1" ( Goto :accessorapidorepair
+	) else if "%c%" EQU "er1" ( Goto :accessorapidorepair
+	) else if "%c%" EQU "U1" ( ECHO Ancora non implementato		::----UAC----------------------------------------
+	) else if "%c%" EQU "u1" ( ECHO Ancora non implementato
+	) else if "%c%" EQU "U2" ( ECHO Ancora non implementato
+	) else if "%c%" EQU "u2" ( ECHO Ancora non implementato
+	) else if "%c%" EQU "tr" ( Goto :checktrim			::----MIX----------------------------------------
+	) else if "%c%" EQU "TR" ( Goto :checktrim
+	) else if "%c%" EQU "I" ( test&cls				::----EXTRA--------------------------------------
+		Goto :information
+	) else if "%c%" EQU "i" ( test&cls
+		Goto :information 
+	) else if "%c%" EQU "i" ( Goto :information
+	) else if "%c%" EQU "C" ( test&cls
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+	) else if "%c%" EQU "c" ( test&cls
+		ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+	) else if "%c%" EQU "D" ( test&cls
+		Goto :debugRoom
+	) else if "%c%" EQU "d" ( test&cls
+		Goto :debugRoom
+	) else if "%c%" EQU "PC" ( test&cls
+		Goto :infoPC
+	) else if "%c%" EQU "pc" ( test&cls
+		Goto :infoPC
+	) else if "%c%" EQU "E" ( test&cls
+		Goto :easterEgg
+	) else if "%c%" EQU "e" ( test&cls
+		 Goto :easterEgg
+	) else if "%c%" EQU "PT1" ( START %pl_cpuz%		::----PORTABILI-----------------------------
+	) else if "%c%" EQU "pt1" ( START %pl_cpuz%
+	) else if "%c%" EQU "PT2" ( Goto :delcpuz
+	) else if "%c%" EQU "pt2" ( Goto :delcpuz
+	) else if "%c%" EQU "PT3" ( START %pl_gpuz%
+	) else if "%c%" EQU "pt3" ( START %pl_gpuz%
+	) else if "%c%" EQU "PT4" ( ECHO [43m[Attenzione][0m - [31mGPU-Z[0 ha solo l'eseguibie, non ha file zip
+	) else if "%c%" EQU "pt4" ( ECHO [43m[Attenzione][0m - [31mGPU-Z[0 ha solo l'eseguibie, non ha file zip
+	) else if "%c%" EQU "PT5" ( START %pl_coretemp%
+	) else if "%c%" EQU "pt5" ( START %pl_coretemp%
+	) else if "%c%" EQU "PT6" ( Goto :delcoretemp
+	) else if "%c%" EQU "pt6" ( Goto :delcoretemp
+	) else if "%c%" EQU "PT7" ( START %pl_crystaldisk%
+	) else if "%c%" EQU "pt7" ( START %pl_crystaldisk%
+	) else if "%c%" EQU "PT8" ( Goto :delcrystaldisk
+	) else if "%c%" EQU "pt8" ( Goto :delcrystaldisk
+	) else if "%c%" EQU "PTT" ( Goto :delportable
+	) else if "%c%" EQU "ptt" ( Goto :delportable
+	) else if "%c%" EQU "PAK1" ( Goto :package1		::----PACKAGE OF FILE-----------------------------
+	) else if "%c%" EQU "pak1" ( Goto :package1
+	) else if "%c%" EQU "PAK2" ( Goto :package2
+	) else if "%c%" EQU "pak2" ( Goto :package2
+	) else if "%c%" EQU "PAK3" ( Goto :package3
+	) else if "%c%" EQU "pak3" ( Goto :package3
+	) else if %c%==0 ( Goto :end				::----END----------------------------------------
+	) else ( ECHO [43m[ERRORE][0m - Comando non ammesso - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu 
+	)
 	Goto :letsgo
 
 
@@ -1007,6 +1004,28 @@ Goto :letsgo
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_codeblocks% ECHO [43m[Attenzione][0m - L'installer di [31mCode::Blocks + Mingw[0m non esiste
 	)
 	Goto :letsgo
+:python
+	IF EXIST D:\Download\%e_python% ECHO Installazione di [31mPython 3[0m partita dal disco D
+	IF EXIST D:\Download\%e_python% START D:\Download\%e_python%
+	IF EXIST D:\Download\%e_python% Goto :letsgo
+	IF EXIST C:\Users\%username%\Downloads\%e_python% ECHO Installazione di [31mPython 3[0m partita dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_python% START C:\Users\%username%\Downloads\%e_python%
+	IF EXIST C:\Users\%username%\Downloads\%e_python% Goto :letsgo
+        ECHO [43m[Attenzione][0m - L'installer di [31mPython 3[0m non esiste
+	Goto :letsgo
+:delpython
+	set python=0
+	IF EXIST D:\Download\%e_python% SET python=1
+	IF EXIST D:\Download\%e_python% ECHO Installer di [31mPython 3[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_python% DEL D:\Download\%e_python%
+	IF EXIST C:\Users\%username%\Downloads\%e_python% SET python=1
+	IF EXIST C:\Users\%username%\Downloads\%e_python% ECHO Installer di [31mPython 3[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_python% DEL C:\Users\%username%\Downloads\%e_python%
+	IF %python%==1 Goto :letsgo
+        IF NOT EXIST D:\Download\%e_python% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_python% ECHO [43m[Attenzione][0m - L'installer di [31mPython 3[0m non esiste
+	)
+	Goto :letsgo
 ::----------------------CUSTOMIZATION-----
 :rainmeter
 	IF EXIST D:\Download\%e_rainmeter% ECHO Installazione di [31mRainmeter[0m partita dal disco D
@@ -1092,7 +1111,7 @@ Goto :letsgo
 	ECHO 	  		! 	atom=%atom%		notepad=%notepad%	rainmeter=%rainmeter%	    !
 	ECHO 	  		! 	rocket=%rocket%	psnow=%psnow%		spotify=%spotify%           !
 	ECHO 	  		! 	spek=%spek%		ds4windows=%ds4windows%	afterburner=%afterburner%	    !
-	ECHO 	  		! 	codeblocks=%codeblocks%	recuva=%recuva%			    !
+	ECHO 	  		! 	codeblocks=%codeblocks%	recuva=%recuva%	python=%python%	    !
 	ECHO 	  		! 			    				    !
 	ECHO 	  		! 	c=%c% (choice)	t=%t%		choicenic=%choicenic%	    !
 	ECHO 			\___________________________________________________________/
@@ -1330,6 +1349,13 @@ Goto :letsgo
 	IF NOT EXIST D:\Download\%e_codeblocks% (
 		IF NOT EXIST C:\Users\%username%\Downloads\%e_codeblocks% ECHO [43m[Attenzione][0m - L'installer di [31mCode::Blocks + Mingw[0m non esiste
 	)
+	IF EXIST D:\Download\%e_python% ECHO Installer di [31mPython 3[0m cancellato dal disco D
+	IF EXIST D:\Download\%e_python% DEL D:\Download\%e_python%
+	IF EXIST C:\Users\%username%\Downloads\%e_python% ECHO Installer di [31mPython 3[0m cancellato dal disco C
+	IF EXIST C:\Users\%username%\Downloads\%e_python% DEL C:\Users\%username%\Downloads\%e_python%
+	IF NOT EXIST D:\Download\%e_python% (
+		IF NOT EXIST C:\Users\%username%\Downloads\%e_python% ECHO [43m[Attenzione][0m - L'installer di [31mPython 3[0m non esiste
+	)
 	IF EXIST D:\Download\%e_rainmeter% ECHO Installer di [31mRainmeter[0m cancellato dal disco D
 	IF EXIST D:\Download\%e_rainmeter% DEL D:\Download\%e_rainmeter%
 	IF EXIST C:\Users\%username%\Downloads\%e_rainmeter% ECHO Installer di [31mRainmeter[0m cancellato dal disco C
@@ -1519,6 +1545,13 @@ Goto :letsgo
 	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mCode::Blocks + Mingw[0m non esiste
 	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mCode::Blocks + Mingw[0m su disco D
 	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mCode::Blocks + Mingw[0m su disco C
+
+	SET check=0
+	IF EXIST D:\Download\%e_python% SET check=1
+	IF EXIST C:\Users\%username%\Downloads\%e_python% SET check=2
+	IF %check%==0 ECHO [43m[Attenzione][0m - L'installer di [31mPython 3[0m non esiste
+	IF %check%==1 ECHO [42m[Presente][0m - Installer di [31mPython 3[0m su disco D
+	IF %check%==2 ECHO [42m[Presente][0m - Installer di [31mPython 3[0m su disco C
 
 	SET check=0
 	IF EXIST D:\Download\%e_rainmeter% SET check=1
@@ -1856,7 +1889,7 @@ Goto :letsgo
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
 	ECHO 	   *		      Versione = %version%			 *
-	ECHO 	    *		  Codename = Majestic Falcon		*
+	ECHO 	    *		  Codename = Majestic Swan		*
 	ECHO 	     *		 Ultima Release = 21/12/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
