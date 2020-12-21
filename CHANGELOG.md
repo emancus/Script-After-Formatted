@@ -39,7 +39,8 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
-### v0.6.1 - Majestic Falcon (next version - Unreleased)
+### v0.6.1 - Majestic Falcon
++ Fix information for FullScreen Mode
 
 ### v0.6.0 - Majestic Eagle
 + New Feature: program package
