@@ -1,4 +1,5 @@
 ## Version List
+ - v0.6.3 - Majestic Vulture
  - v0.6.2 - Majestic Swan
  - v0.6.1 - Majestic Falcon
  - v0.6.0 - Majestic Eagle
@@ -40,6 +41,9 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.6.3 - Majestic Vulture
++ Revisited "Info PC" page
+
 ### v0.6.2 - Majestic Swan
 + Added support for "Python 3"
 + Bugfix (fixed visualization problem with "not ammitted" command)

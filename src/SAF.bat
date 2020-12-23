@@ -3,7 +3,7 @@
 ::----------------------------------------------------------
 @echo off
 	
-	SET version=v0.6.2
+	SET version=v0.6.3
 
 	::----------------------TITLE OF WINDOWS--------------------------------------------------------------------------------------
 	title HidroSaphrie SAF %version% - (Script After Formatted)
@@ -1131,16 +1131,27 @@ Goto :letsgo
 
 ::----------------------INFOPC---------
 :infoPC
-	ECHO [36m	INFORMAZIONI SUL COMPUTER[33m
-	ver
+	ECHO [36m	*****************************
+	ECHO [36m	* INFORMAZIONI SUL COMPUTER *
+	ECHO [36m	*****************************	
+	 ver
 	ECHO [32mNome Computer = [0m %COMPUTERNAME%
 	ECHO [32mNome Utente = 	[0m %USERNAME%
 	ECHO [0m
-	ECHO [32mWindows e' in modalita' (.exe = Legacy BIOS / .efi = UEFI) - Richiede privilegi di amministratore[0m
-	bcdedit | find "path"
+	ECHO [32mWindows e' in modalita' (.exe = Legacy BIOS / .efi = UEFI)[0m
+	net session >nul 2>&1
+    	if %errorLevel% == 0 (
+		bcdedit | find "path"
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non hai Privilegi di Amministratore
+   	)
 	ECHO [0m
 	ECHO [32mIl path del File di Paging:[0m
 	wmic pagefile list /format:list | find "Name"
+	ECHO [0m
+	ECHO [32mIndirizzo IP Pubblico:[0m
+	curl "http://myexternalip.com/raw"
+	ECHO [0m
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
 Goto :letsgo
@@ -1889,8 +1900,8 @@ Goto :letsgo
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
 	ECHO 	   *		      Versione = %version%			 *
-	ECHO 	    *		  Codename = Majestic Swan		*
-	ECHO 	     *		 Ultima Release = 21/12/2020	       *
+	ECHO 	    *		 Codename = Majestic Vulture		*
+	ECHO 	     *		 Ultima Release = 23/12/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
