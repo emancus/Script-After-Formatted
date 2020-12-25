@@ -3,10 +3,10 @@
 ::----------------------------------------------------------
 @echo off
 	
-	SET version=v0.6.3
+	SET version=v0.6.4
 
 	::----------------------TITLE OF WINDOWS--------------------------------------------------------------------------------------
-	title HidroSaphrie SAF %version% - (Script After Formatted)
+	title HidroSaphrie SAF %version% - (Script After Formatted) - Christmas Edition
 
 	
 	::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
@@ -114,13 +114,13 @@
 
 COLOR 9
 ECHO 			  *********************************************************
-ECHO 			 *	   HidroSaphire SAF - Script After Formatted	   *
+ECHO 			 *	   HidroSaphire SAF - Script After Formatted	   *	Christmas Edition
 ECHO 			*************************************************************
 
 
 ::----------------------PRINT MENU [PAG 1]------------------------------------------------------------------------------------------
 :menu
-	ECHO  [31m[Pag 1/3][0m
+	ECHO  [31m[Pag 1/3][0m			     [0m*** [31mM[32me[33mr[34mr[35my[36m C[31mh[32mr[33mi[34ms[35mt[36mm[31ma[32ms [33mt[34mo [35mE[36mv[31me[32mr[33my[34mo[35mn[36me[0m ***
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
 	ECHO  [36mMenu[0m		1) Pagina 1	2) Pagina 2 	3) Pagina 3	F) FullScreen	   M) Minimizza
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
@@ -192,6 +192,7 @@ ECHO 			*************************************************************
 	ECHO  [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset
 	ECHO  [36mWin Store[0m	WS1) WS Reset
 	ECHO  [36mNetwork[0m	NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP
+	ECHO  		NT1) Test LAN/WAN     	      NT2) Info connessione 
 	ECHO  [36mExplorer[0m	ER1) Reset "accesso rapido"
 	ECHO  [32m------------------------------------------[Package Programmi]------------------------------------------[0m
 	ECHO  [45m[Base Pack][0m	PAK1) Firefox, VLC, WinRAR, JDown2, uTorrent, Mp3tag, FileRenamer, TeamViewer
@@ -225,8 +226,8 @@ ECHO 			*************************************************************
 	ECHO 	[32m/ [0m		P4) Spotify		     P5) Spotify	    P6) Spotify installer	      [32m/ [36mWin Update[0m	WU1) WU Riconfig	      WU2) WU hard-reset        			      [32m/  [0m
 	ECHO 	[32m/ [36mRAR[0m		R1) WinRAR [33mx64[0m	     	     R2) WinRAR		    R3) WinRAR installer	      [32m/ [36mWin Store[0m	WS1) WS Reset         								      [32m/  [0m
 	ECHO 	[32m/ [36mDownloader[0m	J1) JDownloader 2 [33mx64[0m	     J2) JDownloader 2	    J3) JDownloader 2 installer       [32m/ [36mNetwork[0m		NR1) Reset scheda di rete     NR2) Reset DHCP, ARP, NetBIOS, DNS e IP                 [32m/  [0m
-	ECHO 	[32m/ [36mTorrent[0m	T1) uTorrent [33mx86[0m	     T2) uTorrent	    T3) uTorrent installer            [32m/ [36mExplorer[0m	ER1) Reset "Accesso Rapido"    							      [32m/  [0m
-	ECHO 	[32m/ [36mMusica[0m	M1) Mp3tag [33mx86[0m	             M2) Mp3tag	 	    M3) Mp3tag installer              [32m/  [0m											              [32m/  [0m
+	ECHO 	[32m/ [36mTorrent[0m	T1) uTorrent [33mx86[0m	     T2) uTorrent	    T3) uTorrent installer            [32m/ [0m		NT1) Test LAN/WAN     	      NT2) Info connessione 				      [32m/  [0m
+	ECHO 	[32m/ [36mMusica[0m	M1) Mp3tag [33mx86[0m	             M2) Mp3tag	 	    M3) Mp3tag installer              [32m/ [36mExplorer[0m	ER1) Reset "Accesso Rapido"    							      [32m/  [0m
 	ECHO 	[32m/ [0m		M4) Spek v.0.8.2 [33mx86[0m	     --------		    M5) Spek zip file        	      [32m/  [0m											              [32m/  [0m
 	ECHO 	[32m/ [36mDesk Remoto[0m	D1) TeamViewer [33mx86[0m	     D2) TeamViewer 	    D3) TeamViewer installer          [32m/----------------------------------------[Programmi Portable]-------------------------------------------[32m/  [0m
 	ECHO 	[32m/ [36mFileRenamer[0m	F1) FileRen Basic v6.3 	     F2) FileRenamer	    F3) FileRenamer installer         [32m/  [0m											              [32m/  [0m
@@ -302,7 +303,7 @@ ECHO 			*************************************************************
 	) else if "%c%" EQU "p5" ( Goto :spotify
 	) else if "%c%" EQU "P6" ( Goto :delspotify			
 	) else if "%c%" EQU "p6" ( Goto :delspotify
-	) else if "%c%" EQU "R1" ( START %l_rar%			::----RAR----------------------------------------
+	) else if "%c%" EQU "R1" ( START %l_rar%		::----RAR----------------------------------------
 	) else if "%c%" EQU "r1" ( START %l_rar%
 	) else if "%c%" EQU "R2" ( Goto :rar
 	) else if "%c%" EQU "r2" ( Goto :rar
@@ -360,7 +361,7 @@ ECHO 			*************************************************************
 	) else if "%c%" EQU "O2" ( Goto :capture
 	) else if "%c%" EQU "o3" ( Goto :delcapture
 	) else if "%c%" EQU "O3" ( Goto :delcapture
-	) else if "%c%" EQU "A1" ( START %l_afterburner%		::----PC MONITOR---------------------------------
+	) else if "%c%" EQU "A1" ( START %l_afterburner%	::----PC MONITOR---------------------------------
 	) else if "%c%" EQU "a1" ( START %l_afterburner%
 	) else if "%c%" EQU "A2" ( Goto :delafterburner
 	) else if "%c%" EQU "a2" ( Goto :delafterburner
@@ -438,7 +439,7 @@ ECHO 			*************************************************************
 	) else if "%c%" EQU "TT" ( Goto :deltotal		::----TOTAL--------------------------------------
 	) else if "%c%" EQU "tt" ( Goto :deltotal
 	) else if "%c%" EQU "Tt" ( Goto :deltotal
-	) else if "%c%" EQU "Q1" ( START %l_amd%				::----UTILITY--------------------------------------
+	) else if "%c%" EQU "Q1" ( START %l_amd%		::----UTILITY--------------------------------------
 	) else if "%c%" EQU "q1" ( START %l_amd%
 	) else if "%c%" EQU "Q2" ( START %l_nvidia%
 	) else if "%c%" EQU "q2" ( START %l_nvidia%
@@ -456,6 +457,10 @@ ECHO 			*************************************************************
 	) else if "%c%" EQU "nr1" ( Goto :nicreset
 	) else if "%c%" EQU "NR2" ( Goto :nicrepair
 	) else if "%c%" EQU "nr2" ( Goto :nicrepair
+	) else if "%c%" EQU "NT1" ( Goto :testlan
+	) else if "%c%" EQU "nt1" ( Goto :testlan
+	) else if "%c%" EQU "NT2" ( Goto :testwan
+	) else if "%c%" EQU "nt2" ( Goto :testwan
 	) else if "%c%" EQU "ER1" ( Goto :accessorapidorepair
 	) else if "%c%" EQU "er1" ( Goto :accessorapidorepair
 	) else if "%c%" EQU "U1" ( ECHO Ancora non implementato		::----UAC----------------------------------------
@@ -1820,6 +1825,49 @@ Goto :letsgo
 	test&cls
 	Goto :menu
 
+:testlan
+	test&cls
+	ECHO [36m	************************************
+	ECHO [36m	  *  Test Connessione LAN / WAN  *
+	ECHO [36m	************************************ 
+	ECHO [0m
+	ping -n 1 192.168.1.1 > nul
+	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Sei connesso alla rete LAN [0m
+		ECHO [32mIl tuo indirizzo IP Privato e' :[0m
+		ipconfig | findstr "v4"
+		ipconfig | findstr "Gate"
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non sei connesso alla rete LAN [0m
+   	)
+	ECHO [0m
+	ping -n 1 8.8.8.8 > nul
+	if %errorLevel% == 0 (
+		ECHO [42m[----OK----][0m - Sei connesso alla rete WAN [0m
+		ECHO [32mIl tuo indirizzo IP Pubblico e' :[0m		
+		curl "http://myexternalip.com/raw"
+	) else (
+        	ECHO [41m[--ERRORE--][0m - Non sei connesso alla rete WAN [0m
+   	)
+	ECHO [0m
+	ECHO [0m
+	ECHO	[42m[COMPLETATO][0m - Test connessione eseguito.
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+	Goto :letsgo
+
+
+:testwan
+	test&cls
+	ECHO [36m	******************************
+	ECHO [36m	 * Informazioni Connessione *
+	ECHO [36m	******************************
+	ECHO [31m
+	net view
+	ECHO [0m
+	ECHO	[42m[COMPLETATO][0m - Test connessione WAN eseguito.
+	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu
+	Goto :letsgo
+
 
 ::----------------------EXPLORER--------------------------------------------------------------------------------------
 :accessorapidorepair
@@ -1900,8 +1948,8 @@ Goto :letsgo
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
 	ECHO 	   *		      Versione = %version%			 *
-	ECHO 	    *		 Codename = Majestic Vulture		*
-	ECHO 	     *		 Ultima Release = 23/12/2020	       *
+	ECHO 	    *		 Codename = Christmas Edition		*
+	ECHO 	     *		 Ultima Release = 25/12/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
 	ECHO [43m[Attenzione][0m - Premi [31m1[0m, [31m2[0m o [31m3[0m per visualizzare il Menu

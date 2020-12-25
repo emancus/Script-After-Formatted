@@ -19,7 +19,7 @@ SAF is an useful script (written in [Batch]) for [Microsoft Windows] that allow 
 
 ## Screenshot :camera:
 <div align="center">
-	<img src="media/screenshot.png">
+	<img src="media/screenshot_CE.png">
 	<br>
 </div>
 
@@ -105,6 +105,8 @@ Do you have a request? Open an [issue], or write me! :mailbox_with_no_mail:
 + DHCP, ARP, NetBIOS, DNS and IP reset
 + Windows "Quick Access" reset
 + Download programs package
++ Connection Test (LAN / WAN)
++ Connection's Information
 
 [Click Here]: https://github.com/HidroSaphire/Script-After-Formatted/archive/master.zip
 [Enrico Mancuso]: https://github.com/HidroSaphire
