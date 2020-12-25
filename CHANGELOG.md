@@ -1,4 +1,5 @@
 ## Version List
+ - v0.6.4 - Christmas Edition
  - v0.6.3 - Majestic Vulture
  - v0.6.2 - Majestic Swan
  - v0.6.1 - Majestic Falcon
@@ -41,6 +42,11 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.6.4 - Christmas Edition
++ New Christmas Message
++ New Feature: Connection Test (LAN / WAN)
++ New Feature: Connection's Information
+
 ### v0.6.3 - Majestic Vulture
 + Revisited "Info PC" page
 
