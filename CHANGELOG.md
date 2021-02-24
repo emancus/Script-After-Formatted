@@ -1,4 +1,5 @@
 ## Version List
+ - v0.6.5 - Majestic Bird
  - v0.6.4 - Christmas Edition
  - v0.6.3 - Majestic Vulture
  - v0.6.2 - Majestic Swan
@@ -42,6 +43,9 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.6.5 - Majestic Bird
++ Update support to "Tor" / "Mp3tag" / "OBS" / "Nodepad++" / "VirtualBox" / "Rainmeter" / "PlayStation Now" / "Python"
+
 ### v0.6.4 - Christmas Edition
 + New Christmas Message
 + New Feature: Connection Test (LAN / WAN)

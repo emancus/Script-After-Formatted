@@ -19,7 +19,7 @@ SAF is an useful script (written in [Batch]) for [Microsoft Windows] that allow 
 
 ## Screenshot :camera:
 <div align="center">
-	<img src="media/screenshot_CE.png">
+	<img src="media/screenshot.png">
 	<br>
 </div>
 

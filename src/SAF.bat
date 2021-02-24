@@ -3,32 +3,32 @@
 ::----------------------------------------------------------
 @echo off
 	
-	SET version=v0.6.4
+	SET version=v0.6.5
 
 	::----------------------TITLE OF WINDOWS--------------------------------------------------------------------------------------
-	title HidroSaphrie SAF %version% - (Script After Formatted) - Christmas Edition
+	title HidroSaphrie SAF %version% - (Script After Formatted)
 
 	
 	::----------------------LINK VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET l_firefox=https://download.mozilla.org/"?product=firefox-stub&os=win&lang=it"
-	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.7/torbrowser-install-win64-10.0.7_it.exe
+	SET l_tor=https://www.torproject.org/dist/torbrowser/10.0.12/torbrowser-install-win64-10.0.12_it.exe
 	SET l_player=http://download.videolan.org/pub/videolan/vlc/2.2.8/win64/vlc-2.2.8-win64.exe
 	SET l_spotify=https://download.scdn.co/SpotifySetup.exe
 	SET l_rar=https://www.winrar.it/prelievo_ok.php?url=prelievo/WinRAR-x64-600it.exe
 	SET l_downloader=https://jdownloader.org/dl?v=101
 	SET l_torrent=https://download-hr.utorrent.com/track/stable/endpoint/utorrent/os/windows
-	SET l_music=https://download.mp3tag.de/mp3tagv304asetup.exe
+	SET l_music=https://download.mp3tag.de/mp3tagv305setup.exe
 	SET l_spek=https://github.com/alexkay/spek/releases/download/v0.8.2/spek-0.8.2.zip
 	SET l_file=http://www.sherrodcomputers.com/downloads/FileRenamerBasic.exe
 	SET l_sync=https://github.com/canton7/SyncTrayzor/releases/download/v1.1.24/SyncTrayzorSetup-x64.exe
-	SET l_vm=https://download.virtualbox.org/virtualbox/6.1.16/VirtualBox-6.1.16-140961-Win.exe
+	SET l_vm=https://download.virtualbox.org/virtualbox/6.1.18/VirtualBox-6.1.18-142142-Win.exe
 	SET l_remoto=https://download.teamviewer.com/full
 	SET l_steam=https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe
 	SET l_epic=https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi
-	SET l_capture=https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.1-Full-Installer-x64.exe
+	SET l_capture=https://cdn-fastly.obsproject.com/downloads/OBS-Studio-26.1.1-Full-Installer-x64.exe
 	SET l_atom=https://atom.io/download/windows_x64
-	SET l_notepad=https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.9/npp.7.9.Installer.x64.exe
-	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3410/Rainmeter-4.4-r3410-beta.exe
+	SET l_notepad=https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.9.3/npp.7.9.3.Installer.exe
+	SET l_rainmeter=https://github.com/rainmeter/rainmeter/releases/download/v4.4.0.3433/Rainmeter-4.4-r3433-beta.exe
 	SET l_rocket=https://punklabs.com/downloads/RocketDock-v1.3.5.exe
 	SET l_psnow=https://download-psnow.playstation.com/downloads/psnow/pc/latest
 	SET l_ds4windows=https://github.com/Jays2Kings/DS4Windows/releases/download/v1.4.52/DS4Windows.zip
@@ -38,31 +38,31 @@
 	SET l_kms1=https://katfile.com/v9hm4vpdo7d8/KMS_360_Pro_4644.zip.html
 	SET l_kms2=https://rapidgator.net/file/2fb3e86836ea43071a026138725a1fdb/KMS_360_Pro_4644.zip
 	SET l_codeblocks=https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-20.03mingw-setup.exe
-	SET l_python=https://www.python.org/ftp/python/3.9.1/python-3.9.1-amd64.exe
+	SET l_python=https://www.python.org/ftp/python/3.9.2/python-3.9.2-amd64.exe
 	SET l_recuva=https://download.ccleaner.com/rcsetup153.exe?cc2020
 	::-------------EXE VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET e_firefox="Firefox Installer.exe"
-	SET e_tor=torbrowser-install-win64-10.0.7_it.exe
+	SET e_tor=torbrowser-install-win64-10.0.12_it.exe
 	SET e_player=vlc-2.2.8-win64.exe
 	SET e_spotify=SpotifySetup.exe
 	SET e_rar=WinRAR-x64-600it.exe
 	SET e_downloader=JDownloaderSetup.exe
 	SET e_torrent=uTorrent.exe
-	SET e_music=mp3tagv304asetup.exe
+	SET e_music=mp3tagv305setup.exe
 	SET e_file=FileRenamerBasic.exe
 	SET e_sync=SyncTrayzorSetup-x64.exe
-	SET e_vm=VirtualBox-6.1.16-140961-Win.exe
+	SET e_vm=VirtualBox-6.1.18-142142-Win.exe
 	SET e_remoto=TeamViewer_Setup.exe
 	SET e_steam=SteamSetup.exe
 	SET e_epic=EpicInstaller-10.19.2.msi
-	SET e_capture=OBS-Studio-26.1-Full-Installer-x64.exe
+	SET e_capture=OBS-Studio-26.1.1-Full-Installer-x64.exe
 	SET e_atom=AtomSetup-x64.exe
-	SET e_notepad=npp.7.9.Installer.x64.exe
-	SET e_rainmeter=Rainmeter-4.4-r3410-beta.exe
+	SET e_notepad=npp.7.9.3.Installer.x64.exe
+	SET e_rainmeter=Rainmeter-4.4-r3433-beta.exe
 	SET e_rocket=RocketDock-v1.3.5.exe
-	SET e_psnow=PlayStationNow-11.3.4.exe
+	SET e_psnow=PlayStationNow-11.4.0.exe
 	SET e_codeblocks=codeblocks-20.03mingw-setup.exe
-	SET e_python=python-3.9.1-amd64.exe
+	SET e_python=python-3.9.2-amd64.exe
 	SET e_recuva=rcsetup153.exe
 	::-----------ZIP VARIABLE INIALIZATION----------------------------------------------------------------------------
 	SET z_spek=spek-0.8.2.zip
@@ -114,13 +114,13 @@
 
 COLOR 9
 ECHO 			  *********************************************************
-ECHO 			 *	   HidroSaphire SAF - Script After Formatted	   *	Christmas Edition
+ECHO 			 *	   HidroSaphire SAF - Script After Formatted	   *
 ECHO 			*************************************************************
 
 
 ::----------------------PRINT MENU [PAG 1]------------------------------------------------------------------------------------------
 :menu
-	ECHO  [31m[Pag 1/3][0m			     [0m*** [31mM[32me[33mr[34mr[35my[36m C[31mh[32mr[33mi[34ms[35mt[36mm[31ma[32ms [33mt[34mo [35mE[36mv[31me[32mr[33my[34mo[35mn[36me[0m ***
+	ECHO  [31m[Pag 1/3][0m
 	ECHO  [32m--------------------------------------------[Navigazione]---------------------------------------------
 	ECHO  [36mMenu[0m		1) Pagina 1	2) Pagina 2 	3) Pagina 3	F) FullScreen	   M) Minimizza
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
@@ -1948,7 +1948,7 @@ Goto :letsgo
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
 	ECHO 	   *		      Versione = %version%			 *
-	ECHO 	    *		 Codename = Christmas Edition		*
+	ECHO 	    *		  Codename = Majestic Bird		*
 	ECHO 	     *		 Ultima Release = 25/12/2020	       *
 	ECHO 	      *************************************************
 	ECHO [0m
