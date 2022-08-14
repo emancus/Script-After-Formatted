@@ -32,7 +32,6 @@ SAF is an useful script (written in [Batch]) for [Microsoft Windows]. Includes a
 + NIC (Network Interface Card) reset
 + DHCP, ARP, NetBIOS, DNS and IP reset
 + Windows "Quick Access" reset
-+ Download programs package
 + Connection Test (LAN / WAN)
 + Connection's Information
 
