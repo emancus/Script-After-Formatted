@@ -44,6 +44,9 @@
  - v0.0.1 - Sparkling Atom
 
 ## Changelog
+### v0.7.1 - Dynamic Castle
+Change some shortcut
+
 ### v0.7.0 - Dynamic Fortress
 Total Rework of Project
 

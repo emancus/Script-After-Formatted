@@ -3,7 +3,7 @@
 ::----------------------------------------------------------
 @echo off
 
-	SET version=v0.7.0
+	SET version=v0.7.1
 
 	::----------------------TITLE OF WINDOWS--------------------------------------------------------------------------------------
 	title HidroSaphrie SAF %version% - (Script After Formatted)
@@ -28,12 +28,12 @@ ECHO 			*************************************************************
 	ECHO  [33m1)[0m Pagina 1
 	ECHO  [32m---------------------------------------------[Programmi]----------------------------------------------
 	ECHO  [33mA1)[0m Lista programmi		   [33mA2)[0m Lista pack Atom
-	ECHO  [32m----------------------------------------------[Utility]-----------------------------------------------
-	ECHO  [36mTR)[0m Controllo TRIM
-	ECHO  [36mWU1)[0m Riconfigura Windows Update         [36mWS1)[0m Reset Windows Store
-	ECHO  [36mNR1)[0m Reset scheda di rete               [36mNR2)[0m Reset DHCP, ARP, NetBIOS, DNS e IP
-	ECHO  [36mNT1)[0m Test LAN/WAN     	                 [36mNT2)[0m Info connessione
-	ECHO  [36mER1)[0m  Reset "accesso rapido"
+	ECHO  [32m----------------------------------------------[Utility]-----------------------------------------------      
+	ECHO  [36mB1)[0m Test LAN/WAN     	      [36mB2)[0m Info connessione
+	ECHO  [36mT1)[0m Controllo TRIM   
+	ECHO  [36mC1)[0m Riconfigura Windows Update         [36mC2)[0m Reset Windows Store
+	ECHO  [36mR1)[0m Reset scheda di rete               [36mR2)[0m Reset DHCP, ARP, NetBIOS, DNS e IP
+	ECHO  [36mR3)[0m  Reset "accesso rapido"
 	ECHO  [32m----------------------------------------------[Extra]--------------------------------------------------
 	ECHO  [36mI)[0m Informazioni	   [36mC)[0m Clear Screen    [36mPC)[0m InfoPC     [36mD)[0m DebugRoom    [36mE)[0m Easter Egg
 	ECHO  0) Esci
@@ -51,23 +51,24 @@ ECHO 			*************************************************************
 	) else if "%c%" EQU "A2" ( Goto :atomInfoPacket
 	) else if "%c%" EQU "a2" ( Goto :atomInfoPacket
 
-	) else if "%c%" EQU "WU1" ( Goto :wureset
-	) else if "%c%" EQU "wu1" ( Goto :wureset
-	) else if "%c%" EQU "WS1" ( Goto :wsreset
-	) else if "%c%" EQU "ws1" ( Goto :wsreset
-	) else if "%c%" EQU "NR1" ( Goto :nicreset
-	) else if "%c%" EQU "nr1" ( Goto :nicreset
-	) else if "%c%" EQU "NR2" ( Goto :nicrepair
-	) else if "%c%" EQU "nr2" ( Goto :nicrepair
-	) else if "%c%" EQU "NT1" ( Goto :testlan
-	) else if "%c%" EQU "nt1" ( Goto :testlan
-	) else if "%c%" EQU "NT2" ( Goto :testwan
-	) else if "%c%" EQU "nt2" ( Goto :testwan
-	) else if "%c%" EQU "ER1" ( Goto :accessorapidorepair
-	) else if "%c%" EQU "er1" ( Goto :accessorapidorepair
+	) else if "%c%" EQU "B1" ( Goto :testlan
+	) else if "%c%" EQU "b1" ( Goto :testlan
+	) else if "%c%" EQU "B2" ( Goto :testwan
+	) else if "%c%" EQU "b2" ( Goto :testwan
+	) else if "%c%" EQU "t1" ( Goto :checktrim
+	) else if "%c%" EQU "T1" ( Goto :checktrim
 
-	) else if "%c%" EQU "tr" ( Goto :checktrim
-	) else if "%c%" EQU "TR" ( Goto :checktrim
+	) else if "%c%" EQU "C1" ( Goto :wureset
+	) else if "%c%" EQU "c1" ( Goto :wureset
+	) else if "%c%" EQU "C2" ( Goto :wsreset
+	) else if "%c%" EQU "c2" ( Goto :wsreset
+	) else if "%c%" EQU "R1" ( Goto :nicreset
+	) else if "%c%" EQU "r1" ( Goto :nicreset
+	) else if "%c%" EQU "R2" ( Goto :nicrepair
+	) else if "%c%" EQU "r2" ( Goto :nicrepair
+	) else if "%c%" EQU "R3" ( Goto :accessorapidorepair
+	) else if "%c%" EQU "r3" ( Goto :accessorapidorepair
+
 	) else if "%c%" EQU "I" ( Goto :information
 	) else if "%c%" EQU "i" ( Goto :information
 	) else if "%c%" EQU "i" ( Goto :information
@@ -488,7 +489,7 @@ Goto :letsgo
 	ECHO 	 *	      https://github.com/HidroSaphire		   *
 	ECHO 	  *	      					          *
 	ECHO 	   *		      Versione = %version%			 *
-	ECHO 	    *		  Codename = Dynamic Fortress		*
+	ECHO 	    *		  Codename = Dynamic Castle 		*
 	ECHO 	     *		 Ultima Release = 14/18/2022	       *
 	ECHO 	      *************************************************
 	ECHO [0m
